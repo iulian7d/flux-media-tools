@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator - Create Strong Passwords Instantly</title>
+    <meta name="description" content="Free password generator. Create strong, random passwords with customizable length and character types. Perfect for account security.">
+    <meta name="keywords" content="password generator, strong password, random password, secure password, password creator">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Password Generator</h1>
+            <p class="subtitle">Create strong, random passwords instantly</p>
+        </header>
+
+        <!-- Ad Space (Top) -->
+        <div class="ad-space">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+                 data-ad-slot="xxxxxxxxxxxxxxxx"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Main Generator -->
+        <main class="generator-section">
+            <div class="generator-card">
+                <!-- Password Length Control -->
+                <div class="input-group">
+                    <div class="length-control">
+                        <label for="passwordLength">Password Length: <span id="lengthDisplay">16</span> characters</label>
+                        <input type="range" id="passwordLength" min="8" max="128" value="16">
+                    </div>
+                </div>
+
+                <!-- Character Options -->
+                <div class="input-group">
+                    <label>Include Characters:</label>
+                    <div class="options-grid">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="uppercase" checked>
+                            <label for="uppercase">Uppercase (A-Z)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="lowercase" checked>
+                            <label for="lowercase">Lowercase (a-z)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="numbers" checked>
+                            <label for="numbers">Numbers (0-9)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="symbols" checked>
+                            <label for="symbols">Special Symbols (!@#$%)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="generate-btn" onclick="generatePassword()">Generate Password</button>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" class="results hidden">
+                <div class="password-display-card">
+                    <div class="password-output">
+                        <input type="text" id="generatedPassword" readonly>
+                        <button class="toggle-btn" onclick="togglePasswordVisibility()" title="Show/Hide">👁️</button>
+                    </div>
+                    <div class="password-strength">
+                        <span class="strength-label">Strength:</span>
+                        <div class="strength-bar">
+                            <div id="strengthIndicator" class="strength-fill"></div>
+                        </div>
+                        <span id="strengthText" class="strength-text">Strong</span>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stat-row">
+                        <span class="stat-label">Password Length:</span>
+                        <span class="stat-value" id="displayLength">16</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Character Types:</span>
+                        <span class="stat-value" id="displayTypes">4</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Possible Combinations:</span>
+                        <span class="stat-value" id="displayCombinations">-</span>
+                    </div>
+                </div>
+
+                <div class="share-section">
+                    <button class="share-btn" onclick="copyPassword()">📋 Copy Password</button>
+                    <button class="share-btn" onclick="generatePassword()">🔄 Generate New</button>
+                </div>
+
+                <button class="reset-btn" onclick="resetGenerator()">Reset</button>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error" class="error hidden"></div>
+        </main>
+
+        <!-- Ad Space (Middle) -->
+        <div class="ad-space">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+                 data-ad-slot="xxxxxxxxxxxxxxxx"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Info Section -->
+        <section class="info-section">
+            <h2>About This Password Generator</h2>
+            <p>
+                Our free password generator creates strong, random passwords that help protect your online accounts.
+                Customize the length and character types to match your security requirements.
+                Each generated password is unique and can be used immediately for account creation or password updates.
+            </p>
+            <h3>Password Security Tips:</h3>
+            <ol>
+                <li>Use passwords with at least 12 characters for better security</li>
+                <li>Include uppercase, lowercase, numbers, and symbols</li>
+                <li>Never reuse passwords across multiple accounts</li>
+                <li>Store passwords in a secure password manager</li>
+                <li>Update passwords regularly for sensitive accounts</li>
+            </ol>
+            <h3>How It Works:</h3>
+            <p>
+                This generator creates cryptographically random passwords using your selected character options.
+                Each character is randomly selected to ensure maximum security and unpredictability.
+            </p>
+        </section>
+
+        <!-- Ad Space (Bottom) -->
+        <div class="ad-space">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+                 data-ad-slot="xxxxxxxxxxxxxxxx"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Flux Media Systems. All rights reserved. | <a href="/">Home</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>
