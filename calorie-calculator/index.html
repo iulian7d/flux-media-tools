@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Calculator - Calculate Your Daily Calorie Needs</title>
+    <meta name="description" content="Free calorie calculator. Calculate BMR, TDEE, and daily calorie needs based on age, weight, height, and activity level.">
+    <meta name="keywords" content="calorie calculator, BMR calculator, TDEE calculator, daily calories, calorie needs, calorie counter">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Calorie Calculator</h1>
+            <p class="subtitle">Calculate your daily calorie needs instantly</p>
+        </header>
+
+        <!-- Ad Space (Top) -->
+        <div class="ad-space">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+                 data-ad-slot="xxxxxxxxxxxxxxxx"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Main Calculator -->
+        <main class="calculator-section">
+            <div class="calculator-card">
+                <!-- Age and Gender -->
+                <div class="input-row">
+                    <div class="input-group half">
+                        <label for="age">Age (years)</label>
+                        <input type="number" id="age" placeholder="Enter your age" min="1" max="120">
+                    </div>
+                    <div class="input-group half">
+                        <label for="gender">Gender</label>
+                        <select id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Height -->
+                <div class="input-row">
+                    <div class="input-group half">
+                        <label for="heightFeet">Height</label>
+                        <input type="number" id="heightFeet" placeholder="Feet" min="1" max="8">
+                    </div>
+                    <div class="input-group half">
+                        <label>&nbsp;</label>
+                        <input type="number" id="heightInches" placeholder="Inches" min="0" max="11">
+                    </div>
+                </div>
+
+                <!-- Weight -->
+                <div class="input-group">
+                    <label for="weight">Weight (lbs)</label>
+                    <input type="number" id="weight" placeholder="Enter your weight" min="50" max="500">
+                </div>
+
+                <!-- Activity Level -->
+                <div class="input-group">
+                    <label for="activity">Activity Level</label>
+                    <select id="activity">
+                        <option value="1.2">Sedentary (Little or no exercise)</option>
+                        <option value="1.375">Lightly Active (1-3 days/week)</option>
+                        <option value="1.55">Moderately Active (3-5 days/week)</option>
+                        <option value="1.725">Very Active (6-7 days/week)</option>
+                        <option value="1.9">Extremely Active (Athlete/Physical job)</option>
+                    </select>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateCalories()">Calculate Calories</button>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" class="results hidden">
+                <div class="result-card">
+                    <div class="result-item">
+                        <span class="result-label">Daily Calories Needed</span>
+                        <div class="result-value highlight">
+                            <span id="tdeeResult">0</span>
+                            <span class="unit">kcal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stat-row">
+                        <span class="stat-label">Basal Metabolic Rate (BMR):</span>
+                        <span class="stat-value" id="bmrtResult">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Activity Multiplier:</span>
+                        <span class="stat-value" id="activityMultiplier">1.0</span>
+                    </div>
+                </div>
+
+                <div class="goals-section">
+                    <h3>Daily Calorie Goals:</h3>
+                    <div class="goal-cards">
+                        <div class="goal-card lose">
+                            <div class="goal-label">Lose Weight</div>
+                            <div class="goal-value" id="loseWeight">0</div>
+                            <div class="goal-subtitle">Deficit: -500 kcal</div>
+                        </div>
+                        <div class="goal-card maintain">
+                            <div class="goal-label">Maintain</div>
+                            <div class="goal-value" id="maintain">0</div>
+                            <div class="goal-subtitle">No change</div>
+                        </div>
+                        <div class="goal-card gain">
+                            <div class="goal-label">Gain Muscle</div>
+                            <div class="goal-value" id="gainMuscle">0</div>
+                            <div class="goal-subtitle">Surplus: +500 kcal</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="macros-section">
+                    <h3>Recommended Daily Macros (Maintain):</h3>
+                    <div class="macro-cards">
+                        <div class="macro-card protein">
+                            <div class="macro-label">Protein</div>
+                            <div class="macro-value" id="proteinGrams">0</div>
+                            <div class="macro-subtitle">grams (30%)</div>
+                        </div>
+                        <div class="macro-card carbs">
+                            <div class="macro-label">Carbs</div>
+                            <div class="macro-value" id="carbsGrams">0</div>
+                            <div class="macro-subtitle">grams (40%)</div>
+                        </div>
+                        <div class="macro-card fats">
+                            <div class="macro-label">Fats</div>
+                            <div class="macro-value" id="fatsGrams">0</div>
+                            <div class="macro-subtitle">grams (30%)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="reset-btn" onclick="resetCalculator()">Calculate Again</button>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error" class="error hidden"></div>
+        </main>
+
+        <!-- Ad Space (Middle) -->
+        <div class="ad-space">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+                 data-ad-slot="xxxxxxxxxxxxxxxx"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Info Section -->
+        <section class="info-section">
+            <h2>About This Calorie Calculator</h2>
+            <p>
+                This free calorie calculator helps you determine your daily calorie needs based on your personal data
+                and activity level. It uses the Mifflin-St Jeor equation to calculate your Basal Metabolic Rate (BMR)
+                and then adjusts for your activity level to find your Total Daily Energy Expenditure (TDEE).
+            </p>
+            <h3>How It Works:</h3>
+            <ol>
+                <li>Enter your age, gender, height, and weight</li>
+                <li>Select your typical activity level</li>
+                <li>Click "Calculate Calories"</li>
+                <li>See your daily calorie needs and macro recommendations</li>
+            </ol>
+            <h3>Understanding Your Results:</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>BMR:</strong> Calories burned at rest</li>
+                <li><strong>TDEE:</strong> Total daily energy expenditure (all calories burned)</li>
+                <li><strong>Lose Weight:</strong> TDEE - 500 (1 lb loss per week)</li>
+                <li><strong>Gain Muscle:</strong> TDEE + 500 (gradual muscle gain)</li>
+            </ul>
+        </section>
+
+        <!-- Ad Space (Bottom) -->
+        <div class="ad-space">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+                 data-ad-slot="xxxxxxxxxxxxxxxx"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Flux Media Systems. All rights reserved. | <a href="/">Home</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>
