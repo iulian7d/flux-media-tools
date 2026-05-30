@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "qr-code-generator",
+  "compatibility_date": "2026-05-30",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "age-calculator"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
