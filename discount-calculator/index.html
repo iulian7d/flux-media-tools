@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator - Calculate Sale Price Instantly</title>
+    <meta name="description" content="Free discount calculator. Calculate sale price, savings amount, and final cost. Perfect for shopping, sales, and discounts.">
+    <meta name="keywords" content="discount calculator, sale price calculator, percentage off, savings calculator, how much off">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Discount Calculator</h1>
+            <p class="subtitle">Calculate sale prices and savings instantly</p>
+        </header>
+
+        <!-- Ad Space (Top) -->
+        <div class="ad-space">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+                 data-ad-slot="xxxxxxxxxxxxxxxx"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Main Calculator -->
+        <main class="calculator-section">
+            <div class="calculator-card">
+                <div class="input-group">
+                    <label for="originalPrice">Original Price ($)</label>
+                    <input type="number" id="originalPrice" placeholder="Enter original price" min="0" step="0.01">
+                </div>
+
+                <div class="input-group">
+                    <label for="discountPercent">Discount Percentage (%)</label>
+                    <div class="discount-input-wrapper">
+                        <input type="number" id="discountPercent" placeholder="Enter discount percentage" min="0" max="100" step="0.01">
+                        <div class="quick-discounts">
+                            <button class="quick-btn" onclick="setDiscount(10)">10%</button>
+                            <button class="quick-btn" onclick="setDiscount(20)">20%</button>
+                            <button class="quick-btn" onclick="setDiscount(30)">30%</button>
+                            <button class="quick-btn" onclick="setDiscount(50)">50%</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculateDiscount()">Calculate Discount</button>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" class="results hidden">
+                <div class="result-card">
+                    <div class="result-item">
+                        <span class="result-label">Discount Amount</span>
+                        <div class="result-value">
+                            <span class="currency">$</span><span id="discountAmount">0.00</span>
+                        </div>
+                    </div>
+                    <div class="result-item separator">
+                        <span class="separator-text">→</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Final Price</span>
+                        <div class="result-value highlight">
+                            <span class="currency">$</span><span id="finalPrice">0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stat-row">
+                        <span class="stat-label">Original Price:</span>
+                        <span class="stat-value" id="displayOriginal">$0.00</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Discount:</span>
+                        <span class="stat-value" id="displayDiscount">0%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">You Save:</span>
+                        <span class="stat-value savings" id="displaySavings">$0.00</span>
+                    </div>
+                    <div class="stat-row highlight-row">
+                        <span class="stat-label">Sale Price:</span>
+                        <span class="stat-value" id="displayFinal">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="share-section">
+                    <button class="share-btn" onclick="copyToClipboard()">📋 Copy Result</button>
+                    <button class="share-btn" onclick="shareResult()">📤 Share</button>
+                </div>
+
+                <button class="reset-btn" onclick="resetCalculator()">Calculate Another Discount</button>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error" class="error hidden"></div>
+        </main>
+
+        <!-- Ad Space (Middle) -->
+        <div class="ad-space">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+                 data-ad-slot="xxxxxxxxxxxxxxxx"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Info Section -->
+        <section class="info-section">
+            <h2>How to Use the Discount Calculator</h2>
+            <p>
+                Our free discount calculator helps you quickly find out how much you'll save and what you'll pay after a discount.
+                Whether you're shopping online or in-store, use this tool to make smart purchasing decisions.
+            </p>
+            <h3>How It Works:</h3>
+            <ol>
+                <li>Enter the original price of the item</li>
+                <li>Enter the discount percentage (or click a quick discount button)</li>
+                <li>Click "Calculate Discount"</li>
+                <li>See your savings and final price instantly</li>
+            </ol>
+            <h3>Formula:</h3>
+            <p><strong>Discount Amount = Original Price × (Discount % ÷ 100)</strong></p>
+            <p><strong>Final Price = Original Price - Discount Amount</strong></p>
+        </section>
+
+        <!-- Ad Space (Bottom) -->
+        <div class="ad-space">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+                 data-ad-slot="xxxxxxxxxxxxxxxx"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Flux Media Systems. All rights reserved. | <a href="/">Home</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>
