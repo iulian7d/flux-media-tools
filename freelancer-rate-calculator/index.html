@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Rate Calculator - What Should I Charge?</title>
+    <meta name="description" content="Free freelancer rate calculator. Calculate your minimum hourly rate, day rate, and project rate based on your income goal, expenses, and billable hours.">
+    <meta name="keywords" content="freelancer rate calculator, hourly rate calculator, how much should I charge, freelance pricing calculator, consultant rate calculator">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+    <h1>🧑‍💻 Freelancer Rate Calculator</h1>
+    <p class="subtitle">Calculate the minimum rate you need to charge to hit your income goal</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <h3 style="font-size:1rem; margin-bottom:16px; color:#667eea;">💼 Income Goal</h3>
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Desired Annual Take-Home Income</label>
+                <div class="input-prefix"><span>$</span><input type="number" id="income" placeholder="80000" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Tax Rate (%)</label>
+                <input type="number" id="tax" placeholder="25" min="0" max="60">
+            </div>
+        </div>
+
+        <h3 style="font-size:1rem; margin: 24px 0 16px; color:#667eea;">🗓️ Time & Availability</h3>
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Weeks Worked Per Year</label>
+                <input type="number" id="weeks" placeholder="48" min="1" max="52">
+            </div>
+            <div class="input-group">
+                <label>Billable Hours Per Week</label>
+                <input type="number" id="billable" placeholder="30" min="1" max="60">
+            </div>
+        </div>
+
+        <h3 style="font-size:1rem; margin: 24px 0 16px; color:#667eea;">💸 Annual Business Expenses</h3>
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Software & Tools</label>
+                <div class="input-prefix"><span>$</span><input type="number" id="software" placeholder="1200" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Health Insurance</label>
+                <div class="input-prefix"><span>$</span><input type="number" id="health" placeholder="6000" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Equipment & Hardware</label>
+                <div class="input-prefix"><span>$</span><input type="number" id="equipment" placeholder="1500" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Other Business Expenses</label>
+                <div class="input-prefix"><span>$</span><input type="number" id="other" placeholder="2000" min="0"></div>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcRate()">Calculate My Rate</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="hourly-rate">$0/hr</div>
+                <div class="big-label">Minimum Hourly Rate</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="day-rate">$0</div><div class="lbl">Day Rate (8 hrs)</div></div>
+                <div class="result-box"><div class="val" id="project-week">$0</div><div class="lbl">Weekly Project Rate</div></div>
+                <div class="result-box"><div class="val" id="gross-needed">$0</div><div class="lbl">Gross Annual Needed</div></div>
+            </div>
+
+            <div style="background:#f8f9fc; border-radius:10px; padding:20px; margin-top:16px;">
+                <div class="tax-row"><span class="tax-name">Take-Home Income Goal</span><span class="tax-val" id="b-income">$0</span></div>
+                <div class="tax-row"><span class="tax-name">Self-Employment Tax</span><span class="tax-val" id="b-tax">$0</span></div>
+                <div class="tax-row"><span class="tax-name">Total Business Expenses</span><span class="tax-val" id="b-expenses">$0</span></div>
+                <div class="tax-row" style="border-top:2px solid #667eea; margin-top:6px; padding-top:14px; font-weight:700; color:#667eea;">
+                    <span>Gross Revenue Required</span><span id="b-gross">$0</span>
+                </div>
+                <div class="tax-row" style="font-size:0.85rem; color:#7f8c8d;">
+                    <span>Total Billable Hours/Year</span><span id="b-hours">0 hrs</span>
+                </div>
+            </div>
+
+            <div style="background:#fff3cd; border-radius:10px; padding:16px; margin-top:16px; font-size:0.9rem;">
+                <strong>💡 Pro tip:</strong> Add a 20% buffer above your minimum rate to account for slow months, unpaid admin time, and business growth. Your suggested rate: <strong id="suggested-rate">$0/hr</strong>
+            </div>
+
+            <button class="reset-btn" onclick="resetRate()">Recalculate</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+    <div class="info-section">
+        <h2>Why Most Freelancers Undercharge</h2>
+        <p>Many freelancers set rates based on what they "feel comfortable" charging rather than what they actually need. This calculator works backwards from your financial reality: your income goal, your taxes, your expenses, and your actual available hours.</p>
+        <p>Remember: as a freelancer, you pay both the employee AND employer portions of payroll taxes (15.3%), health insurance, equipment, software, and unpaid time for marketing and admin. All of these need to be baked into your rate.</p>
+    </div>
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>⚡ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregnancy Due Date Calculator - Due Date, Week & Milestones</title>
+    <meta name="description" content="Free pregnancy due date calculator. Enter your last period, conception, or IVF date to get your due date, current pregnancy week, trimester, and baby milestones.">
+    <meta name="keywords" content="pregnancy due date calculator, when is my due date, pregnancy week calculator, how many weeks pregnant, pregnancy calculator">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+    <h1>🤰 Pregnancy Due Date Calculator</h1>
+    <p class="subtitle">Find your due date, current week, and pregnancy milestones</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="input-group" style="margin-bottom:20px;">
+            <label>Calculate from:</label>
+            <select id="method" onchange="updateMethod()" style="padding:11px 14px; border:1.5px solid #dde2e8; border-radius:8px; font-size:0.95rem; background:white; color:#2c3e50;">
+                <option value="lmp">Last Menstrual Period (LMP)</option>
+                <option value="conception">Conception Date</option>
+                <option value="ivf">IVF Transfer Date</option>
+                <option value="ultrasound">Ultrasound Date (enter weeks)</option>
+            </select>
+        </div>
+        <div class="form-grid">
+            <div class="input-group" id="date-group">
+                <label id="date-label">Date of Last Period</label>
+                <input type="date" id="main-date">
+            </div>
+            <div class="input-group" id="cycle-group">
+                <label>Cycle Length (days)</label>
+                <input type="number" id="cycle" value="28" min="20" max="45">
+            </div>
+            <div class="input-group" id="weeks-group" style="display:none;">
+                <label>Weeks Pregnant at Ultrasound</label>
+                <input type="number" id="us-weeks" placeholder="12" min="4" max="40">
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcPregnancy()">Calculate Due Date</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="due-date">—</div>
+                <div class="big-label">Estimated Due Date (EDD)</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="week-preg">—</div><div class="lbl">Weeks Pregnant</div></div>
+                <div class="result-box"><div class="val" id="trimester">—</div><div class="lbl">Trimester</div></div>
+                <div class="result-box"><div class="val" id="days-left">—</div><div class="lbl">Days Until Due Date</div></div>
+            </div>
+
+            <h3 style="font-size:1rem; margin: 20px 0 14px;">Pregnancy Timeline</h3>
+            <div id="timeline"></div>
+
+            <h3 style="font-size:1rem; margin: 24px 0 14px;">Baby Size This Week 🍼</h3>
+            <div id="baby-size" style="background:#fef9f0; border-radius:10px; padding:16px; text-align:center; font-size:1.05rem;"></div>
+
+            <h3 style="font-size:1rem; margin: 24px 0 14px;">Key Milestones</h3>
+            <div id="milestones"></div>
+
+            <button class="reset-btn" onclick="resetPregnancy()">Calculate Again</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+    <div class="info-section">
+        <h2>About This Calculator</h2>
+        <p>This calculator uses the standard Naegele's rule (LMP + 280 days) to estimate your due date. Conception date adds 266 days. IVF transfer adds 266 days for day-3 embryos or 264 days for day-5 embryos.</p>
+        <p>Only about 4% of babies are born on their exact due date — most arrive within two weeks either side. Your healthcare provider may adjust your due date based on ultrasound measurements.</p>
+        <p><em>This tool is for informational purposes only. Always consult your OB/GYN or midwife for medical guidance during pregnancy.</em></p>
+    </div>
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>⚡ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

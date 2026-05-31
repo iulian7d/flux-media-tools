@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Take-Home Calculator - Net Pay After Tax by US State</title>
+    <meta name="description" content="Free salary calculator. Calculate your net take-home pay after federal tax, state tax, and FICA deductions for all 50 US states.">
+    <meta name="keywords" content="salary calculator, take home pay calculator, net pay calculator, salary after tax, paycheck calculator">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>💰 Salary Take-Home Calculator</h1>
+    <p class="subtitle">Calculate your net pay after federal tax, state tax, and FICA</p>
+</header>
+
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block"
+             data-ad-client="ca-pub-6784909791643403"
+             data-ad-slot="4825833720"
+             data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Gross Annual Salary</label>
+                <div class="input-prefix"><span>$</span><input type="number" id="salary" placeholder="75000" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>US State</label>
+                <select id="state">
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska (No Income Tax)</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="FL">Florida (No Income Tax)</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada (No Income Tax)</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota (No Income Tax)</option>
+                    <option value="TN">Tennessee (No Income Tax)</option>
+                    <option value="TX">Texas (No Income Tax)</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington (No Income Tax)</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming (No Income Tax)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Filing Status</label>
+                <select id="filing">
+                    <option value="single">Single</option>
+                    <option value="married">Married Filing Jointly</option>
+                    <option value="hoh">Head of Household</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>401(k) Contribution (%)</label>
+                <input type="number" id="k401" placeholder="6" min="0" max="100" step="0.5">
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcSalary()">Calculate Take-Home Pay</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="net-annual">$0</div>
+                <div class="big-label">Annual Take-Home Pay</div>
+            </div>
+
+            <div class="result-grid">
+                <div class="result-box">
+                    <div class="val" id="net-monthly">$0</div>
+                    <div class="lbl">Per Month</div>
+                </div>
+                <div class="result-box">
+                    <div class="val" id="net-biweekly">$0</div>
+                    <div class="lbl">Every 2 Weeks</div>
+                </div>
+                <div class="result-box">
+                    <div class="val" id="net-hourly">$0</div>
+                    <div class="lbl">Per Hour (40hr/wk)</div>
+                </div>
+            </div>
+
+            <h3 style="font-size:1rem; margin: 20px 0 14px; color:#2c3e50;">Tax Breakdown</h3>
+            <div id="tax-breakdown"></div>
+
+            <div class="bracket-bar" id="bracket-bar" style="margin-top:20px;"></div>
+
+            <button class="reset-btn" onclick="resetSalary()">Calculate Another Salary</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block"
+             data-ad-client="ca-pub-6784909791643403"
+             data-ad-slot="8670391187"
+             data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>About This Salary Calculator</h2>
+        <p>This calculator estimates your take-home pay after federal income tax (2025 brackets), Social Security (6.2%), Medicare (1.45%), and state income tax. 401(k) contributions are pre-tax and reduce your taxable income.</p>
+        <p>Results are estimates. Actual withholding depends on your W-4 allowances, additional income, itemized deductions, and other factors. Consult a tax professional for precise figures.</p>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block"
+             data-ad-client="ca-pub-6784909791643403"
+             data-ad-slot="2104982836"
+             data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>⚡ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp;
+    <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp;
+    <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

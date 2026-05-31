@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Interaction Checker - Check Medication & Supplement Interactions</title>
+    <meta name="description" content="Free drug interaction checker. Enter 2 or more medications or supplements to check for known interactions, severity, and what to watch for.">
+    <meta name="keywords" content="drug interaction checker, medication interaction checker, drug interactions, supplement interactions, medicine interaction">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+    <h1>💊 Drug Interaction Checker</h1>
+    <p class="subtitle">Check interactions between medications and supplements</p>
+</header>
+<div class="container">
+    <div class="medical-disclaimer">
+        <strong>⚕️ Important:</strong> This tool is for informational purposes only. Always consult your doctor or pharmacist before changing medications. In an emergency, call 911 or Poison Control (1-800-222-1222).
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <p style="color:#555; margin-bottom:20px; font-size:0.95rem;">Enter the names of medications or supplements you want to check. Add at least 2 drugs.</p>
+        <div id="drug-inputs">
+            <div class="drug-input-row">
+                <input type="text" placeholder="Drug or supplement #1 (e.g., aspirin, ibuprofen)" class="drug-input">
+                <button class="remove-btn" style="display:none;" onclick="removeInput(this)">✕</button>
+            </div>
+            <div class="drug-input-row">
+                <input type="text" placeholder="Drug or supplement #2 (e.g., warfarin, Fish Oil)" class="drug-input">
+                <button class="remove-btn" style="display:none;" onclick="removeInput(this)">✕</button>
+            </div>
+        </div>
+        <button class="add-btn" onclick="addDrugInput()">+ Add Another Drug</button>
+        <button class="calc-btn" onclick="checkInteractions()">Check Interactions</button>
+    </div>
+
+    <div id="results" class="results">
+        <div id="results-inner"></div>
+    </div>
+
+    <div id="loading" style="display:none;" class="card" style="text-align:center;">
+        <div style="text-align:center; padding:20px;">
+            <div class="spinner"></div>
+            <p style="color:#7f8c8d; margin-top:12px;">Checking interactions via OpenFDA...</p>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>How to Use This Checker</h2>
+        <p>Enter the generic or brand names of any medications, vitamins, or supplements you take. The checker uses the OpenFDA drug label database to identify known interactions.</p>
+        <p><strong>Common drug interaction types:</strong> Some drugs affect how quickly the body processes other drugs (CYP450 interactions). Others compete for the same receptors. Some can cause dangerous additive effects when combined (e.g., blood thinners, CNS depressants).</p>
+        <p>This database covers FDA-regulated drugs. Herbal supplements and vitamins may not appear in all cases. For a comprehensive review of all your medications, consult your pharmacist — they have access to professional-grade interaction databases.</p>
+    </div>
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>⚡ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

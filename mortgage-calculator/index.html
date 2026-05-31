@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage & Loan Calculator - Calculate Payments & Affordability</title>
+    <meta name="description" content="Free mortgage and loan calculator. Find out how much house you can afford, calculate monthly payments, and view full amortization schedules.">
+    <meta name="keywords" content="mortgage calculator, loan calculator, how much house can I afford, monthly payment calculator, amortization schedule">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>🏠 Mortgage & Loan Calculator</h1>
+    <p class="subtitle">Calculate payments, affordability, and full amortization schedules</p>
+</header>
+
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block"
+             data-ad-client="ca-pub-6784909791643403"
+             data-ad-slot="4825833720"
+             data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('mortgage')">🏠 Mortgage Affordability</button>
+        <button class="tab-btn" onclick="switchTab('loan')">💳 Loan Calculator</button>
+    </div>
+
+    <!-- MORTGAGE TAB -->
+    <div id="tab-mortgage" class="tab-content active">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Annual Gross Income</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="m-income" placeholder="80000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Monthly Debt Payments</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="m-debts" placeholder="500" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Down Payment</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="m-down" placeholder="40000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Interest Rate (%)</label>
+                    <input type="number" id="m-rate" placeholder="6.8" step="0.1" min="0" max="30">
+                </div>
+                <div class="input-group">
+                    <label>Loan Term</label>
+                    <select id="m-term">
+                        <option value="30">30 Years</option>
+                        <option value="20">20 Years</option>
+                        <option value="15">15 Years</option>
+                        <option value="10">10 Years</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Annual Property Tax ($)</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="m-tax" placeholder="3000" min="0"></div>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcMortgage()">Calculate Affordability</button>
+        </div>
+
+        <div id="mortgage-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="m-max-price">$0</div>
+                    <div class="big-label">Maximum Home Price You Can Afford</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box">
+                        <div class="val" id="m-monthly">$0</div>
+                        <div class="lbl">Monthly Payment (PITI)</div>
+                    </div>
+                    <div class="result-box">
+                        <div class="val" id="m-total-interest">$0</div>
+                        <div class="lbl">Total Interest Paid</div>
+                    </div>
+                    <div class="result-box">
+                        <div class="val" id="m-dti">0%</div>
+                        <div class="lbl">Debt-to-Income Ratio</div>
+                    </div>
+                </div>
+                <div class="chart-wrap">
+                    <canvas id="mortgageChart"></canvas>
+                </div>
+                <button class="reset-btn" onclick="resetMortgage()">Calculate Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOAN TAB -->
+    <div id="tab-loan" class="tab-content">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Loan Amount</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="l-amount" placeholder="25000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Annual Interest Rate (%)</label>
+                    <input type="number" id="l-rate" placeholder="7.5" step="0.1" min="0" max="100">
+                </div>
+                <div class="input-group">
+                    <label>Loan Term</label>
+                    <select id="l-term">
+                        <option value="1">1 Year</option>
+                        <option value="2">2 Years</option>
+                        <option value="3">3 Years</option>
+                        <option value="5" selected>5 Years</option>
+                        <option value="7">7 Years</option>
+                        <option value="10">10 Years</option>
+                        <option value="15">15 Years</option>
+                        <option value="20">20 Years</option>
+                        <option value="30">30 Years</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Extra Monthly Payment (optional)</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="l-extra" placeholder="0" min="0"></div>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcLoan()">Calculate Loan</button>
+        </div>
+
+        <div id="loan-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="l-monthly">$0</div>
+                    <div class="big-label">Monthly Payment</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box">
+                        <div class="val" id="l-total-interest">$0</div>
+                        <div class="lbl">Total Interest</div>
+                    </div>
+                    <div class="result-box">
+                        <div class="val" id="l-total-cost">$0</div>
+                        <div class="lbl">Total Cost</div>
+                    </div>
+                    <div class="result-box">
+                        <div class="val" id="l-payoff">—</div>
+                        <div class="lbl">Payoff Date</div>
+                    </div>
+                </div>
+                <div id="l-savings-box" style="display:none; background:#e8f5e9; border-radius:10px; padding:16px; margin-bottom:20px; text-align:center;">
+                    <strong style="color:#27ae60;">Extra payments save you <span id="l-savings">$0</span> in interest and pay off <span id="l-months-early">0</span> months early!</strong>
+                </div>
+                <div class="chart-wrap">
+                    <canvas id="loanChart"></canvas>
+                </div>
+                <h3 style="margin:20px 0 10px; font-size:1rem;">Amortization Schedule</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead>
+                        <tbody id="amort-table"></tbody>
+                    </table>
+                </div>
+                <button class="reset-btn" onclick="resetLoan()">Calculate Again</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block"
+             data-ad-client="ca-pub-6784909791643403"
+             data-ad-slot="8670391187"
+             data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>How to Use This Calculator</h2>
+        <p><strong>Mortgage Affordability:</strong> Enter your income, existing debts, and down payment to find the maximum home price you can comfortably afford based on a 28%/36% DTI guideline. The monthly payment shown includes principal, interest, taxes, and insurance (PITI).</p>
+        <p><strong>Loan Calculator:</strong> Enter any loan amount, rate, and term to get your exact monthly payment and a full amortization schedule. Add extra monthly payments to see how much interest you save and how early you pay off the loan.</p>
+        <p><em>Results are estimates for informational purposes. Consult a mortgage professional before making financial decisions.</em></p>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block"
+             data-ad-client="ca-pub-6784909791643403"
+             data-ad-slot="2104982836"
+             data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>⚡ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp;
+    <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp;
+    <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

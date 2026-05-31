@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator - Monthly Payment & Amortization Schedule</title>
+    <meta name="description" content="Free loan calculator. Calculate monthly payments for auto loans, personal loans, and student loans. See full amortization schedule and total interest paid.">
+    <meta name="keywords" content="loan calculator, auto loan calculator, personal loan calculator, monthly payment calculator, amortization schedule">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+    <h1>💳 Loan Calculator</h1>
+    <p class="subtitle">Calculate monthly payments and full amortization for any loan</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Loan Amount</label>
+                <div class="input-prefix"><span>$</span><input type="number" id="amount" placeholder="20000" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Annual Interest Rate (%)</label>
+                <input type="number" id="rate" placeholder="8.5" step="0.1" min="0">
+            </div>
+            <div class="input-group">
+                <label>Loan Term</label>
+                <select id="term">
+                    <option value="1">1 Year (12 months)</option>
+                    <option value="2">2 Years</option>
+                    <option value="3">3 Years</option>
+                    <option value="4">4 Years</option>
+                    <option value="5" selected>5 Years</option>
+                    <option value="6">6 Years</option>
+                    <option value="7">7 Years</option>
+                    <option value="10">10 Years</option>
+                    <option value="15">15 Years</option>
+                    <option value="20">20 Years</option>
+                    <option value="30">30 Years</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Loan Type</label>
+                <select id="type">
+                    <option>Auto Loan</option>
+                    <option>Personal Loan</option>
+                    <option>Student Loan</option>
+                    <option>Home Equity Loan</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="input-group" style="grid-column: span 2;">
+                <label>Extra Monthly Payment (optional) — pay off faster!</label>
+                <div class="input-prefix"><span>$</span><input type="number" id="extra" placeholder="0" min="0"></div>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcLoan()">Calculate Loan</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="monthly">$0</div>
+                <div class="big-label">Monthly Payment</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="total-interest">$0</div><div class="lbl">Total Interest</div></div>
+                <div class="result-box"><div class="val" id="total-cost">$0</div><div class="lbl">Total Cost</div></div>
+                <div class="result-box"><div class="val" id="payoff">—</div><div class="lbl">Payoff Date</div></div>
+            </div>
+            <div id="savings-box" style="display:none; background:#e8f5e9; border-radius:10px; padding:16px; margin-bottom:20px; text-align:center;">
+                <strong style="color:#27ae60;">Extra payments save <span id="savings">$0</span> and pay off <span id="early">0</span> months early!</strong>
+            </div>
+            <div style="height:260px; margin: 20px 0;"><canvas id="chart"></canvas></div>
+            <h3 style="font-size:1rem; margin:16px 0 10px;">Amortization Schedule</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead>
+                    <tbody id="table"></tbody>
+                </table>
+            </div>
+            <button class="reset-btn" onclick="resetLoan()">Calculate Again</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+    <div class="info-section">
+        <h2>How Loan Payments Are Calculated</h2>
+        <p>Monthly payments are calculated using the standard amortization formula, where each payment covers interest on the remaining balance plus a portion of principal. Early payments are mostly interest; later payments shift toward principal.</p>
+        <p>Adding even a small extra payment each month can significantly reduce total interest and shorten the loan term — especially in the early years of the loan.</p>
+    </div>
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>⚡ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

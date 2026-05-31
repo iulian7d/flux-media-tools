@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance Cost Estimator - ACA Subsidy Calculator</title>
+    <meta name="description" content="Free health insurance cost estimator. Calculate your estimated monthly premium, ACA subsidy eligibility, and out-of-pocket costs based on income and family size.">
+    <meta name="keywords" content="health insurance calculator, ACA subsidy calculator, Obamacare calculator, health insurance cost estimator, marketplace insurance calculator">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+    <h1>🏥 Health Insurance Cost Estimator</h1>
+    <p class="subtitle">Estimate your premium and ACA subsidy eligibility</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Household Annual Income</label>
+                <div class="input-prefix"><span>$</span><input type="number" id="income" placeholder="55000" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Household Size (# of people)</label>
+                <input type="number" id="household" placeholder="2" min="1" max="10">
+            </div>
+            <div class="input-group">
+                <label>Age (oldest adult in household)</label>
+                <input type="number" id="age" placeholder="35" min="18" max="64">
+            </div>
+            <div class="input-group">
+                <label>State</label>
+                <select id="state">
+                    <option value="avg">Average (national)</option>
+                    <option value="high">High cost (NY, CA, VT, WV)</option>
+                    <option value="low">Low cost (MN, UT, AR, NH)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Plan Type</label>
+                <select id="plan">
+                    <option value="silver">Silver (most common)</option>
+                    <option value="bronze">Bronze (lower premium, higher deductible)</option>
+                    <option value="gold">Gold (higher premium, lower out-of-pocket)</option>
+                    <option value="platinum">Platinum (highest premium, lowest out-of-pocket)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Do you have access to employer coverage?</label>
+                <select id="employer">
+                    <option value="no">No — I need marketplace coverage</option>
+                    <option value="yes">Yes — employer coverage available</option>
+                </select>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcInsurance()">Estimate My Costs</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight" id="cost-highlight">
+                <div class="big-number" id="net-premium">$0/mo</div>
+                <div class="big-label">Estimated Monthly Premium (After Subsidy)</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="full-premium">$0</div><div class="lbl">Full Monthly Premium</div></div>
+                <div class="result-box"><div class="val" id="subsidy">$0</div><div class="lbl">Monthly Subsidy (APTC)</div></div>
+                <div class="result-box"><div class="val" id="fpl">0%</div><div class="lbl">% of Federal Poverty Level</div></div>
+            </div>
+            <div id="subsidy-info" style="margin-bottom:20px;"></div>
+
+            <h3 style="font-size:1rem; margin:16px 0 14px;">Plan Comparison</h3>
+            <div id="plan-comparison"></div>
+
+            <div id="employer-note" style="display:none; margin-top:16px; padding:14px; background:#fff8f0; border-radius:8px; border-left:3px solid #f4a261; font-size:0.9rem;"></div>
+
+            <p style="color:#7f8c8d; font-size:0.82rem; margin-top:20px;"><em>Estimates based on 2025 ACA marketplace averages. Actual premiums vary significantly by insurer, exact location, and plan. Visit HealthCare.gov for official quotes during open enrollment (Nov 1 – Jan 15).</em></p>
+            <button class="reset-btn" onclick="resetInsurance()">Recalculate</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+    <div class="info-section">
+        <h2>How ACA Subsidies Work</h2>
+        <p>The Affordable Care Act provides Premium Tax Credits (Advanced Premium Tax Credits, or APTC) to households with income between 100% and 400% of the Federal Poverty Level (FPL). Under the American Rescue Plan extension (through 2025), subsidies are also available above 400% FPL if premiums would exceed 8.5% of income.</p>
+        <p>Open Enrollment runs November 1 – January 15 each year. Special enrollment periods are available for qualifying life events (job loss, marriage, birth of child). Visit HealthCare.gov for official estimates and to enroll.</p>
+        <p><em>This is an estimate only and not a guarantee of actual subsidy amounts. Always verify through HealthCare.gov or a licensed insurance broker.</em></p>
+    </div>
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>⚡ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

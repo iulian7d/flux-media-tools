@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ovulation & Period Calculator - Fertile Window & Cycle Tracker</title>
+    <meta name="description" content="Free ovulation and period calculator. Find your fertile window, ovulation day, next period date, and PMS window. Includes 3-month cycle calendar.">
+    <meta name="keywords" content="ovulation calculator, period calculator, fertile window calculator, when am I ovulating, menstrual cycle calculator, ovulation tracker">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+    <h1>🌸 Ovulation & Period Calculator</h1>
+    <p class="subtitle">Track your fertile window, ovulation day, and upcoming periods</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>First Day of Last Period</label>
+                <input type="date" id="last-period">
+            </div>
+            <div class="input-group">
+                <label>Average Cycle Length (days)</label>
+                <input type="number" id="cycle-len" value="28" min="20" max="45">
+            </div>
+            <div class="input-group">
+                <label>Average Period Duration (days)</label>
+                <input type="number" id="period-len" value="5" min="2" max="10">
+            </div>
+            <div class="input-group">
+                <label>Luteal Phase Length (days)</label>
+                <input type="number" id="luteal" value="14" min="10" max="16">
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcOvulation()">Calculate My Cycle</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="ovulation-date">—</div>
+                <div class="big-label">Estimated Ovulation Day</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box" style="border-color:#ffb3c1; background:#fff0f3;"><div class="val" id="fertile-window" style="font-size:1rem; color:#e63946;">—</div><div class="lbl">🌸 Fertile Window</div></div>
+                <div class="result-box" style="border-color:#b7e4c7; background:#f0fff4;"><div class="val" id="next-period" style="color:#2d6a4f;">—</div><div class="lbl">📅 Next Period</div></div>
+                <div class="result-box" style="border-color:#ffd6a5; background:#fffbf0;"><div class="val" id="pms-start" style="color:#c77c00;">—</div><div class="lbl">😤 PMS Starts</div></div>
+            </div>
+
+            <div id="late-checker" style="background:#f8f9fc; border-radius:10px; padding:16px; margin-bottom:20px;">
+                <strong>Am I late?</strong>
+                <span id="late-status" style="margin-left:8px;"></span>
+            </div>
+
+            <h3 style="font-size:1rem; margin: 16px 0 14px;">3-Month Calendar</h3>
+            <div id="calendar"></div>
+
+            <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:12px; font-size:0.82rem;">
+                <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;background:#ff8fab;border-radius:3px;display:inline-block;"></span> Period</span>
+                <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;background:#a8dadc;border-radius:3px;display:inline-block;"></span> Fertile Window</span>
+                <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;background:#c77dff;border-radius:3px;display:inline-block;"></span> Ovulation Day</span>
+                <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;background:#ffd6a5;border-radius:3px;display:inline-block;"></span> PMS Window</span>
+            </div>
+
+            <button class="reset-btn" onclick="resetOvulation()">Recalculate</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+    <div class="info-section">
+        <h2>How the Fertile Window Works</h2>
+        <p>Ovulation typically occurs 12–16 days before your next period. Sperm can survive for up to 5 days in the reproductive tract, making the 5 days before ovulation plus ovulation day itself the peak fertility window.</p>
+        <p>The luteal phase (time between ovulation and next period) is fairly constant at 12–14 days for most women. If you have irregular cycles, tracking your basal body temperature or using ovulation test strips will give more accurate results.</p>
+        <p><em>This calculator is for informational and family planning purposes only. It is not a reliable method of contraception. Consult your doctor for medical advice.</em></p>
+    </div>
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>⚡ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

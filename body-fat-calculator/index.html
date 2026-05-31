@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Fat Percentage Calculator - Navy Formula & BMI Method</title>
+    <meta name="description" content="Free body fat percentage calculator. Use the US Navy formula or BMI method to calculate your body fat %, fitness category, and ideal body fat range.">
+    <meta name="keywords" content="body fat calculator, body fat percentage, how to calculate body fat, body fat percentage calculator, navy body fat calculator">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+    <h1>💪 Body Fat Percentage Calculator</h1>
+    <p class="subtitle">Calculate your body fat % using the US Navy formula or BMI method</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Method</label>
+                <select id="method" onchange="updateMethod()">
+                    <option value="navy">US Navy Formula (more accurate)</option>
+                    <option value="bmi">BMI-Based Estimate</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Sex</label>
+                <select id="sex" onchange="updateMethod()">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Age</label>
+                <input type="number" id="age" placeholder="30" min="15" max="100">
+            </div>
+            <div class="input-group">
+                <label>Height</label>
+                <div style="display:flex;gap:8px;">
+                    <input type="number" id="h-ft" placeholder="5" min="3" max="8" style="padding:11px 14px;border:1.5px solid #dde2e8;border-radius:8px;font-size:0.95rem;width:60px;">
+                    <span style="align-self:center;color:#7f8c8d;font-size:0.85rem;">ft</span>
+                    <input type="number" id="h-in" placeholder="10" min="0" max="11" style="padding:11px 14px;border:1.5px solid #dde2e8;border-radius:8px;font-size:0.95rem;width:60px;">
+                    <span style="align-self:center;color:#7f8c8d;font-size:0.85rem;">in</span>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Weight (lbs)</label>
+                <input type="number" id="weight" placeholder="175" min="50" max="600">
+            </div>
+
+            <div id="navy-fields">
+                <div class="input-group" style="margin-bottom:16px;">
+                    <label>Waist (inches, at navel)</label>
+                    <input type="number" id="waist" placeholder="34" step="0.5" min="20" max="80">
+                </div>
+                <div class="input-group" id="neck-group">
+                    <label>Neck (inches, at narrowest)</label>
+                    <input type="number" id="neck" placeholder="15" step="0.5" min="10" max="30">
+                </div>
+                <div class="input-group" id="hip-group" style="display:none; margin-top:16px;">
+                    <label>Hips (inches, at widest) — women only</label>
+                    <input type="number" id="hips" placeholder="38" step="0.5" min="20" max="80">
+                </div>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcBodyFat()">Calculate Body Fat %</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight" id="bf-result">
+                <div class="big-number" id="bf-pct">0%</div>
+                <div class="big-label" id="bf-category">—</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="fat-mass">—</div><div class="lbl">Fat Mass</div></div>
+                <div class="result-box"><div class="val" id="lean-mass">—</div><div class="lbl">Lean Mass</div></div>
+                <div class="result-box"><div class="val" id="ideal-bf">—</div><div class="lbl">Ideal Body Fat %</div></div>
+            </div>
+            <div id="bf-bar-wrap" style="margin:20px 0;">
+                <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:#7f8c8d;margin-bottom:6px;">
+                    <span>Essential</span><span>Athlete</span><span>Fitness</span><span>Average</span><span>Obese</span>
+                </div>
+                <div class="bf-bar-bg">
+                    <div id="bf-bar-fill" class="bf-bar-fill"></div>
+                    <div id="bf-bar-marker" class="bf-bar-marker"></div>
+                </div>
+            </div>
+            <div id="categories-table"></div>
+            <button class="reset-btn" onclick="resetBF()">Recalculate</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+    <div class="info-section">
+        <h2>US Navy Method vs BMI Method</h2>
+        <p>The <strong>US Navy formula</strong> uses circumference measurements (waist, neck, and hips for women) to estimate body fat percentage. It's significantly more accurate than BMI-based estimates because it accounts for body shape, not just weight and height.</p>
+        <p>The <strong>BMI method</strong> uses the Deurenberg formula to estimate body fat from BMI, age, and sex. It's less accurate for athletes or very muscular individuals, but useful as a quick estimate when tape measurements aren't available.</p>
+        <p>For best accuracy, also consider DEXA scans (gold standard) or hydrostatic weighing at a health/fitness center.</p>
+    </div>
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>⚡ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

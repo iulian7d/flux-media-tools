@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Calculator - Best Times to Sleep and Wake Up</title>
+    <meta name="description" content="Free sleep calculator. Find the best times to wake up or go to sleep based on 90-minute sleep cycles. Calculate sleep debt and optimize your rest.">
+    <meta name="keywords" content="sleep calculator, what time should I wake up, what time should I go to sleep, sleep cycle calculator, best time to wake up">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+    <h1>😴 Sleep Calculator</h1>
+    <p class="subtitle">Find the best times to sleep and wake based on 90-minute sleep cycles</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('wake')">⏰ I need to wake up at...</button>
+        <button class="tab-btn" onclick="switchTab('sleep')">🛌 I'm going to sleep now...</button>
+        <button class="tab-btn" onclick="switchTab('debt')">😮‍💨 Sleep Debt Calculator</button>
+    </div>
+
+    <div id="tab-wake" class="tab-content active">
+        <div class="card">
+            <p style="color:#555; margin-bottom:20px; font-size:0.95rem;">Enter your wake-up time and we'll calculate the best times to fall asleep.</p>
+            <div class="input-group">
+                <label>Wake-up Time</label>
+                <input type="time" id="wake-time" value="07:00">
+            </div>
+            <div class="input-group" style="margin-top:16px;">
+                <label>Time to fall asleep (minutes)</label>
+                <select id="fall-asleep-wake">
+                    <option value="14">About 14 min (average)</option>
+                    <option value="5">About 5 min (falls asleep fast)</option>
+                    <option value="20">About 20 min</option>
+                    <option value="30">About 30 min</option>
+                </select>
+            </div>
+            <button class="calc-btn" onclick="calcWake()">Show Best Bedtimes</button>
+        </div>
+        <div id="wake-results" class="results">
+            <div class="card">
+                <h3 style="font-size:1rem; margin-bottom:16px;">Best times to go to sleep tonight:</h3>
+                <div id="wake-times"></div>
+                <p style="color:#7f8c8d; font-size:0.85rem; margin-top:16px;">Based on 90-minute sleep cycles. Waking at the end of a cycle means waking up naturally refreshed. Each row includes progressively fewer cycles.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-sleep" class="tab-content">
+        <div class="card">
+            <p style="color:#555; margin-bottom:20px; font-size:0.95rem;">Going to sleep now? We'll calculate the best times to wake up.</p>
+            <div class="input-group">
+                <label>Bedtime</label>
+                <input type="time" id="sleep-time" value="23:00">
+            </div>
+            <div class="input-group" style="margin-top:16px;">
+                <label>Time to fall asleep (minutes)</label>
+                <select id="fall-asleep-sleep">
+                    <option value="14">About 14 min (average)</option>
+                    <option value="5">About 5 min</option>
+                    <option value="20">About 20 min</option>
+                    <option value="30">About 30 min</option>
+                </select>
+            </div>
+            <button class="calc-btn" onclick="calcSleep()">Show Best Wake Times</button>
+        </div>
+        <div id="sleep-results" class="results">
+            <div class="card">
+                <h3 style="font-size:1rem; margin-bottom:16px;">Best times to wake up:</h3>
+                <div id="sleep-times"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-debt" class="tab-content">
+        <div class="card">
+            <p style="color:#555; margin-bottom:20px; font-size:0.95rem;">How much sleep do you owe your body?</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Your Age</label>
+                    <input type="number" id="debt-age" placeholder="30" min="5" max="100">
+                </div>
+                <div class="input-group">
+                    <label>Average hours slept per night</label>
+                    <input type="number" id="avg-sleep" placeholder="6.5" step="0.5" min="0" max="12">
+                </div>
+                <div class="input-group">
+                    <label>How many days per week?</label>
+                    <input type="number" id="debt-days" placeholder="7" min="1" max="7">
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcDebt()">Calculate Sleep Debt</button>
+        </div>
+        <div id="debt-results" class="results">
+            <div class="card" id="debt-card">
+                <div class="result-highlight">
+                    <div class="big-number" id="debt-val">0 hrs</div>
+                    <div class="big-label" id="debt-label">Weekly Sleep Debt</div>
+                </div>
+                <div id="debt-advice" style="margin-top:16px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <h3 style="font-size:1rem; margin-bottom:16px; color:#667eea;">💤 Sleep Needs by Age</h3>
+        <div id="sleep-needs-table"></div>
+    </div>
+
+    <div class="info-section">
+        <h2>Why Sleep Cycles Matter</h2>
+        <p>Sleep occurs in 90-minute cycles made up of light sleep, deep sleep, and REM sleep. Waking up in the middle of a cycle — especially during deep sleep — causes that groggy, disoriented feeling (sleep inertia). Waking at the end of a complete cycle means you naturally surface at the lightest sleep stage and wake up feeling refreshed.</p>
+        <p>This is why sleeping 6 hours often feels better than 7: 6 is four complete cycles, while 7 may interrupt a fifth cycle partway through.</p>
+    </div>
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>⚡ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

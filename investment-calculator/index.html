@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator - Investment Growth Calculator</title>
+    <meta name="description" content="Free compound interest calculator. See how your investment grows over time with monthly contributions. Compare scenarios and view growth charts.">
+    <meta name="keywords" content="compound interest calculator, investment calculator, investment growth calculator, savings calculator, wealth calculator">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>📈 Compound Interest Calculator</h1>
+    <p class="subtitle">See how your investments grow over time</p>
+</header>
+
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block"
+             data-ad-client="ca-pub-6784909791643403"
+             data-ad-slot="4825833720"
+             data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Initial Investment</label>
+                <div class="input-prefix"><span>$</span><input type="number" id="principal" placeholder="10000" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Monthly Contribution</label>
+                <div class="input-prefix"><span>$</span><input type="number" id="monthly" placeholder="500" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Annual Return Rate (%)</label>
+                <input type="number" id="rate" placeholder="7" step="0.1" min="0" max="50">
+            </div>
+            <div class="input-group">
+                <label>Investment Period (Years)</label>
+                <input type="number" id="years" placeholder="20" min="1" max="50">
+            </div>
+            <div class="input-group">
+                <label>Compounding Frequency</label>
+                <select id="freq">
+                    <option value="12">Monthly</option>
+                    <option value="4">Quarterly</option>
+                    <option value="1">Annually</option>
+                    <option value="365">Daily</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Inflation Rate (%) — optional</label>
+                <input type="number" id="inflation" placeholder="2.5" step="0.1" min="0" max="20">
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcInvestment()">Calculate Growth</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="final-value">$0</div>
+                <div class="big-label">Final Portfolio Value</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box">
+                    <div class="val" id="total-invested">$0</div>
+                    <div class="lbl">Total Invested</div>
+                </div>
+                <div class="result-box">
+                    <div class="val" id="total-interest">$0</div>
+                    <div class="lbl">Interest Earned</div>
+                </div>
+                <div class="result-box">
+                    <div class="val" id="inflation-adj">$0</div>
+                    <div class="lbl">Inflation-Adjusted Value</div>
+                </div>
+            </div>
+            <div class="chart-wrap" style="height:300px; margin:24px 0;">
+                <canvas id="growthChart"></canvas>
+            </div>
+            <button class="reset-btn" onclick="resetInvestment()">Calculate Again</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block"
+             data-ad-client="ca-pub-6784909791643403"
+             data-ad-slot="8670391187"
+             data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>About Compound Interest</h2>
+        <p>Compound interest is interest calculated on both the initial principal and all previously accumulated interest. Einstein reportedly called it the "eighth wonder of the world" — the longer your money compounds, the faster it grows.</p>
+        <p>Starting earlier makes a massive difference: $500/month from age 25 at 7% grows to ~$1.3M by 65. Starting at 35 with the same contributions reaches only ~$600K — half the amount for the same monthly investment.</p>
+        <p><em>Projections are estimates based on a constant rate of return. Actual investment returns vary and past performance does not guarantee future results.</em></p>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block"
+             data-ad-client="ca-pub-6784909791643403"
+             data-ad-slot="2104982836"
+             data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>⚡ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp;
+    <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp;
+    <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

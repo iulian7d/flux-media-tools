@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Pressure Checker & Tracker - Is My Blood Pressure Normal?</title>
+    <meta name="description" content="Free blood pressure checker. Enter your systolic and diastolic readings to get your BP classification. Track readings over time and see trends.">
+    <meta name="keywords" content="blood pressure checker, blood pressure normal range, blood pressure tracker, is my blood pressure normal, blood pressure classification">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+    <h1>❤️ Blood Pressure Checker & Tracker</h1>
+    <p class="subtitle">Check your reading, get your classification, and track trends over time</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <h3 style="font-size:1rem; margin-bottom:20px; color:#667eea;">Check a Reading</h3>
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Systolic (top number)</label>
+                <div class="bp-input-wrap">
+                    <input type="number" id="systolic" placeholder="120" min="60" max="250">
+                    <span class="bp-unit">mmHg</span>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Diastolic (bottom number)</label>
+                <div class="bp-input-wrap">
+                    <input type="number" id="diastolic" placeholder="80" min="40" max="150">
+                    <span class="bp-unit">mmHg</span>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Pulse (BPM) — optional</label>
+                <div class="bp-input-wrap">
+                    <input type="number" id="pulse" placeholder="72" min="30" max="250">
+                    <span class="bp-unit">BPM</span>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Notes (optional)</label>
+                <input type="text" id="notes" placeholder="Morning reading, after exercise...">
+            </div>
+        </div>
+        <button class="calc-btn" onclick="checkBP()">Check Reading & Save to Log</button>
+    </div>
+
+    <div id="result-card" class="results">
+        <div class="card">
+            <div id="bp-result-box" class="bp-result">
+                <div class="bp-numbers" id="bp-numbers">—/—</div>
+                <div class="bp-category" id="bp-category">—</div>
+                <div class="bp-desc" id="bp-desc"></div>
+            </div>
+            <div id="bp-advice" style="margin-top:16px; padding:14px; border-radius:10px; font-size:0.9rem;"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3 style="font-size:1rem; margin-bottom:16px; color:#667eea;">📊 Blood Pressure Categories (AHA)</h3>
+        <div class="bp-chart-wrap">
+            <div class="bp-chart-row" style="--color:#00b09b;"><span class="bp-chart-label">Normal</span><span class="bp-range">Below 120/80</span></div>
+            <div class="bp-chart-row" style="--color:#f7c59f;"><span class="bp-chart-label">Elevated</span><span class="bp-range">120–129 / below 80</span></div>
+            <div class="bp-chart-row" style="--color:#f4a261;"><span class="bp-chart-label">High Stage 1</span><span class="bp-range">130–139 / 80–89</span></div>
+            <div class="bp-chart-row" style="--color:#e76f51;"><span class="bp-chart-label">High Stage 2</span><span class="bp-range">140+ / 90+</span></div>
+            <div class="bp-chart-row" style="--color:#e63946;"><span class="bp-chart-label">Crisis</span><span class="bp-range">180+ / 120+</span></div>
+            <div class="bp-chart-row" style="--color:#a8dadc;"><span class="bp-chart-label">Low</span><span class="bp-range">Below 90/60</span></div>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card" id="log-card">
+        <h3 style="font-size:1rem; margin-bottom:16px; color:#667eea;">📋 Reading Log</h3>
+        <div id="log-empty" style="color:#7f8c8d; font-size:0.9rem;">No readings logged yet. Add your first reading above.</div>
+        <div id="log-chart-wrap" style="display:none; height:200px; margin-bottom:16px;"><canvas id="logChart"></canvas></div>
+        <div id="log-table-wrap" style="display:none;">
+            <table>
+                <thead><tr><th>Date & Time</th><th>Reading</th><th>Pulse</th><th>Category</th><th>Notes</th><th></th></tr></thead>
+                <tbody id="log-tbody"></tbody>
+            </table>
+        </div>
+        <div id="log-avg" style="display:none; margin-top:12px; padding:12px; background:#f8f9fc; border-radius:8px; font-size:0.9rem;"></div>
+        <button onclick="clearLog()" id="clear-btn" style="display:none; margin-top:12px; background:none; border:1px solid #e74c3c; color:#e74c3c; padding:8px 16px; border-radius:6px; font-size:0.85rem; cursor:pointer;">Clear All Readings</button>
+    </div>
+
+    <div class="info-section">
+        <h2>Understanding Your Blood Pressure</h2>
+        <p>Blood pressure is measured in mmHg and expressed as systolic (pressure during heartbeat) over diastolic (pressure between beats). Normal blood pressure is below 120/80 mmHg. High blood pressure (hypertension) significantly increases risk of heart disease, stroke, and kidney disease.</p>
+        <p>Readings can vary throughout the day. For the most accurate reading: sit quietly for 5 minutes, support your arm at heart level, and take 2–3 readings 1 minute apart. Use your average.</p>
+        <p><em>This tool is for informational purposes only. If you have high blood pressure or are concerned about your readings, consult a healthcare professional.</em></p>
+    </div>
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>⚡ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>
