@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bodyfat.fluxmediasystems.com/sitemap.xml

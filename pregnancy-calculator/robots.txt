@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pregnancy.fluxmediasystems.com/sitemap.xml

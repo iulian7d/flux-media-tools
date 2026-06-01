@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bp.fluxmediasystems.com/sitemap.xml

@@ -1,0 +1,117 @@
+# Flux Media Systems — Free Web Tools
+> A collection of free, single-purpose calculators and tools for health, finance, and everyday tasks.
+> All tools run entirely in the browser. No login required. No data stored on servers.
+
+## Site
+https://fluxmediasystems.com
+
+## Tools
+
+### Finance Tools
+
+**Mortgage Calculator**
+URL: https://mortgage.fluxmediasystems.com
+Description: Calculate mortgage affordability based on income and debts, or compute monthly payments and amortization for any loan amount. Uses the 28%/36% DTI rule. Includes extra payment savings.
+Keywords: mortgage calculator, mortgage affordability, monthly payment, amortization table, home loan
+
+**Salary & Take-Home Pay Calculator**
+URL: https://salary.fluxmediasystems.com
+Description: Calculate net take-home pay from gross salary. Covers 2025 federal income tax brackets for all filing statuses, all 50 US state taxes, Social Security, Medicare, and 401k deductions.
+Keywords: salary calculator, take home pay, net pay calculator, paycheck calculator, income tax calculator
+
+**Investment Growth Calculator**
+URL: https://invest.fluxmediasystems.com
+Description: Project investment portfolio growth with compound interest. Supports initial investment, monthly contributions, adjustable compounding frequency, and inflation-adjusted returns. Includes a line chart.
+Keywords: investment calculator, compound interest calculator, investment growth, portfolio calculator, compound interest
+
+**Loan Calculator**
+URL: https://loan.fluxmediasystems.com
+Description: Calculate monthly loan payments, total interest paid, and full amortization schedule for any loan. Shows savings from making extra payments. Includes a stacked bar chart.
+Keywords: loan calculator, loan payment calculator, amortization calculator, personal loan calculator, auto loan calculator
+
+**Freelancer Rate Calculator**
+URL: https://rate.fluxmediasystems.com
+Description: Calculate the minimum hourly rate a freelancer needs to charge to hit their income goal. Accounts for desired income, self-employment tax, unpaid vacation weeks, non-billable hours, and business expenses.
+Keywords: freelancer rate calculator, hourly rate calculator, freelance pricing, consultant rate, self-employed income
+
+**Retirement Savings Calculator**
+URL: https://retire.fluxmediasystems.com
+Description: Project retirement savings growth and determine if you'll have enough to retire. Uses the 4% safe withdrawal rule. Factors in Social Security income, inflation, and current portfolio value.
+Keywords: retirement calculator, retirement savings calculator, 401k calculator, retirement planning, how much to retire
+
+### Health & Medical Tools
+
+**Pregnancy Due Date Calculator**
+URL: https://pregnancy.fluxmediasystems.com
+Description: Calculate pregnancy due date from last menstrual period (LMP), conception date, IVF transfer date, or ultrasound. Shows weeks pregnant, trimester, days remaining, baby size by week, and key milestones.
+Keywords: pregnancy calculator, due date calculator, pregnancy due date, how many weeks pregnant, baby size calculator
+
+**Ovulation & Fertile Window Calculator**
+URL: https://ovulation.fluxmediasystems.com
+Description: Calculate ovulation day, fertile window, and next period based on cycle length and luteal phase. Includes a 3-month color-coded calendar showing period, fertile, ovulation, and PMS days.
+Keywords: ovulation calculator, fertile window calculator, ovulation tracker, when am I fertile, conception calculator
+
+**Blood Pressure Tracker**
+URL: https://bp.fluxmediasystems.com
+Description: Log and track blood pressure readings over time. Classifies readings using AHA guidelines (Normal, Elevated, Stage 1, Stage 2, Crisis). Saves history locally and displays a trend chart.
+Keywords: blood pressure tracker, blood pressure log, blood pressure chart, hypertension tracker, systolic diastolic
+
+**Type 2 Diabetes Risk Calculator**
+URL: https://diabetes.fluxmediasystems.com
+Description: Assess Type 2 diabetes risk using ADA guidelines. Scores age, BMI, waist circumference, physical activity, family history, diet, blood pressure, and gestational diabetes history. Provides a personalized action plan.
+Keywords: diabetes risk calculator, type 2 diabetes risk, am I diabetic, prediabetes calculator, diabetes risk assessment
+
+**Sleep Calculator**
+URL: https://sleep.fluxmediasystems.com
+Description: Find the best times to go to sleep or wake up based on 90-minute sleep cycles. Includes a sleep debt calculator showing weekly sleep deficit by age group.
+Keywords: sleep calculator, what time should I sleep, best time to wake up, sleep cycle calculator, sleep debt
+
+**Body Fat Percentage Calculator**
+URL: https://bodyfat.fluxmediasystems.com
+Description: Calculate body fat percentage using the US Navy formula (waist, neck, hips measurements) or the BMI-based Deurenberg formula. Shows fat mass, lean mass, fitness category, and ideal range.
+Keywords: body fat calculator, body fat percentage, navy body fat calculator, how to calculate body fat, body composition
+
+**Health Insurance Cost Estimator**
+URL: https://insurance.fluxmediasystems.com
+Description: Estimate monthly health insurance premiums and ACA subsidy eligibility. Based on 2025 marketplace averages. Inputs: income, household size, age, state cost tier, plan type (Bronze/Silver/Gold/Platinum).
+Keywords: health insurance calculator, ACA subsidy calculator, Obamacare calculator, health insurance cost estimator, marketplace insurance
+
+**Drug Interaction Checker**
+URL: https://interactions.fluxmediasystems.com
+Description: Check for interactions between 2 or more medications or supplements using the OpenFDA drug label database. Displays interaction descriptions and severity (major, moderate, minor).
+Keywords: drug interaction checker, medication interaction, drug interactions, supplement interactions, medicine interaction
+
+### General Tools
+
+**Age Calculator**
+URL: https://age.fluxmediasystems.com
+Description: Calculate exact age in years, months, and days from a birthdate. Also shows days until next birthday and age on any target date.
+Keywords: age calculator, how old am I, birthday calculator, age in days, exact age calculator
+
+**Calorie Calculator**
+URL: https://calorie.fluxmediasystems.com
+Description: Calculate daily calorie needs based on age, sex, height, weight, and activity level. Uses the Mifflin-St Jeor equation. Shows TDEE and calorie targets for weight loss, maintenance, and gain.
+Keywords: calorie calculator, TDEE calculator, daily calorie needs, how many calories should I eat, weight loss calories
+
+**QR Code Generator**
+URL: https://qr.fluxmediasystems.com
+Description: Generate QR codes instantly for any URL, text, or content. Download as PNG. No login required. Runs entirely in the browser.
+Keywords: QR code generator, free QR code, create QR code, QR code maker, URL to QR code
+
+**Password Generator**
+URL: https://password.fluxmediasystems.com
+Description: Generate strong, random passwords with custom length and character sets (uppercase, lowercase, numbers, symbols). Shows password strength meter.
+Keywords: password generator, strong password generator, random password, secure password, password maker
+
+**Discount & Sale Price Calculator**
+URL: https://discount.fluxmediasystems.com
+Description: Calculate sale price after a percentage discount, or work backwards to find what discount percentage was applied. Also calculates tax on final price.
+Keywords: discount calculator, sale price calculator, percentage off calculator, percent discount, how much is X% off
+
+## Publisher
+Flux Media Systems
+https://fluxmediasystems.com
+contact: via website
+
+## License
+All tools are free to use. Content may be cited with attribution.

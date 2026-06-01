@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sleep.fluxmediasystems.com/sitemap.xml

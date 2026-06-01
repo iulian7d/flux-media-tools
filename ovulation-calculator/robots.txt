@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ovulation.fluxmediasystems.com/sitemap.xml
