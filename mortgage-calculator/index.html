@@ -3,40 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mortgage & Loan Calculator - Calculate Payments & Affordability</title>
-    <meta name="description" content="Free mortgage and loan calculator. Find out how much house you can afford, calculate monthly payments, and view full amortization schedules.">
-    <meta name="keywords" content="mortgage calculator, loan calculator, how much house can I afford, monthly payment calculator, amortization schedule">
+    <title>Mortgage Calculator - US & UK Payments, Affordability & Stamp Duty</title>
+    <meta name="description" content="Free mortgage calculator for the US and UK. Calculate affordability, monthly payments, amortization schedules, and UK Stamp Duty Land Tax.">
+    <meta name="keywords" content="mortgage calculator, UK mortgage calculator, stamp duty calculator, loan calculator, how much can I borrow UK, mortgage affordability">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <meta property="og:title" content="Mortgage & Loan Calculator - Monthly Payments & Affordability">
-    <meta property="og:description" content="Free mortgage calculator. Find out how much house you can afford, calculate monthly payments, and view full amortization schedules.">
+    <meta property="og:title" content="Mortgage Calculator - US & UK Payments, Affordability & Stamp Duty">
+    <meta property="og:description" content="Free mortgage calculator for the US and UK. Calculate affordability, monthly payments, amortization schedules, and UK Stamp Duty Land Tax.">
     <meta property="og:url" content="https://mortgage.fluxmediasystems.com">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Flux Media Systems">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Mortgage & Loan Calculator - Monthly Payments & Affordability">
-    <meta name="twitter:description" content="Free mortgage calculator. Find out how much house you can afford, calculate monthly payments, and view full amortization schedules.">
+    <meta name="twitter:title" content="Mortgage Calculator - US & UK Payments, Affordability & Stamp Duty">
+    <meta name="twitter:description" content="Free mortgage calculator for the US and UK. Calculate affordability, monthly payments, amortization schedules, and UK Stamp Duty Land Tax.">
     <link rel="canonical" href="https://mortgage.fluxmediasystems.com">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Mortgage & Loan Calculator - Monthly Payments & Affordability",
+  "name": "Mortgage Calculator - US & UK Payments, Affordability & Stamp Duty",
   "url": "https://mortgage.fluxmediasystems.com",
-  "description": "Free mortgage calculator. Find out how much house you can afford, calculate monthly payments, and view full amortization schedules.",
+  "description": "Free mortgage calculator for the US and UK. Calculate affordability, monthly payments, amortization schedules, and UK Stamp Duty Land Tax.",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web Browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Flux Media Systems",
-    "url": "https://fluxmediasystems.com"
-  }
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "Flux Media Systems", "url": "https://fluxmediasystems.com" }
 }
 </script>
 <script type="application/ld+json">
@@ -46,34 +38,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How much house can I afford?",
+      "name": "How much can I borrow for a mortgage in the UK?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Enter your gross income, monthly debts, down payment, and interest rate. The mortgage calculator uses the 28%/36% debt-to-income rule to find your maximum home price."
+        "text": "Most UK lenders will lend up to 4.5 times your annual income. On a £50,000 salary, you could typically borrow up to £225,000. Joint applicants' incomes are usually combined."
       }
     },
     {
       "@type": "Question",
-      "name": "What is an amortization schedule?",
+      "name": "How much is Stamp Duty in the UK?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "An amortization schedule shows every monthly payment broken down into principal and interest, plus the remaining loan balance after each payment."
+        "text": "In England (2024/25): 0% up to £250,000; 5% on £250,001–£925,000; 10% on £925,001–£1.5M; 12% above that. First-time buyers pay 0% up to £425,000 and 5% up to £625,000."
       }
     },
     {
       "@type": "Question",
-      "name": "How does a down payment affect my mortgage payment?",
+      "name": "How much house can I afford in the US?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A larger down payment reduces the loan amount, lowering monthly payments and total interest paid. A 20% down payment also avoids private mortgage insurance (PMI)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is a good mortgage interest rate?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mortgage rates vary by market conditions, credit score, and loan type. As of 2025, conventional 30-year mortgage rates range from 6\u20137.5% for most borrowers."
+        "text": "Enter your income, existing debts, and down payment. The calculator uses the 28%/36% DTI rule to find your maximum affordable home price."
       }
     }
   ]
@@ -83,8 +67,8 @@
 <body>
 
 <header class="header">
-    <h1>🏠 Mortgage & Loan Calculator</h1>
-    <p class="subtitle">Calculate payments, affordability, and full amortization schedules</p>
+    <h1>🏠 Mortgage Calculator</h1>
+    <p class="subtitle">Calculate payments, affordability &amp; Stamp Duty — US &amp; UK</p>
 </header>
 
 <div class="container">
@@ -95,144 +79,265 @@
              data-ad-format="auto" data-full-width-responsive="true"></ins>
     </div>
 
+    <!-- Country toggle -->
     <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('mortgage')">🏠 Mortgage Affordability</button>
-        <button class="tab-btn" onclick="switchTab('loan')">💳 Loan Calculator</button>
+        <button class="tab-btn active" id="country-us-btn" onclick="switchCountry('us')">🇺🇸 United States</button>
+        <button class="tab-btn" id="country-uk-btn" onclick="switchCountry('uk')">🇬🇧 United Kingdom</button>
     </div>
 
-    <!-- MORTGAGE TAB -->
-    <div id="tab-mortgage" class="tab-content active">
-        <div class="card">
-            <div class="form-grid">
-                <div class="input-group">
-                    <label>Annual Gross Income</label>
-                    <div class="input-prefix"><span>$</span><input type="number" id="m-income" placeholder="80000" min="0"></div>
-                </div>
-                <div class="input-group">
-                    <label>Monthly Debt Payments</label>
-                    <div class="input-prefix"><span>$</span><input type="number" id="m-debts" placeholder="500" min="0"></div>
-                </div>
-                <div class="input-group">
-                    <label>Down Payment</label>
-                    <div class="input-prefix"><span>$</span><input type="number" id="m-down" placeholder="40000" min="0"></div>
-                </div>
-                <div class="input-group">
-                    <label>Interest Rate (%)</label>
-                    <input type="number" id="m-rate" placeholder="6.8" step="0.1" min="0" max="30">
-                </div>
-                <div class="input-group">
-                    <label>Loan Term</label>
-                    <select id="m-term">
-                        <option value="30">30 Years</option>
-                        <option value="20">20 Years</option>
-                        <option value="15">15 Years</option>
-                        <option value="10">10 Years</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>Annual Property Tax ($)</label>
-                    <div class="input-prefix"><span>$</span><input type="number" id="m-tax" placeholder="3000" min="0"></div>
-                </div>
-            </div>
-            <button class="calc-btn" onclick="calcMortgage()">Calculate Affordability</button>
+    <!-- ═══ US SECTION ═══ -->
+    <div id="us-section">
+        <div class="tabs" style="margin-top:8px;">
+            <button class="tab-btn active" id="us-tab-mortgage-btn" onclick="switchTab('mortgage')">🏠 Affordability</button>
+            <button class="tab-btn" id="us-tab-loan-btn" onclick="switchTab('loan')">💳 Loan Calculator</button>
         </div>
 
-        <div id="mortgage-results" class="results">
+        <!-- US Mortgage Affordability -->
+        <div id="tab-mortgage" class="tab-content active">
             <div class="card">
-                <div class="result-highlight">
-                    <div class="big-number" id="m-max-price">$0</div>
-                    <div class="big-label">Maximum Home Price You Can Afford</div>
-                </div>
-                <div class="result-grid">
-                    <div class="result-box">
-                        <div class="val" id="m-monthly">$0</div>
-                        <div class="lbl">Monthly Payment (PITI)</div>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Annual Gross Income</label>
+                        <div class="input-prefix"><span>$</span><input type="number" id="m-income" placeholder="80000" min="0"></div>
                     </div>
-                    <div class="result-box">
-                        <div class="val" id="m-total-interest">$0</div>
-                        <div class="lbl">Total Interest Paid</div>
+                    <div class="input-group">
+                        <label>Monthly Debt Payments</label>
+                        <div class="input-prefix"><span>$</span><input type="number" id="m-debts" placeholder="500" min="0"></div>
                     </div>
-                    <div class="result-box">
-                        <div class="val" id="m-dti">0%</div>
-                        <div class="lbl">Debt-to-Income Ratio</div>
+                    <div class="input-group">
+                        <label>Down Payment</label>
+                        <div class="input-prefix"><span>$</span><input type="number" id="m-down" placeholder="40000" min="0"></div>
+                    </div>
+                    <div class="input-group">
+                        <label>Interest Rate (%)</label>
+                        <input type="number" id="m-rate" placeholder="6.8" step="0.1" min="0" max="30">
+                    </div>
+                    <div class="input-group">
+                        <label>Loan Term</label>
+                        <select id="m-term">
+                            <option value="30">30 Years</option>
+                            <option value="20">20 Years</option>
+                            <option value="15">15 Years</option>
+                            <option value="10">10 Years</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Annual Property Tax ($)</label>
+                        <div class="input-prefix"><span>$</span><input type="number" id="m-tax" placeholder="3000" min="0"></div>
                     </div>
                 </div>
-                <div class="chart-wrap">
-                    <canvas id="mortgageChart"></canvas>
+                <button class="calc-btn" onclick="calcMortgage()">Calculate Affordability</button>
+            </div>
+
+            <div id="mortgage-results" class="results">
+                <div class="card">
+                    <div class="result-highlight">
+                        <div class="big-number" id="m-max-price">$0</div>
+                        <div class="big-label">Maximum Home Price You Can Afford</div>
+                    </div>
+                    <div class="result-grid">
+                        <div class="result-box"><div class="val" id="m-monthly">$0</div><div class="lbl">Monthly Payment (PITI)</div></div>
+                        <div class="result-box"><div class="val" id="m-total-interest">$0</div><div class="lbl">Total Interest Paid</div></div>
+                        <div class="result-box"><div class="val" id="m-dti">0%</div><div class="lbl">Debt-to-Income Ratio</div></div>
+                    </div>
+                    <div class="chart-wrap"><canvas id="mortgageChart"></canvas></div>
+                    <button class="reset-btn" onclick="resetMortgage()">Calculate Again</button>
                 </div>
-                <button class="reset-btn" onclick="resetMortgage()">Calculate Again</button>
+            </div>
+        </div>
+
+        <!-- US Loan Calculator -->
+        <div id="tab-loan" class="tab-content">
+            <div class="card">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Loan Amount</label>
+                        <div class="input-prefix"><span>$</span><input type="number" id="l-amount" placeholder="25000" min="0"></div>
+                    </div>
+                    <div class="input-group">
+                        <label>Annual Interest Rate (%)</label>
+                        <input type="number" id="l-rate" placeholder="7.5" step="0.1" min="0" max="100">
+                    </div>
+                    <div class="input-group">
+                        <label>Loan Term</label>
+                        <select id="l-term">
+                            <option value="1">1 Year</option>
+                            <option value="2">2 Years</option>
+                            <option value="3">3 Years</option>
+                            <option value="5" selected>5 Years</option>
+                            <option value="7">7 Years</option>
+                            <option value="10">10 Years</option>
+                            <option value="15">15 Years</option>
+                            <option value="20">20 Years</option>
+                            <option value="30">30 Years</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Extra Monthly Payment (optional)</label>
+                        <div class="input-prefix"><span>$</span><input type="number" id="l-extra" placeholder="0" min="0"></div>
+                    </div>
+                </div>
+                <button class="calc-btn" onclick="calcLoan()">Calculate Loan</button>
+            </div>
+
+            <div id="loan-results" class="results">
+                <div class="card">
+                    <div class="result-highlight">
+                        <div class="big-number" id="l-monthly">$0</div>
+                        <div class="big-label">Monthly Payment</div>
+                    </div>
+                    <div class="result-grid">
+                        <div class="result-box"><div class="val" id="l-total-interest">$0</div><div class="lbl">Total Interest</div></div>
+                        <div class="result-box"><div class="val" id="l-total-cost">$0</div><div class="lbl">Total Cost</div></div>
+                        <div class="result-box"><div class="val" id="l-payoff">—</div><div class="lbl">Payoff Date</div></div>
+                    </div>
+                    <div id="l-savings-box" style="display:none; background:#e8f5e9; border-radius:10px; padding:16px; margin-bottom:20px; text-align:center;">
+                        <strong style="color:#27ae60;">Extra payments save you <span id="l-savings">$0</span> in interest and pay off <span id="l-months-early">0</span> months early!</strong>
+                    </div>
+                    <div class="chart-wrap"><canvas id="loanChart"></canvas></div>
+                    <h3 style="margin:20px 0 10px; font-size:1rem;">Amortization Schedule</h3>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead>
+                            <tbody id="amort-table"></tbody>
+                        </table>
+                    </div>
+                    <button class="reset-btn" onclick="resetLoan()">Calculate Again</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- LOAN TAB -->
-    <div id="tab-loan" class="tab-content">
-        <div class="card">
-            <div class="form-grid">
-                <div class="input-group">
-                    <label>Loan Amount</label>
-                    <div class="input-prefix"><span>$</span><input type="number" id="l-amount" placeholder="25000" min="0"></div>
-                </div>
-                <div class="input-group">
-                    <label>Annual Interest Rate (%)</label>
-                    <input type="number" id="l-rate" placeholder="7.5" step="0.1" min="0" max="100">
-                </div>
-                <div class="input-group">
-                    <label>Loan Term</label>
-                    <select id="l-term">
-                        <option value="1">1 Year</option>
-                        <option value="2">2 Years</option>
-                        <option value="3">3 Years</option>
-                        <option value="5" selected>5 Years</option>
-                        <option value="7">7 Years</option>
-                        <option value="10">10 Years</option>
-                        <option value="15">15 Years</option>
-                        <option value="20">20 Years</option>
-                        <option value="30">30 Years</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>Extra Monthly Payment (optional)</label>
-                    <div class="input-prefix"><span>$</span><input type="number" id="l-extra" placeholder="0" min="0"></div>
-                </div>
-            </div>
-            <button class="calc-btn" onclick="calcLoan()">Calculate Loan</button>
+    <!-- ═══ UK SECTION ═══ -->
+    <div id="uk-section" style="display:none;">
+        <div class="tabs" style="margin-top:8px;">
+            <button class="tab-btn active" id="uk-tab-afford-btn" onclick="switchUKTab('afford')">🏠 Affordability &amp; Stamp Duty</button>
+            <button class="tab-btn" id="uk-tab-repay-btn" onclick="switchUKTab('repay')">💷 Repayment Calculator</button>
         </div>
 
-        <div id="loan-results" class="results">
+        <!-- UK Affordability + Stamp Duty -->
+        <div id="uk-tab-afford" class="tab-content active">
             <div class="card">
-                <div class="result-highlight">
-                    <div class="big-number" id="l-monthly">$0</div>
-                    <div class="big-label">Monthly Payment</div>
-                </div>
-                <div class="result-grid">
-                    <div class="result-box">
-                        <div class="val" id="l-total-interest">$0</div>
-                        <div class="lbl">Total Interest</div>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Annual Income — Applicant 1 (£)</label>
+                        <div class="input-prefix"><span>£</span><input type="number" id="uk-income1" placeholder="45000" min="0"></div>
                     </div>
-                    <div class="result-box">
-                        <div class="val" id="l-total-cost">$0</div>
-                        <div class="lbl">Total Cost</div>
+                    <div class="input-group">
+                        <label>Annual Income — Applicant 2 (£, if joint)</label>
+                        <div class="input-prefix"><span>£</span><input type="number" id="uk-income2" placeholder="0" min="0"></div>
                     </div>
-                    <div class="result-box">
-                        <div class="val" id="l-payoff">—</div>
-                        <div class="lbl">Payoff Date</div>
+                    <div class="input-group">
+                        <label>Deposit (£)</label>
+                        <div class="input-prefix"><span>£</span><input type="number" id="uk-deposit" placeholder="30000" min="0"></div>
+                    </div>
+                    <div class="input-group">
+                        <label>Interest Rate (%)</label>
+                        <input type="number" id="uk-rate" placeholder="4.5" step="0.1" min="0" max="20">
+                    </div>
+                    <div class="input-group">
+                        <label>Mortgage Term</label>
+                        <select id="uk-term">
+                            <option value="40">40 Years</option>
+                            <option value="35">35 Years</option>
+                            <option value="30" selected>30 Years</option>
+                            <option value="25">25 Years</option>
+                            <option value="20">20 Years</option>
+                            <option value="15">15 Years</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Buyer Type</label>
+                        <select id="uk-buyer-type">
+                            <option value="firsttime">First-Time Buyer</option>
+                            <option value="movinghome">Moving Home</option>
+                            <option value="additionalprop">Additional Property (BTL / 2nd home)</option>
+                        </select>
                     </div>
                 </div>
-                <div id="l-savings-box" style="display:none; background:#e8f5e9; border-radius:10px; padding:16px; margin-bottom:20px; text-align:center;">
-                    <strong style="color:#27ae60;">Extra payments save you <span id="l-savings">$0</span> in interest and pay off <span id="l-months-early">0</span> months early!</strong>
+                <button class="calc-btn" onclick="calcUKMortgage()">Calculate Affordability &amp; Stamp Duty</button>
+            </div>
+
+            <div id="uk-afford-results" class="results">
+                <div class="card">
+                    <div class="result-highlight">
+                        <div class="big-number" id="uk-max-price">£0</div>
+                        <div class="big-label">Estimated Maximum Property Price</div>
+                    </div>
+                    <div class="result-grid">
+                        <div class="result-box"><div class="val" id="uk-borrow">£0</div><div class="lbl">Max Mortgage (4.5× income)</div></div>
+                        <div class="result-box"><div class="val" id="uk-monthly-pay">£0</div><div class="lbl">Monthly Repayment</div></div>
+                        <div class="result-box"><div class="val" id="uk-ltv">0%</div><div class="lbl">Loan-to-Value (LTV)</div></div>
+                    </div>
+                    <div style="margin:20px 0; padding:16px; background:#f0f9ff; border-radius:10px; border-left:4px solid #3498db;">
+                        <h3 style="font-size:1rem; margin:0 0 10px;">🏛️ Stamp Duty Land Tax (England)</h3>
+                        <div id="uk-sdlt-breakdown"></div>
+                        <div style="margin-top:10px; display:flex; justify-content:space-between; font-weight:700; font-size:1rem;">
+                            <span>Total Stamp Duty</span><span id="uk-sdlt-total">£0</span>
+                        </div>
+                    </div>
+                    <div class="chart-wrap"><canvas id="ukMortgageChart"></canvas></div>
+                    <button class="reset-btn" onclick="resetUKMortgage()">Calculate Again</button>
                 </div>
-                <div class="chart-wrap">
-                    <canvas id="loanChart"></canvas>
+            </div>
+        </div>
+
+        <!-- UK Repayment Calculator -->
+        <div id="uk-tab-repay" class="tab-content">
+            <div class="card">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Mortgage Amount (£)</label>
+                        <div class="input-prefix"><span>£</span><input type="number" id="uk-loan-amount" placeholder="250000" min="0"></div>
+                    </div>
+                    <div class="input-group">
+                        <label>Interest Rate (%)</label>
+                        <input type="number" id="uk-loan-rate" placeholder="4.5" step="0.1" min="0" max="20">
+                    </div>
+                    <div class="input-group">
+                        <label>Mortgage Term</label>
+                        <select id="uk-loan-term">
+                            <option value="40">40 Years</option>
+                            <option value="35">35 Years</option>
+                            <option value="30" selected>30 Years</option>
+                            <option value="25">25 Years</option>
+                            <option value="20">20 Years</option>
+                            <option value="15">15 Years</option>
+                            <option value="10">10 Years</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Overpayment per month (£, optional)</label>
+                        <div class="input-prefix"><span>£</span><input type="number" id="uk-loan-extra" placeholder="0" min="0"></div>
+                    </div>
                 </div>
-                <h3 style="margin:20px 0 10px; font-size:1rem;">Amortization Schedule</h3>
-                <div class="table-wrap">
-                    <table>
-                        <thead><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead>
-                        <tbody id="amort-table"></tbody>
-                    </table>
+                <button class="calc-btn" onclick="calcUKLoan()">Calculate Repayments</button>
+            </div>
+
+            <div id="uk-loan-results" class="results">
+                <div class="card">
+                    <div class="result-highlight">
+                        <div class="big-number" id="uk-l-monthly">£0</div>
+                        <div class="big-label">Monthly Repayment</div>
+                    </div>
+                    <div class="result-grid">
+                        <div class="result-box"><div class="val" id="uk-l-interest">£0</div><div class="lbl">Total Interest</div></div>
+                        <div class="result-box"><div class="val" id="uk-l-total">£0</div><div class="lbl">Total Cost</div></div>
+                        <div class="result-box"><div class="val" id="uk-l-payoff">—</div><div class="lbl">Payoff Date</div></div>
+                    </div>
+                    <div id="uk-l-savings-box" style="display:none; background:#e8f5e9; border-radius:10px; padding:16px; margin-bottom:20px; text-align:center;">
+                        <strong style="color:#27ae60;">Overpayments save you <span id="uk-l-savings">£0</span> in interest and pay off <span id="uk-l-months-early">0</span> months early!</strong>
+                    </div>
+                    <div class="chart-wrap"><canvas id="ukLoanChart"></canvas></div>
+                    <h3 style="margin:20px 0 10px; font-size:1rem;">Amortisation Schedule</h3>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead>
+                            <tbody id="uk-amort-table"></tbody>
+                        </table>
+                    </div>
+                    <button class="reset-btn" onclick="resetUKLoan()">Calculate Again</button>
                 </div>
-                <button class="reset-btn" onclick="resetLoan()">Calculate Again</button>
             </div>
         </div>
     </div>
@@ -246,9 +351,10 @@
 
     <div class="info-section">
         <h2>How to Use This Calculator</h2>
-        <p><strong>Mortgage Affordability:</strong> Enter your income, existing debts, and down payment to find the maximum home price you can comfortably afford based on a 28%/36% DTI guideline. The monthly payment shown includes principal, interest, taxes, and insurance (PITI).</p>
-        <p><strong>Loan Calculator:</strong> Enter any loan amount, rate, and term to get your exact monthly payment and a full amortization schedule. Add extra monthly payments to see how much interest you save and how early you pay off the loan.</p>
-        <p><em>Results are estimates for informational purposes. Consult a mortgage professional before making financial decisions.</em></p>
+        <p><strong>🇺🇸 US Affordability:</strong> Uses the 28%/36% debt-to-income rule to find your maximum home price. Monthly payment includes principal, interest, taxes, and insurance (PITI).</p>
+        <p><strong>🇬🇧 UK Affordability:</strong> Uses the standard 4.5× income multiple used by most UK lenders. Also calculates Stamp Duty Land Tax (SDLT) for England — including first-time buyer relief and the 3% surcharge for additional properties.</p>
+        <p><strong>🇬🇧 UK Repayment:</strong> Enter your mortgage amount, rate, and term to get monthly repayments and a full amortisation schedule. Add overpayments to see how much interest you save.</p>
+        <p><em>Results are estimates for informational purposes. Speak to a mortgage adviser before making financial decisions.</em></p>
     </div>
 
     <div class="ad-space">

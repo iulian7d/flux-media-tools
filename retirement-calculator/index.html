@@ -3,40 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retirement Calculator - When Can I Retire?</title>
-    <meta name="description" content="Free retirement calculator. Find out when you can retire based on your current savings, contributions, and expected returns. Plan your retirement today.">
-    <meta name="keywords" content="retirement calculator, when can I retire, retirement savings calculator, 401k calculator, retirement planning">
+    <title>Retirement Calculator - When Can I Retire? US & UK</title>
+    <meta name="description" content="Free retirement calculator for the US and UK. Find out when you can retire based on your savings, 401k/ISA contributions, and State Pension or Social Security.">
+    <meta name="keywords" content="retirement calculator, when can I retire, retirement savings calculator, 401k calculator, UK pension calculator, ISA retirement, State Pension calculator">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <meta property="og:title" content="Retirement Calculator - When Can I Retire?">
-    <meta property="og:description" content="Free retirement calculator. Find out when you can retire and if your savings are on track using the 4% withdrawal rule.">
+    <meta property="og:title" content="Retirement Calculator - When Can I Retire? US & UK">
+    <meta property="og:description" content="Free retirement calculator for the US and UK. Plan your retirement with 401k/ISA, Social Security/State Pension, and the 4% withdrawal rule.">
     <meta property="og:url" content="https://retire.fluxmediasystems.com">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Flux Media Systems">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Retirement Calculator - When Can I Retire?">
-    <meta name="twitter:description" content="Free retirement calculator. Find out when you can retire and if your savings are on track using the 4% withdrawal rule.">
+    <meta name="twitter:title" content="Retirement Calculator - When Can I Retire? US & UK">
+    <meta name="twitter:description" content="Free retirement calculator for the US and UK. Plan your retirement with 401k/ISA, Social Security/State Pension, and the 4% withdrawal rule.">
     <link rel="canonical" href="https://retire.fluxmediasystems.com">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Retirement Calculator - When Can I Retire?",
+  "name": "Retirement Calculator - When Can I Retire? US & UK",
   "url": "https://retire.fluxmediasystems.com",
-  "description": "Free retirement calculator. Find out when you can retire and if your savings are on track using the 4% withdrawal rule.",
+  "description": "Free retirement calculator for the US and UK. Plan your retirement with 401k/ISA, Social Security/State Pension, and the 4% withdrawal rule.",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web Browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Flux Media Systems",
-    "url": "https://fluxmediasystems.com"
-  }
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "Flux Media Systems", "url": "https://fluxmediasystems.com" }
 }
 </script>
 <script type="application/ld+json">
@@ -46,10 +38,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How much money do I need to retire?",
+      "name": "How much money do I need to retire in the US?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Using the 4% rule, multiply your desired annual retirement income by 25. To generate $60,000/year, you need $1.5 million in retirement savings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do I need to retire in the UK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The UK State Pension (2024/25) provides up to £11,502/year. For a comfortable retirement, most UK retirees aim for £25,000–£37,000/year total. Use the 4% rule: divide your required portfolio income by 0.04 to get your target pot size."
       }
     },
     {
@@ -59,14 +59,6 @@
         "@type": "Answer",
         "text": "The 4% rule states you can withdraw 4% of your portfolio annually with a very high probability your money lasts 30+ years. It's based on decades of historical market data."
       }
-    },
-    {
-      "@type": "Question",
-      "name": "How much should I save for retirement each month?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A common guideline is to save 15% of gross income for retirement. Our calculator shows exactly how much you need to save to reach your target retirement date."
-      }
     }
   ]
 }
@@ -75,79 +67,151 @@
 <body>
 <header class="header">
     <h1>🌅 Retirement Calculator</h1>
-    <p class="subtitle">Find out when you can retire and how much you'll have</p>
+    <p class="subtitle">Find out when you can retire and how much you'll have — US &amp; UK</p>
 </header>
 <div class="container">
     <div class="ad-space">
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
     </div>
 
-    <div class="card">
-        <div class="form-grid">
-            <div class="input-group">
-                <label>Current Age</label>
-                <input type="number" id="current-age" placeholder="35" min="18" max="80">
-            </div>
-            <div class="input-group">
-                <label>Target Retirement Age</label>
-                <input type="number" id="retire-age" placeholder="65" min="40" max="80">
-            </div>
-            <div class="input-group">
-                <label>Current Savings / Portfolio</label>
-                <div class="input-prefix"><span>$</span><input type="number" id="savings" placeholder="50000" min="0"></div>
-            </div>
-            <div class="input-group">
-                <label>Monthly Contribution</label>
-                <div class="input-prefix"><span>$</span><input type="number" id="contribution" placeholder="1000" min="0"></div>
-            </div>
-            <div class="input-group">
-                <label>Expected Annual Return (%)</label>
-                <input type="number" id="return-rate" placeholder="7" step="0.1" min="0" max="30">
-            </div>
-            <div class="input-group">
-                <label>Desired Annual Retirement Income</label>
-                <div class="input-prefix"><span>$</span><input type="number" id="retire-income" placeholder="60000" min="0"></div>
-            </div>
-            <div class="input-group">
-                <label>Expected Monthly Social Security ($)</label>
-                <div class="input-prefix"><span>$</span><input type="number" id="ss" placeholder="1800" min="0"></div>
-            </div>
-            <div class="input-group">
-                <label>Inflation Rate (%)</label>
-                <input type="number" id="inflation" placeholder="2.5" step="0.1" min="0" max="20">
-            </div>
-        </div>
-        <button class="calc-btn" onclick="calcRetirement()">Calculate Retirement Plan</button>
+    <!-- Country toggle -->
+    <div class="tabs">
+        <button class="tab-btn active" id="tab-us-btn" onclick="switchCountry('us')">🇺🇸 United States</button>
+        <button class="tab-btn" id="tab-uk-btn" onclick="switchCountry('uk')">🇬🇧 United Kingdom</button>
     </div>
 
-    <div id="results" class="results">
+    <!-- US Form -->
+    <div id="us-section">
         <div class="card">
-            <div class="result-highlight" id="status-box">
-                <div class="big-number" id="nest-egg">$0</div>
-                <div class="big-label" id="nest-label">Projected Nest Egg at Retirement</div>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Current Age</label>
+                    <input type="number" id="current-age" placeholder="35" min="18" max="80">
+                </div>
+                <div class="input-group">
+                    <label>Target Retirement Age</label>
+                    <input type="number" id="retire-age" placeholder="65" min="40" max="80">
+                </div>
+                <div class="input-group">
+                    <label>Current Savings / Portfolio</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="savings" placeholder="50000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Monthly Contribution</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="contribution" placeholder="1000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Expected Annual Return (%)</label>
+                    <input type="number" id="return-rate" placeholder="7" step="0.1" min="0" max="30">
+                </div>
+                <div class="input-group">
+                    <label>Desired Annual Retirement Income</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="retire-income" placeholder="60000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Expected Monthly Social Security ($)</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="ss" placeholder="1800" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Inflation Rate (%)</label>
+                    <input type="number" id="inflation" placeholder="2.5" step="0.1" min="0" max="20">
+                </div>
             </div>
-            <div class="result-grid">
-                <div class="result-box"><div class="val" id="years-to-retire">0</div><div class="lbl">Years Until Retirement</div></div>
-                <div class="result-box"><div class="val" id="monthly-sustainable">$0</div><div class="lbl">Sustainable Monthly Income</div></div>
-                <div class="result-box"><div class="val" id="retirement-status" style="font-size:1rem;">—</div><div class="lbl">Retirement Status</div></div>
+            <button class="calc-btn" onclick="calcRetirement()">Calculate Retirement Plan</button>
+        </div>
+
+        <div id="results" class="results">
+            <div class="card">
+                <div class="result-highlight" id="status-box">
+                    <div class="big-number" id="nest-egg">$0</div>
+                    <div class="big-label">Projected Nest Egg at Retirement</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="years-to-retire">0</div><div class="lbl">Years Until Retirement</div></div>
+                    <div class="result-box"><div class="val" id="monthly-sustainable">$0</div><div class="lbl">Sustainable Monthly Income</div></div>
+                    <div class="result-box"><div class="val" id="retirement-status" style="font-size:1rem;">—</div><div class="lbl">Retirement Status</div></div>
+                </div>
+                <div style="height:280px; margin:20px 0;"><canvas id="chart"></canvas></div>
+                <div id="gap-box" style="display:none; background:#ffeaea; border-radius:10px; padding:16px; margin-bottom:16px; font-size:0.9rem;">
+                    <strong style="color:#e74c3c;">⚠️ Savings gap detected!</strong> You need to save an additional <strong id="gap-amount">$0</strong>/month to meet your income goal.
+                </div>
+                <button class="reset-btn" onclick="resetRetirement()">Recalculate</button>
             </div>
-            <div style="height:280px; margin:20px 0;"><canvas id="chart"></canvas></div>
-            <div id="gap-box" style="display:none; background:#ffeaea; border-radius:10px; padding:16px; margin-bottom:16px; font-size:0.9rem;">
-                <strong style="color:#e74c3c;">⚠️ Savings gap detected!</strong> You need to save an additional <strong id="gap-amount">$0</strong>/month to meet your income goal.
+        </div>
+    </div>
+
+    <!-- UK Form -->
+    <div id="uk-section" style="display:none;">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Current Age</label>
+                    <input type="number" id="uk-current-age" placeholder="35" min="18" max="80">
+                </div>
+                <div class="input-group">
+                    <label>Target Retirement Age</label>
+                    <input type="number" id="uk-retire-age" placeholder="65" min="40" max="80">
+                </div>
+                <div class="input-group">
+                    <label>Current Pension / ISA / SIPP Savings</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="uk-savings" placeholder="30000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Monthly Contribution (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="uk-contribution" placeholder="500" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Expected Annual Return (%)</label>
+                    <input type="number" id="uk-return-rate" placeholder="6" step="0.1" min="0" max="30">
+                </div>
+                <div class="input-group">
+                    <label>Desired Annual Retirement Income (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="uk-retire-income" placeholder="30000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Expected Annual State Pension (£)</label>
+                    <input type="number" id="uk-state-pension" placeholder="11502" min="0">
+                    <small style="color:#7f8c8d; font-size:0.78rem;">Full 2024/25 new State Pension = £11,502/yr</small>
+                </div>
+                <div class="input-group">
+                    <label>Inflation Rate (%)</label>
+                    <input type="number" id="uk-inflation" placeholder="2.5" step="0.1" min="0" max="20">
+                </div>
             </div>
-            <button class="reset-btn" onclick="resetRetirement()">Recalculate</button>
+            <button class="calc-btn" onclick="calcRetirementUK()">Calculate Retirement Plan</button>
+        </div>
+
+        <div id="uk-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="uk-nest-egg">£0</div>
+                    <div class="big-label">Projected Pension Pot at Retirement</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="uk-years-to-retire">0</div><div class="lbl">Years Until Retirement</div></div>
+                    <div class="result-box"><div class="val" id="uk-monthly-sustainable">£0</div><div class="lbl">Sustainable Monthly Income</div></div>
+                    <div class="result-box"><div class="val" id="uk-retirement-status" style="font-size:1rem;">—</div><div class="lbl">Retirement Status</div></div>
+                </div>
+                <div style="height:280px; margin:20px 0;"><canvas id="uk-chart"></canvas></div>
+                <div id="uk-gap-box" style="display:none; background:#ffeaea; border-radius:10px; padding:16px; margin-bottom:16px; font-size:0.9rem;">
+                    <strong style="color:#e74c3c;">⚠️ Savings gap detected!</strong> You need to save an additional <strong id="uk-gap-amount">£0</strong>/month to meet your income goal.
+                </div>
+                <button class="reset-btn" onclick="resetRetirementUK()">Recalculate</button>
+            </div>
         </div>
     </div>
 
     <div class="ad-space">
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
     </div>
+
     <div class="info-section">
-        <h2>The 4% Rule</h2>
-        <p>This calculator uses the widely-cited 4% safe withdrawal rate — the principle that you can withdraw 4% of your portfolio annually in retirement with a very high probability your money lasts 30+ years. To generate $60,000/year, you need $1.5M in savings.</p>
-        <p>Social Security benefits are factored in as guaranteed income, reducing the portfolio size you need. Inflation is applied to calculate how much your desired income actually needs to be in future dollars.</p>
-        <p><em>Projections assume constant returns. Actual investment performance varies. Consult a financial advisor for personalized retirement planning.</em></p>
+        <h2>Retirement Planning — US &amp; UK</h2>
+        <p><strong>🇺🇸 US:</strong> Uses the 4% safe withdrawal rule. Social Security is factored in as guaranteed income. Enter your 401(k)/IRA balance and contributions to see if you're on track.</p>
+        <p><strong>🇬🇧 UK:</strong> The full new State Pension (2024/25) is £11,502/year, paid from age 66. Enter your workplace pension, ISA, or SIPP savings. The calculator uses the 4% rule to determine if your pot is large enough alongside your State Pension.</p>
+        <p><em>Projections assume constant returns. Actual investment performance varies. Consult a financial adviser for personalised retirement planning.</em></p>
     </div>
+
     <div class="ad-space">
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
     </div>

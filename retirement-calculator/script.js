@@ -1,3 +1,12 @@
+// ─── COUNTRY SWITCH ───────────────────────────────────────────────────────────
+function switchCountry(country) {
+    document.getElementById('us-section').style.display = country === 'us' ? '' : 'none';
+    document.getElementById('uk-section').style.display = country === 'uk' ? '' : 'none';
+    document.getElementById('tab-us-btn').classList.toggle('active', country === 'us');
+    document.getElementById('tab-uk-btn').classList.toggle('active', country === 'uk');
+}
+
+// ─── US CALCULATOR ────────────────────────────────────────────────────────────
 let retireChart = null;
 function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
 
@@ -20,7 +29,6 @@ function calcRetirement() {
     const fvContribs = monthly > 0 ? monthly * (Math.pow(1 + mr, months) - 1) / mr : 0;
     const nestEgg = fvSavings + fvContribs;
 
-    // Future value of desired income (inflation-adjusted)
     const futureIncome = retireIncome * Math.pow(1 + inflation / 100, years);
     const ssAnnual = ss * 12;
     const portfolioIncome = futureIncome - ssAnnual;
@@ -38,20 +46,18 @@ function calcRetirement() {
 
     const gapBox = document.getElementById('gap-box');
     if (!onTrack) {
-        const needed = portfolioNeeded;
-        const shortfall = needed - nestEgg;
-        const addlMonthly = shortfall / ((Math.pow(1+mr, months)-1) / mr);
+        const shortfall = portfolioNeeded - nestEgg;
+        const addlMonthly = shortfall / ((Math.pow(1 + mr, months) - 1) / mr);
         document.getElementById('gap-amount').textContent = fmt(addlMonthly);
         gapBox.style.display = 'block';
     } else {
         gapBox.style.display = 'none';
     }
 
-    // Chart data year-by-year
     const labels = [], vals = [];
     for (let y = 0; y <= years; y++) {
         const m = y * 12;
-        const fv = savings * Math.pow(1+mr,m) + (monthly > 0 ? monthly*(Math.pow(1+mr,m)-1)/mr : 0);
+        const fv = savings * Math.pow(1 + mr, m) + (monthly > 0 ? monthly * (Math.pow(1 + mr, m) - 1) / mr : 0);
         labels.push(curAge + y);
         vals.push(Math.round(fv));
     }
@@ -65,14 +71,94 @@ function calcRetirement() {
             labels,
             datasets: [
                 { label: 'Portfolio Value', data: vals, borderColor: '#667eea', backgroundColor: 'rgba(102,126,234,0.1)', fill: true, tension: 0.4, pointRadius: 0 },
-                { label: 'Target Needed', data: labels.map(() => Math.round(portfolioNeeded)), borderColor: '#e74c3c', borderDash: [6,3], pointRadius: 0, fill: false }
+                { label: 'Target Needed', data: labels.map(() => Math.round(portfolioNeeded)), borderColor: '#e74c3c', borderDash: [6, 3], pointRadius: 0, fill: false }
             ]
         },
         options: {
             responsive: true, maintainAspectRatio: false,
             plugins: { legend: { position: 'bottom' } },
-            scales: { y: { ticks: { callback: v => '$'+(v>=1e6?(v/1e6).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'K':v) } } }
+            scales: { y: { ticks: { callback: v => '$' + (v >= 1e6 ? (v / 1e6).toFixed(1) + 'M' : v >= 1000 ? (v / 1000).toFixed(0) + 'K' : v) } } }
         }
     });
 }
+
 function resetRetirement() { document.getElementById('results').classList.remove('show'); }
+
+// ─── UK CALCULATOR ────────────────────────────────────────────────────────────
+let ukRetireChart = null;
+function fmtGBP(n) { return '£' + Math.round(n).toLocaleString(); }
+
+function calcRetirementUK() {
+    const curAge = parseInt(document.getElementById('uk-current-age').value) || 35;
+    const retireAge = parseInt(document.getElementById('uk-retire-age').value) || 65;
+    const savings = parseFloat(document.getElementById('uk-savings').value) || 0;
+    const monthly = parseFloat(document.getElementById('uk-contribution').value) || 0;
+    const returnRate = parseFloat(document.getElementById('uk-return-rate').value) || 6;
+    const retireIncome = parseFloat(document.getElementById('uk-retire-income').value) || 30000;
+    const statePension = parseFloat(document.getElementById('uk-state-pension').value) || 11502;
+    const inflation = parseFloat(document.getElementById('uk-inflation').value) || 2.5;
+
+    const years = retireAge - curAge;
+    if (years <= 0) { alert('Retirement age must be greater than current age.'); return; }
+
+    const mr = returnRate / 100 / 12;
+    const months = years * 12;
+    const fvSavings = savings * Math.pow(1 + mr, months);
+    const fvContribs = monthly > 0 ? monthly * (Math.pow(1 + mr, months) - 1) / mr : 0;
+    const nestEgg = fvSavings + fvContribs;
+
+    // Inflation-adjust the desired income
+    const futureIncome = retireIncome * Math.pow(1 + inflation / 100, years);
+    // State Pension covers part of it
+    const portfolioIncome = Math.max(0, futureIncome - statePension);
+    const portfolioNeeded = portfolioIncome / 0.04;
+    const sustainableMonthly = (nestEgg * 0.04 + statePension) / 12;
+
+    document.getElementById('uk-nest-egg').textContent = fmtGBP(nestEgg);
+    document.getElementById('uk-years-to-retire').textContent = years;
+    document.getElementById('uk-monthly-sustainable').textContent = fmtGBP(sustainableMonthly);
+
+    const onTrack = nestEgg >= portfolioNeeded;
+    const statusEl = document.getElementById('uk-retirement-status');
+    statusEl.textContent = onTrack ? '✅ On Track' : '⚠️ Needs Work';
+    statusEl.style.color = onTrack ? '#27ae60' : '#e74c3c';
+
+    const gapBox = document.getElementById('uk-gap-box');
+    if (!onTrack && mr > 0) {
+        const shortfall = portfolioNeeded - nestEgg;
+        const addlMonthly = shortfall / ((Math.pow(1 + mr, months) - 1) / mr);
+        document.getElementById('uk-gap-amount').textContent = fmtGBP(addlMonthly);
+        gapBox.style.display = 'block';
+    } else {
+        gapBox.style.display = 'none';
+    }
+
+    const labels = [], vals = [];
+    for (let y = 0; y <= years; y++) {
+        const m = y * 12;
+        const fv = savings * Math.pow(1 + mr, m) + (monthly > 0 ? monthly * (Math.pow(1 + mr, m) - 1) / mr : 0);
+        labels.push(curAge + y);
+        vals.push(Math.round(fv));
+    }
+
+    document.getElementById('uk-results').classList.add('show');
+    if (ukRetireChart) ukRetireChart.destroy();
+    const ctx = document.getElementById('uk-chart').getContext('2d');
+    ukRetireChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels,
+            datasets: [
+                { label: 'Pension Pot', data: vals, borderColor: '#667eea', backgroundColor: 'rgba(102,126,234,0.1)', fill: true, tension: 0.4, pointRadius: 0 },
+                { label: 'Target Needed', data: labels.map(() => Math.round(portfolioNeeded)), borderColor: '#e74c3c', borderDash: [6, 3], pointRadius: 0, fill: false }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom' } },
+            scales: { y: { ticks: { callback: v => '£' + (v >= 1e6 ? (v / 1e6).toFixed(1) + 'M' : v >= 1000 ? (v / 1000).toFixed(0) + 'K' : v) } } }
+        }
+    });
+}
+
+function resetRetirementUK() { document.getElementById('uk-results').classList.remove('show'); }
