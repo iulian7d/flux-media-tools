@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divorce Asset Calculator 2026 - Financial Settlement Estimator UK & US</title>
+    <meta name="description" content="Free divorce asset calculator 2026. Model how property, savings, pensions, and debts might be divided in a divorce financial settlement. UK and US guidance.">
+    <meta name="keywords" content="divorce asset calculator, divorce financial settlement calculator, how are assets split in divorce, divorce property calculator UK, equitable distribution calculator">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="../main-site/styles.css">
+    <link rel="canonical" href="https://divorce-assets.legalcalctools.com">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Divorce Asset Calculator 2026","url":"https://divorce-assets.legalcalctools.com","description":"Model how assets and debts might be divided in a divorce financial settlement. UK and US guidance. Free, instant estimate.","applicationCategory":"LegalApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Legal Calc Tools","url":"https://legalcalctools.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are assets divided in a UK divorce?","acceptedAnswer":{"@type":"Answer","text":"In England and Wales, the starting point for dividing marital assets is an equal 50/50 split. Courts can depart from equality based on the needs of each party (especially housing needs with children), contributions made, earning capacity, standard of living, and any pre-marital assets or inheritance. The welfare of children is the first consideration."}},{"@type":"Question","name":"Is divorce a 50/50 split in the US?","acceptedAnswer":{"@type":"Answer","text":"It depends on the state. Community property states (California, Texas, Arizona, Nevada, Washington, etc.) split marital assets 50/50 as a default. Equitable distribution states (most states) divide assets 'fairly' but not necessarily equally, considering factors like marriage length, each spouse's contributions, and economic circumstances."}},{"@type":"Question","name":"Are pensions included in a divorce settlement?","acceptedAnswer":{"@type":"Answer","text":"Yes. In the UK, pensions are usually the largest asset after the family home and must be disclosed and considered in financial settlements. Options include a pension sharing order (splitting the pension), a pension earmarking order, or offsetting the pension value against other assets like the house. In the US, pension rights in divorce are handled via a Qualified Domestic Relations Order (QDRO)."}}]}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>🏡 Divorce Asset Calculator</h1>
+    <p class="subtitle">Model your financial settlement — UK &amp; US</p>
+</header>
+<div class="container">
+    <div class="ad-space"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+    <div class="card">
+        <h3 style="font-size:1rem; margin-bottom:18px; color:#1a2e44;">Enter Your Joint Assets &amp; Debts</h3>
+        <div class="form-grid">
+            <div class="input-group"><label>Family Home Value (£/$)</label><div class="input-prefix"><span>£</span><input type="number" id="home-value" placeholder="350000" min="0"></div></div>
+            <div class="input-group"><label>Outstanding Mortgage (£/$)</label><div class="input-prefix"><span>£</span><input type="number" id="mortgage" placeholder="180000" min="0"></div></div>
+            <div class="input-group"><label>Savings &amp; Investments (£/$)</label><div class="input-prefix"><span>£</span><input type="number" id="savings" placeholder="50000" min="0"></div></div>
+            <div class="input-group"><label>Your Pension Value (£/$)</label><div class="input-prefix"><span>£</span><input type="number" id="pension1" placeholder="80000" min="0"></div></div>
+            <div class="input-group"><label>Partner's Pension Value (£/$)</label><div class="input-prefix"><span>£</span><input type="number" id="pension2" placeholder="40000" min="0"></div></div>
+            <div class="input-group"><label>Other Assets (cars, business, etc. £/$)</label><div class="input-prefix"><span>£</span><input type="number" id="other-assets" placeholder="20000" min="0"></div></div>
+            <div class="input-group"><label>Joint Debts (excl. mortgage £/$)</label><div class="input-prefix"><span>£</span><input type="number" id="debts" placeholder="5000" min="0"></div></div>
+            <div class="input-group"><label>Split Approach</label>
+                <select id="split">
+                    <option value="50">Equal (50/50) — starting point</option>
+                    <option value="60">60/40 in your favour</option>
+                    <option value="65">65/35 in your favour</option>
+                    <option value="40">40/60 in partner's favour</option>
+                    <option value="35">35/65 in partner's favour</option>
+                </select>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcDivorce()">Model My Settlement</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="your-share">£0</div>
+                <div class="big-label">Your Estimated Share of Net Assets</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="total-assets">£0</div><div class="lbl">Total Assets</div></div>
+                <div class="result-box"><div class="val" id="total-debts">£0</div><div class="lbl">Total Liabilities</div></div>
+                <div class="result-box"><div class="val" id="net-assets">£0</div><div class="lbl">Net Marital Estate</div></div>
+            </div>
+            <table class="breakdown-table" id="breakdown" style="margin-top:20px;"></table>
+            <p style="color:#607d8b; font-size:0.83rem; margin-top:16px;">⚠️ This is a simplified model. Actual settlements depend on individual circumstances, needs, children's welfare, and court discretion. Always instruct a family law solicitor/attorney.</p>
+            <button class="reset-btn" onclick="resetCalc()">Recalculate</button>
+        </div>
+    </div>
+
+    <div class="ad-space"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+    <div class="info-section">
+        <h2>How Divorce Asset Division Works</h2>
+        <p>In England and Wales, the court's starting point is an equal division of marital assets. This can be departed from based on the needs of each party (particularly housing needs when there are children), contributions made, earning capacity, and the duration of the marriage. Pre-marital assets and inheritances may be ringfenced in shorter marriages.</p>
+        <p>In the US, 9 states are "community property" states where marital assets are split 50/50 by default. The remaining states use "equitable distribution," dividing assets fairly but not necessarily equally, based on factors including marriage length, each spouse's financial situation, and contributions.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How are assets divided in a UK divorce?</h3>
+        <p>In England and Wales, the family court aims for a fair division of marital assets, starting from equality (50/50) and departing from it based on individual circumstances. The first consideration is always the welfare of any children. Factors include: needs (housing, income), contributions (including non-financial contributions as homemaker or carer), standard of living, age and health, and the duration of the marriage. Scotland has a different legal framework under the Family Law (Scotland) Act 1985.</p>
+
+        <h3>Is divorce a 50/50 split in the US?</h3>
+        <p>In the 9 community property states (California, Texas, Arizona, Nevada, Washington, Idaho, Louisiana, New Mexico, Wisconsin), marital property is split 50/50. In the other 41 equitable distribution states, courts divide marital property "fairly" but not necessarily equally. Separate property (owned before marriage, or received as inheritance or gift during marriage) is generally kept by the original owner, though it can become marital property if "commingled."</p>
+
+        <h3>Are pensions included in a divorce settlement?</h3>
+        <p>Yes — pensions are often one of the largest assets in a marriage and must be fully disclosed. In the UK, courts can make a pension sharing order (dividing a pension between spouses), a pension earmarking order (directing future payments to the other spouse), or you can agree to "offset" the pension value against other assets (e.g., one spouse keeps the pension, the other gets more of the house equity). In the US, a Qualified Domestic Relations Order (QDRO) is used to divide defined benefit and 401(k) pension plans without triggering early withdrawal penalties.</p>
+
+        <h3>Do I need a court order for a divorce financial settlement?</h3>
+        <p>In the UK, a verbal agreement or even a signed document is not legally binding — you need a court order (called a consent order) to protect both parties from future claims. Without a consent order, either spouse can make a financial claim against the other years or even decades later, even after remarrying. In the US, the divorce decree or settlement agreement must be approved and signed by a judge to be legally binding.</p>
+    </div>
+
+    <div class="disclaimer-box"><strong>⚠️ Legal Disclaimer:</strong> This calculator models a simplified split for illustrative purposes only. Actual divorce settlements are determined by courts based on all circumstances. Always seek advice from a qualified family law solicitor or attorney.</div>
+
+    <div class="ad-space"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+</div>
+<footer class="footer">
+    <p>⚖️ <a href="https://legalcalctools.com">Legal Calc Tools</a> &nbsp;|&nbsp; <a href="https://legalcalctools.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://legalcalctools.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Legal Calc Tools. All rights reserved.</p>
+</footer>
+<script>
+function fmt(n){return n.toLocaleString('en-GB',{minimumFractionDigits:0,maximumFractionDigits:0});}
+function calcDivorce(){
+    const homeVal=parseFloat(document.getElementById('home-value').value)||0;
+    const mortgage=parseFloat(document.getElementById('mortgage').value)||0;
+    const savings=parseFloat(document.getElementById('savings').value)||0;
+    const p1=parseFloat(document.getElementById('pension1').value)||0;
+    const p2=parseFloat(document.getElementById('pension2').value)||0;
+    const other=parseFloat(document.getElementById('other-assets').value)||0;
+    const debts=parseFloat(document.getElementById('debts').value)||0;
+    const splitPct=parseInt(document.getElementById('split').value)/100;
+
+    const homeEquity=Math.max(0,homeVal-mortgage);
+    const totalAssets=homeVal+savings+p1+p2+other;
+    const totalLiabilities=mortgage+debts;
+    const netEstate=Math.max(0,totalAssets-totalLiabilities);
+    const yourShare=netEstate*splitPct;
+
+    document.getElementById('your-share').textContent='£'+fmt(yourShare);
+    document.getElementById('total-assets').textContent='£'+fmt(totalAssets);
+    document.getElementById('total-debts').textContent='£'+fmt(totalLiabilities);
+    document.getElementById('net-assets').textContent='£'+fmt(netEstate);
+
+    document.getElementById('breakdown').innerHTML=`
+    <tr><th>Asset / Liability</th><th>Total Value</th><th>Your Share (${splitPct*100}%)</th><th>Partner's Share (${(1-splitPct)*100}%)</th></tr>
+    ${homeEquity>0?`<tr><td>Home equity</td><td>£${fmt(homeEquity)}</td><td>£${fmt(homeEquity*splitPct)}</td><td>£${fmt(homeEquity*(1-splitPct))}</td></tr>`:''}
+    ${savings>0?`<tr><td>Savings &amp; investments</td><td>£${fmt(savings)}</td><td>£${fmt(savings*splitPct)}</td><td>£${fmt(savings*(1-splitPct))}</td></tr>`:''}
+    ${(p1+p2)>0?`<tr><td>Pensions (combined)</td><td>£${fmt(p1+p2)}</td><td>£${fmt((p1+p2)*splitPct)}</td><td>£${fmt((p1+p2)*(1-splitPct))}</td></tr>`:''}
+    ${other>0?`<tr><td>Other assets</td><td>£${fmt(other)}</td><td>£${fmt(other*splitPct)}</td><td>£${fmt(other*(1-splitPct))}</td></tr>`:''}
+    ${debts>0?`<tr><td>Joint debts (shared)</td><td>-£${fmt(debts)}</td><td>-£${fmt(debts*splitPct)}</td><td>-£${fmt(debts*(1-splitPct))}</td></tr>`:''}
+    <tr class="total"><td><strong>Net total</strong></td><td><strong>£${fmt(netEstate)}</strong></td><td><strong>£${fmt(yourShare)}</strong></td><td><strong>£${fmt(netEstate-yourShare)}</strong></td></tr>
+    `;
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+function resetCalc(){document.getElementById('results').classList.remove('show');}
+</script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});(adsbygoogle=window.adsbygoogle||[]).push({});(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</body>
+</html>

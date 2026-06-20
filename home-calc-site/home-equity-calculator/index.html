@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Equity Calculator 2026 - How Much Equity Do I Have?</title>
+    <meta name="description" content="Free home equity calculator 2026. Calculate how much equity you have in your home and how much you could borrow against it through a remortgage or equity release.">
+    <meta name="keywords" content="home equity calculator, how much equity do I have, home equity loan UK, equity release calculator, remortgage equity calculator">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="../main-site/styles.css">
+    <link rel="canonical" href="https://home-equity.homecalctools.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Home Equity Calculator 2026",
+  "url": "https://home-equity.homecalctools.com",
+  "description": "Calculate your home equity and how much you could borrow against your property through remortgaging or equity release.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+  "publisher": { "@type": "Organization", "name": "Home Calc Tools", "url": "https://homecalctools.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my home equity?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Home equity = Current property value − Outstanding mortgage balance. For example, if your home is worth £350,000 and your outstanding mortgage is £180,000, your equity is £170,000. Equity increases as you pay down your mortgage and as property values rise, and decreases if property values fall or you borrow more against the property." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much of my home equity can I borrow against?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most UK mortgage lenders allow you to borrow up to 80–85% LTV when remortgaging to release equity. So if your property is worth £300,000, the maximum new mortgage is typically £240,000–£255,000. If your outstanding mortgage is £150,000, you could release up to £90,000–£105,000 in equity. Some specialist lenders offer up to 90% LTV. Equity release schemes (lifetime mortgages) for over-55s work differently and can typically release 20–50% of the property value." }
+    },
+    {
+      "@type": "Question",
+      "name": "What can I use home equity for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Common uses for equity release via remortgage include: home improvements and extensions (which may add value to the property); consolidating high-interest debt (though this converts unsecured debt to secured debt, which carries risk); helping adult children with a house deposit; paying for education; funding a buy-to-let deposit; or covering major one-time expenses. Using equity for living expenses or consumption is higher risk, as it reduces the financial buffer in your home." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is equity release and how does it work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Equity release is specifically for homeowners aged 55 or over and allows you to access equity without making monthly repayments. The most common type is a lifetime mortgage, where interest rolls up over time and is repaid when the property is eventually sold (on death or moving into care). The total amount owed can grow significantly over time due to compound interest. Equity release reduces the value of your estate and affects means-tested benefits. Always take independent financial advice before proceeding." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does releasing equity affect my mortgage rate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Releasing equity increases your outstanding mortgage and raises your LTV. If your current LTV is 50% and you release equity to bring it to 70%, you may move into a higher-rate LTV band. The new rate is set on your full remortgage balance at the higher LTV. In most cases, the benefit of accessing equity for worthwhile purposes (like home improvements that add value) outweighs the rate increase — but always model the total cost carefully with a mortgage adviser." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>📈 Home Equity Calculator</h1>
+    <p class="subtitle">How much equity do you have — and how much could you borrow?</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Current Property Value (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="property-value" placeholder="350000" min="10000"></div>
+            </div>
+            <div class="input-group">
+                <label>Outstanding Mortgage Balance (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="mortgage-balance" placeholder="180000" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Max LTV You're Comfortable With</label>
+                <select id="max-ltv">
+                    <option value="75">75% LTV (keep 25% equity)</option>
+                    <option value="80" selected>80% LTV (keep 20% equity)</option>
+                    <option value="85">85% LTV (keep 15% equity)</option>
+                    <option value="90">90% LTV (keep 10% equity)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Original Purchase Price (£) — optional</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="purchase-price" placeholder="280000" min="0"></div>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcEquity()">Calculate Equity →</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="equity-amount">£0</div>
+                <div class="big-label">Your Home Equity</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="current-ltv">0%</div><div class="lbl">Current LTV</div></div>
+                <div class="result-box"><div class="val" id="equity-pct">0%</div><div class="lbl">Equity %</div></div>
+                <div class="result-box"><div class="val" id="releasable">£0</div><div class="lbl">Max Releasable Equity</div></div>
+            </div>
+            <table class="breakdown-table" id="equity-breakdown" style="margin-top:16px;"></table>
+            <div class="result-note" id="equity-note"></div>
+            <button class="reset-btn" onclick="resetCalc()">Recalculate</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>Understanding Home Equity</h2>
+        <p>Your home equity is the portion of your property that you own outright — the difference between what your home is worth and what you still owe on your mortgage. It represents your financial stake in the property and grows over time through two mechanisms: paying down the mortgage capital, and house price appreciation.</p>
+        <p>Equity can be accessed through remortgaging (borrowing more against the property), a second charge mortgage, or for older homeowners, equity release products like lifetime mortgages.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How do I calculate my home equity?</h3>
+        <p>Simple formula: Home equity = Current property value − Outstanding mortgage balance. If your home is worth £350,000 today and you owe £180,000 on your mortgage, your equity is £170,000 (48.6% of the property value). Your equity changes over time: it increases with each mortgage payment (the capital portion), with house price rises, and with any improvements you make; it decreases if you borrow more against the property or if house prices fall.</p>
+
+        <h3>How much of my home equity can I borrow against?</h3>
+        <p>The maximum you can release depends on your maximum acceptable LTV and your current outstanding balance. At 80% LTV on a £300,000 property, the maximum new mortgage is £240,000. If your current balance is £140,000, you could release up to £100,000 in equity. At 75% LTV, you'd access up to £85,000. Lenders also apply affordability criteria — the total new mortgage must be affordable based on your income. Getting an accurate current property valuation (via a surveyor or lender's free valuation) is the first step.</p>
+
+        <h3>What can I use home equity for?</h3>
+        <p>Common uses include home improvements (loft conversions at £30,000–£60,000; extensions at £50,000–£150,000, which often add more value than they cost); debt consolidation (replacing high-interest credit cards/loans — reduces interest cost but converts unsecured debt to secured, meaning your home is at risk); helping children with house deposits; funding renovations; or buying an investment property. Be cautious about releasing equity for everyday spending — this erodes the financial safety net your equity provides.</p>
+
+        <h3>What is equity release and how does it work?</h3>
+        <p>Equity release is available to homeowners aged 55 or over and lets you access equity without monthly repayments. A lifetime mortgage (the most common type) adds compound interest to the outstanding debt, which is repaid from the property sale when you die or move into long-term care. The no-negative-equity guarantee (required by the Equity Release Council) ensures you'll never owe more than the property value. However, compound interest can significantly erode the remaining estate value. Always get independent financial advice regulated by the FCA before taking equity release.</p>
+
+        <h3>Does releasing equity affect my mortgage rate?</h3>
+        <p>Yes, releasing equity typically increases your LTV, which can push you into a higher rate band. For example, if your current LTV is 45% and you remortgage to 70%, you move from the best-rate bracket to a slightly higher one. However, rates at 70% LTV are still competitive, and if you're using the equity productively (e.g., a home improvement that adds value, or clearing high-interest debt at 20%+ APR), the financial benefit usually far outweighs the modest rate increase on the mortgage.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ Disclaimer:</strong> Equity calculations are estimates. Property values should be confirmed by a professional valuation. This is not financial advice — consult a qualified, FCA-regulated mortgage adviser before releasing equity.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>🏠 <a href="https://homecalctools.com">Home Calc Tools</a> &nbsp;|&nbsp; <a href="https://homecalctools.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://homecalctools.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Home Calc Tools. All rights reserved. Not financial advice.</p>
+</footer>
+<script>
+function fmt(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
+
+function calcEquity() {
+    const value = parseFloat(document.getElementById('property-value').value) || 0;
+    const balance = parseFloat(document.getElementById('mortgage-balance').value) || 0;
+    const maxLTV = parseInt(document.getElementById('max-ltv').value) / 100;
+    const purchasePrice = parseFloat(document.getElementById('purchase-price').value) || 0;
+    if (!value) { alert('Please enter the current property value.'); return; }
+
+    const equity = value - balance;
+    const equityPct = (equity / value * 100).toFixed(1);
+    const currentLTV = balance > 0 ? (balance / value * 100).toFixed(1) : 0;
+    const maxNewMortgage = value * maxLTV;
+    const releasable = Math.max(0, maxNewMortgage - balance);
+    const appreciation = purchasePrice > 0 ? value - purchasePrice : 0;
+
+    document.getElementById('equity-amount').textContent = fmt(equity);
+    document.getElementById('current-ltv').textContent = currentLTV + '%';
+    document.getElementById('equity-pct').textContent = equityPct + '%';
+    document.getElementById('releasable').textContent = fmt(releasable);
+
+    let rows = `
+        <tr><th>Item</th><th>Amount</th></tr>
+        <tr><td>Current property value</td><td>${fmt(value)}</td></tr>
+        <tr><td>Outstanding mortgage</td><td>${fmt(balance)}</td></tr>
+        <tr><td>Your home equity</td><td>${fmt(equity)}</td></tr>
+        <tr><td>Current LTV</td><td>${currentLTV}%</td></tr>
+        <tr><td>Equity as % of value</td><td>${equityPct}%</td></tr>
+        <tr><td>Max mortgage at ${Math.round(maxLTV*100)}% LTV</td><td>${fmt(maxNewMortgage)}</td></tr>
+        <tr class="total"><td><strong>Max releasable equity (at ${Math.round(maxLTV*100)}% LTV)</strong></td><td><strong>${fmt(releasable)}</strong></td></tr>
+    `;
+    if (appreciation !== 0) {
+        rows += `<tr><td>House price change since purchase</td><td>${appreciation >= 0 ? '+' : ''}${fmt(appreciation)} (${((appreciation/purchasePrice)*100).toFixed(1)}%)</td></tr>`;
+    }
+    document.getElementById('equity-breakdown').innerHTML = rows;
+
+    let note = '';
+    if (releasable > 0) {
+        note = `You could potentially release up to ${fmt(releasable)} through remortgaging at ${Math.round(maxLTV*100)}% LTV. `;
+        note += 'This would be secured against your home. Interest rates and lender criteria apply. ';
+        note += 'Consider the purpose carefully and speak to an FCA-regulated mortgage adviser before proceeding.';
+    } else {
+        note = `Your current LTV (${currentLTV}%) is already at or above ${Math.round(maxLTV*100)}% LTV. To release equity, you would need to either pay down more of your mortgage or consider a higher LTV option with a specialist lender.`;
+    }
+    document.getElementById('equity-note').textContent = note;
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+function resetCalc() { document.getElementById('results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

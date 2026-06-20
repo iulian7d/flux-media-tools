@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimony Calculator 2026 - Spousal Support Estimator UK & US</title>
+    <meta name="description" content="Free alimony calculator 2026. Estimate spousal maintenance or alimony payments based on marriage length, income difference, and jurisdiction. UK and US guidance.">
+    <meta name="keywords" content="alimony calculator, spousal support calculator, spousal maintenance UK, alimony estimator, divorce maintenance calculator">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="../main-site/styles.css">
+    <link rel="canonical" href="https://alimony.legalcalctools.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Alimony & Spousal Support Calculator 2026",
+  "url": "https://alimony.legalcalctools.com",
+  "description": "Estimate alimony and spousal maintenance payments for UK and US divorces. Free, instant, no sign-up.",
+  "applicationCategory": "LegalApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "Legal Calc Tools", "url": "https://legalcalctools.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is alimony calculated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Alimony (US) or spousal maintenance (UK) is not calculated by a strict formula in most jurisdictions. Courts consider factors including the length of the marriage, each spouse's income and earning capacity, standard of living, age and health, and contributions to the marriage. Some US states have advisory formulas, but these are guidelines only." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does alimony last?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Duration depends on the length of marriage and circumstances. Short marriages (under 5 years) may produce limited-term payments; medium marriages (5–15 years) often result in payments for roughly 30–50% of the marriage length; long marriages (15+ years) may result in indefinite payments until remarriage or death. UK courts increasingly favour time-limited orders." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can alimony be changed after divorce?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Either party can apply to court for a variation if there is a material change in circumstances — such as the paying spouse losing their job, a significant change in income, the receiving spouse remarrying or cohabiting, or a serious health change. In the UK, a clean break order prevents future maintenance claims." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>💍 Alimony / Spousal Support Calculator</h1>
+    <p class="subtitle">Estimate spousal maintenance — UK &amp; US guidance</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('uk')">🇬🇧 UK Spousal Maintenance</button>
+        <button class="tab-btn" onclick="switchTab('us')">🇺🇸 US Alimony Estimate</button>
+    </div>
+
+    <div id="tab-uk">
+        <div class="card">
+            <p style="color:#607d8b; font-size:0.88rem; margin-bottom:20px;">UK courts have wide discretion — this is a broad estimate only. Actual orders vary significantly.</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Higher Earner's Annual Income (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="uk-high" placeholder="65000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Lower Earner's Annual Income (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="uk-low" placeholder="20000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Length of Marriage (years)</label>
+                    <input type="number" id="uk-years" placeholder="10" min="0">
+                </div>
+                <div class="input-group">
+                    <label>Children under 18?</label>
+                    <select id="uk-children">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcUK()">Estimate UK Spousal Maintenance</button>
+        </div>
+        <div id="uk-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="uk-monthly">£0/mo</div>
+                    <div class="big-label">Estimated Monthly Maintenance</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="uk-annual">£0</div><div class="lbl">Per Year</div></div>
+                    <div class="result-box"><div class="val" id="uk-duration">—</div><div class="lbl">Indicative Duration</div></div>
+                    <div class="result-box"><div class="val" id="uk-total">£0</div><div class="lbl">Estimated Total</div></div>
+                </div>
+                <p style="color:#607d8b; font-size:0.83rem; margin-top:16px;">⚠️ UK courts have wide discretion. This estimate uses a simplified income-sharing approach. Actual orders vary significantly based on needs, lifestyle, and all circumstances. Always seek legal advice.</p>
+                <button class="reset-btn" onclick="resetUK()">Recalculate</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-us" style="display:none;">
+        <div class="card">
+            <p style="color:#607d8b; font-size:0.88rem; margin-bottom:20px;">US alimony varies widely by state. This uses common advisory guidelines as a broad estimate.</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Paying Spouse Gross Annual Income ($)</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="us-payor" placeholder="90000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Receiving Spouse Gross Annual Income ($)</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="us-payee" placeholder="30000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Length of Marriage (years)</label>
+                    <input type="number" id="us-years" placeholder="12" min="0">
+                </div>
+                <div class="input-group">
+                    <label>Alimony Type</label>
+                    <select id="us-type">
+                        <option value="rehabilitative">Rehabilitative (time-limited)</option>
+                        <option value="permanent">Permanent / Long-term</option>
+                        <option value="lump">Lump sum estimate</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcUS()">Estimate US Alimony</button>
+        </div>
+        <div id="us-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="us-monthly">$0/mo</div>
+                    <div class="big-label">Estimated Monthly Alimony</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="us-annual">$0</div><div class="lbl">Per Year</div></div>
+                    <div class="result-box"><div class="val" id="us-duration">—</div><div class="lbl">Estimated Duration</div></div>
+                    <div class="result-box"><div class="val" id="us-total">$0</div><div class="lbl">Estimated Total</div></div>
+                </div>
+                <p style="color:#607d8b; font-size:0.83rem; margin-top:16px;">⚠️ Alimony varies widely by state — some states (like Texas) rarely award it; others (like California) may award significant amounts. Consult a family law attorney in your state.</p>
+                <button class="reset-btn" onclick="resetUS()">Recalculate</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>How Alimony & Spousal Maintenance Work</h2>
+        <p>Unlike child support, there is no fixed formula for alimony (US) or spousal maintenance (UK). Courts have wide discretion and consider the needs of both parties, the standard of living during the marriage, each spouse's earning capacity, health and age, and contributions made (including as a homemaker or carer).</p>
+        <p>In the UK, the general approach is to meet the reasonable needs of the lower-earning spouse while considering the other's ability to pay. In the US, many states have advisory guidelines, but courts retain full discretion.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How is alimony calculated?</h3>
+        <p>There is no single national formula for alimony in either the UK or US. In the UK (called spousal maintenance), courts look at both parties' needs and resources. A commonly used starting point is to aim for roughly equal incomes after payment — so if there's a £45,000 income gap, maintenance might be set at around £15,000–£22,500 per year, adjusted for needs. In the US, some states use formulas like 30–40% of the income difference divided by 12 for monthly payments, but this varies enormously by state.</p>
+
+        <h3>How long does alimony last?</h3>
+        <p>Duration depends heavily on marriage length and circumstances. For short marriages (under 5 years) in the UK, courts increasingly favour no maintenance or a very short term. For medium marriages (5–15 years), joint-lives orders (until remarriage or death) are becoming less common, with time-limited orders preferred to promote financial independence. For long marriages (15+ years) with a significant income gap — especially where one spouse sacrificed a career — longer or indefinite orders are more likely. In the US, rehabilitative alimony is most common, lasting until the receiving spouse can become self-supporting.</p>
+
+        <h3>Can alimony be changed after divorce?</h3>
+        <p>Yes. Either party can apply to vary a maintenance order if there is a material change in circumstances: job loss, significant income change, serious illness, the receiving spouse remarrying or cohabiting, or retirement. In the UK, a "clean break" consent order prevents future claims entirely — this is often preferred where both parties have sufficient assets. In the US, modifying alimony requires a court petition and proof of substantial change.</p>
+
+        <h3>Is alimony taxable in the UK and US?</h3>
+        <p>In the UK, spousal maintenance received is not taxable income for the recipient and is not tax-deductible for the payer (for orders made after 1988). In the US, the tax treatment changed under the 2017 Tax Cuts and Jobs Act: for divorce agreements finalised after 31 December 2018, alimony is no longer deductible by the payer and is no longer taxable income for the recipient. For older agreements (pre-2019), the old rules still apply — payments are deductible by the payer and taxable income for the recipient.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ Legal Disclaimer:</strong> This calculator provides rough estimates for informational purposes only. Alimony and spousal maintenance decisions are highly fact-specific and at judicial discretion. Always consult a qualified family law solicitor or attorney before making decisions based on these estimates.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>⚖️ <a href="https://legalcalctools.com">Legal Calc Tools</a> &nbsp;|&nbsp; <a href="https://legalcalctools.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://legalcalctools.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Legal Calc Tools. All rights reserved.</p>
+</footer>
+<script>
+const tabs = ['uk','us'];
+function switchTab(t) {
+    tabs.forEach(id => document.getElementById('tab-'+id).style.display = id===t?'block':'none');
+    document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', tabs[i]===t));
+}
+function calcUK() {
+    const high = parseFloat(document.getElementById('uk-high').value) || 0;
+    const low = parseFloat(document.getElementById('uk-low').value) || 0;
+    const years = parseFloat(document.getElementById('uk-years').value) || 0;
+    const hasChildren = document.getElementById('uk-children').value === 'yes';
+
+    const gap = Math.max(0, high - low);
+    const annualMaint = gap * (years < 5 ? 0.25 : years < 10 ? 0.33 : 0.4);
+    const monthly = annualMaint / 12;
+
+    let duration = years < 3 ? 'Up to 2 years' : years < 7 ? '2–5 years' : years < 15 ? '5–10 years' : 'Potentially joint lives';
+    if (hasChildren) duration += ' (may extend while caring for children)';
+
+    const durationYears = years < 3 ? 2 : years < 7 ? 4 : years < 15 ? 8 : years;
+    const total = annualMaint * durationYears;
+
+    document.getElementById('uk-monthly').textContent = '£' + monthly.toFixed(0) + '/mo';
+    document.getElementById('uk-annual').textContent = '£' + annualMaint.toFixed(0);
+    document.getElementById('uk-duration').textContent = duration.split('(')[0].trim();
+    document.getElementById('uk-total').textContent = '£' + total.toFixed(0);
+    document.getElementById('uk-results').classList.add('show');
+}
+function resetUK() { document.getElementById('uk-results').classList.remove('show'); }
+
+function calcUS() {
+    const payor = parseFloat(document.getElementById('us-payor').value) || 0;
+    const payee = parseFloat(document.getElementById('us-payee').value) || 0;
+    const years = parseFloat(document.getElementById('us-years').value) || 0;
+    const type = document.getElementById('us-type').value;
+
+    const gap = Math.max(0, payor - payee);
+    const monthlyRaw = (gap * 0.30) / 12;
+    const monthly = Math.min(monthlyRaw, payor * 0.40 / 12);
+
+    let durationYears = type === 'permanent' ? years : Math.ceil(years * (years < 5 ? 0.4 : years < 10 ? 0.45 : 0.5));
+    if (type === 'lump') durationYears = 1;
+
+    const total = type === 'lump' ? monthly * 12 * durationYears : monthly * 12 * durationYears;
+
+    document.getElementById('us-monthly').textContent = '$' + monthly.toFixed(0) + '/mo';
+    document.getElementById('us-annual').textContent = '$' + (monthly*12).toFixed(0);
+    document.getElementById('us-duration').textContent = type === 'lump' ? 'One-time payment' : durationYears + ' year(s)';
+    document.getElementById('us-total').textContent = '$' + total.toFixed(0);
+    document.getElementById('us-results').classList.add('show');
+}
+function resetUS() { document.getElementById('us-results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

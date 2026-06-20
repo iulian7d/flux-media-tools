@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stamp Duty Calculator 2026 - UK SDLT First-Time Buyer & Second Home</title>
+    <meta name="description" content="Free UK stamp duty calculator 2026. Calculate SDLT on property purchases including first-time buyer relief, second home 5% surcharge, Scotland LBTT, and Wales LTT rates.">
+    <meta name="keywords" content="stamp duty calculator 2026, SDLT calculator, stamp duty first time buyer, stamp duty second home, stamp duty land tax calculator UK">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="../main-site/styles.css">
+    <link rel="canonical" href="https://stamp-duty.homecalctools.com">
+    <meta property="og:title" content="Stamp Duty Calculator 2026 - UK SDLT">
+    <meta property="og:description" content="Free UK stamp duty calculator. Includes first-time buyer relief, second home surcharge, Scotland and Wales rates.">
+    <meta property="og:url" content="https://stamp-duty.homecalctools.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "UK Stamp Duty Calculator 2026",
+  "url": "https://stamp-duty.homecalctools.com",
+  "description": "Calculate UK stamp duty (SDLT) on property purchases. Includes first-time buyer relief, second home surcharge, Scotland LBTT, and Wales LTT.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+  "publisher": { "@type": "Organization", "name": "Home Calc Tools", "url": "https://homecalctools.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much stamp duty do I pay on a house in 2026?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In England and Northern Ireland (2026), stamp duty (SDLT) thresholds are: 0% on the first £250,000; 5% on £250,001–£925,000; 10% on £925,001–£1.5 million; 12% above £1.5 million. First-time buyers pay 0% up to £425,000 and 5% on £425,001–£625,000 (full relief removed above £625,000). Second home buyers pay an additional 5% surcharge on each band." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do first-time buyers pay stamp duty?",
+      "acceptedAnswer": { "@type": "Answer", "text": "First-time buyers in England get relief on properties up to £625,000. They pay 0% on the first £425,000 and 5% on the portion between £425,001 and £625,000. If the property costs more than £625,000, no first-time buyer relief applies and standard rates are charged on the full amount. In Scotland and Wales, different thresholds apply to first-time buyers." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much extra stamp duty do you pay on a second home?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Since October 2024, buyers of additional residential properties (second homes, buy-to-let) in England pay a 5% surcharge on top of standard stamp duty rates on every band. So the effective rates for a second home in England are: 5% on £0–£250,000; 10% on £250,001–£925,000; 15% on £925,001–£1.5 million; 17% above £1.5 million." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the stamp duty rates in Scotland?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Scotland has its own Land and Buildings Transaction Tax (LBTT), not SDLT. The 2026 rates are: 0% on £0–£145,000; 2% on £145,001–£250,000; 5% on £250,001–£325,000; 10% on £325,001–£750,000; 12% above £750,000. First-time buyers get relief with a 0% band up to £175,000. An Additional Dwelling Supplement (ADS) of 8% applies to second homes in Scotland." }
+    },
+    {
+      "@type": "Question",
+      "name": "When do I need to pay stamp duty?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Stamp duty must be paid within 14 days of completing a property purchase in England and Northern Ireland. Your solicitor or conveyancer will typically handle the payment on your behalf and include it in the completion statement. Failure to pay on time results in interest charges and potential penalties from HMRC." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>📋 Stamp Duty Calculator 2026</h1>
+    <p class="subtitle">UK SDLT — England, Scotland (LBTT) &amp; Wales (LTT)</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('england')">England &amp; NI</button>
+        <button class="tab-btn" onclick="switchTab('scotland')">Scotland (LBTT)</button>
+        <button class="tab-btn" onclick="switchTab('wales')">Wales (LTT)</button>
+    </div>
+
+    <!-- England / NI -->
+    <div id="tab-england">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Property Purchase Price (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="eng-price" placeholder="350000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Buyer Type</label>
+                    <select id="eng-buyer">
+                        <option value="standard">Standard (moving home)</option>
+                        <option value="ftb">First-time buyer</option>
+                        <option value="second">Second home / Buy-to-let</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcEngland()">Calculate Stamp Duty →</button>
+        </div>
+        <div id="eng-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="eng-total">£0</div>
+                    <div class="big-label">Total Stamp Duty (SDLT)</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="eng-effective">0%</div><div class="lbl">Effective Rate</div></div>
+                    <div class="result-box"><div class="val" id="eng-price-show">£0</div><div class="lbl">Property Price</div></div>
+                    <div class="result-box"><div class="val" id="eng-total-cost">£0</div><div class="lbl">Total Cost (Price + SDLT)</div></div>
+                </div>
+                <table class="breakdown-table" id="eng-breakdown" style="margin-top:16px;"></table>
+                <button class="reset-btn" onclick="resetEng()">Calculate Another</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scotland -->
+    <div id="tab-scotland" style="display:none;">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Property Purchase Price (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="sco-price" placeholder="250000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Buyer Type</label>
+                    <select id="sco-buyer">
+                        <option value="standard">Standard buyer</option>
+                        <option value="ftb">First-time buyer</option>
+                        <option value="second">Additional property (ADS)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcScotland()">Calculate LBTT →</button>
+        </div>
+        <div id="sco-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="sco-total">£0</div>
+                    <div class="big-label">Total LBTT (Scotland)</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="sco-effective">0%</div><div class="lbl">Effective Rate</div></div>
+                    <div class="result-box"><div class="val" id="sco-ads">£0</div><div class="lbl">ADS (if applicable)</div></div>
+                    <div class="result-box"><div class="val" id="sco-total-cost">£0</div><div class="lbl">Total Cost</div></div>
+                </div>
+                <table class="breakdown-table" id="sco-breakdown" style="margin-top:16px;"></table>
+                <button class="reset-btn" onclick="resetSco()">Calculate Another</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wales -->
+    <div id="tab-wales" style="display:none;">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Property Purchase Price (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="wal-price" placeholder="250000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Buyer Type</label>
+                    <select id="wal-buyer">
+                        <option value="standard">Standard buyer</option>
+                        <option value="ftb">First-time buyer</option>
+                        <option value="second">Additional property (4% surcharge)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcWales()">Calculate LTT →</button>
+        </div>
+        <div id="wal-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="wal-total">£0</div>
+                    <div class="big-label">Total LTT (Wales)</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="wal-effective">0%</div><div class="lbl">Effective Rate</div></div>
+                    <div class="result-box"><div class="val" id="wal-price-show">£0</div><div class="lbl">Property Price</div></div>
+                    <div class="result-box"><div class="val" id="wal-total-cost">£0</div><div class="lbl">Total Cost</div></div>
+                </div>
+                <table class="breakdown-table" id="wal-breakdown" style="margin-top:16px;"></table>
+                <button class="reset-btn" onclick="resetWal()">Calculate Another</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>UK Stamp Duty Rates 2026</h2>
+        <p><strong>England &amp; Northern Ireland (SDLT):</strong> Standard rates — 0% up to £250,000; 5% on £250,001–£925,000; 10% on £925,001–£1.5M; 12% above £1.5M. First-time buyers: 0% up to £425,000; 5% on £425,001–£625,000 (no relief above £625,000). Second home/BTL: standard rates + 5% surcharge on every band.</p>
+        <p><strong>Scotland (LBTT):</strong> 0% up to £145,000; 2% on £145,001–£250,000; 5% on £250,001–£325,000; 10% on £325,001–£750,000; 12% above £750,000. First-time buyer relief: 0% up to £175,000. Additional Dwelling Supplement (ADS): 8% on top of standard rates.</p>
+        <p><strong>Wales (LTT):</strong> 0% up to £225,000; 6% on £225,001–£400,000; 7.5% on £400,001–£750,000; 10% on £750,001–£1.5M; 12% above £1.5M. First-time buyer relief: no additional relief beyond standard 0% band. Additional property surcharge: 4%.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How much stamp duty do I pay on a house in 2026?</h3>
+        <p>For a typical English property: a £300,000 home would incur SDLT of: £0 on the first £250,000 + 5% on £50,000 = £2,500 total. A £500,000 home: £0 on £250,000 + 5% on £250,000 = £12,500. A first-time buyer purchasing at £500,000 pays: £0 on first £425,000 + 5% on £75,000 = £3,750 — saving £8,750 vs standard rates. Use the calculator above for your specific property price.</p>
+
+        <h3>Do first-time buyers pay stamp duty?</h3>
+        <p>First-time buyers in England benefit from significant relief. Properties up to £425,000: 0% stamp duty. Properties from £425,001 to £625,000: 5% only on the amount above £425,000. For a £500,000 property, a first-time buyer saves £8,750 vs a standard buyer. Important: all buyers on the transaction must be first-time buyers, and the property must be your only home and main residence. The relief doesn't apply to investment properties or shared ownership purchases in all cases — check HMRC guidance.</p>
+
+        <h3>How much extra stamp duty do you pay on a second home?</h3>
+        <p>Since October 2024, second homes in England attract a 5% Additional Dwelling Supplement on top of standard rates. For a £300,000 second home: standard SDLT = £2,500 + 5% surcharge on full £300,000 = £15,000 extra = £17,500 total. This applies to any property you purchase when you already own a residential property, including buy-to-let investments. You can claim a refund if you sell your previous main home within 36 months.</p>
+
+        <h3>What are the stamp duty rates in Scotland?</h3>
+        <p>Scotland uses Land and Buildings Transaction Tax (LBTT). For a £250,000 property: 0% on first £145,000 (£0) + 2% on £105,000 = £2,100 total. For a £400,000 property: £0 + 2% on £105,000 (£2,100) + 5% on £75,000 (£3,750) = £5,850. Additional property buyers in Scotland pay an 8% Additional Dwelling Supplement (ADS) on the full purchase price — so for a £250,000 additional property: £2,100 LBTT + £20,000 ADS = £22,100 total.</p>
+
+        <h3>When do I need to pay stamp duty?</h3>
+        <p>In England and Northern Ireland, SDLT must be filed and paid within 14 days of completion. In Scotland, LBTT must be paid within 30 days of completion. In Wales, LTT must be paid within 30 days. Your solicitor will normally handle this as part of the conveyancing process and include the stamp duty amount in your completion statement. If you're doing a no-solicitor (DIY) conveyance, you must file a return and pay directly to HMRC/Revenue Scotland/Welsh Revenue Authority.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ Disclaimer:</strong> Stamp duty calculations are based on published 2026 rates. Tax legislation can change — always verify current rates at gov.uk, revenue.scot, or gov.wales before completing a property purchase. This is not tax advice.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>🏠 <a href="https://homecalctools.com">Home Calc Tools</a> &nbsp;|&nbsp; <a href="https://homecalctools.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://homecalctools.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Home Calc Tools. All rights reserved. Not financial or legal advice.</p>
+</footer>
+<script>
+function switchTab(t) {
+    ['england','scotland','wales'].forEach(id => document.getElementById('tab-'+id).style.display = id===t?'block':'none');
+    document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', ['england','scotland','wales'][i]===t));
+}
+function fmt(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
+function calcBanded(price, bands) {
+    let total = 0;
+    let rows = [{ label: 'Band', range: 'Rate', amount: 'Tax' }];
+    let prev = 0;
+    for (const b of bands) {
+        if (price <= prev) break;
+        const taxable = Math.min(price, b.to) - prev;
+        const tax = taxable * b.rate;
+        total += tax;
+        rows.push({ label: fmt(prev+1) + ' – ' + (b.to >= 999999999 ? 'above' : fmt(b.to)), range: (b.rate*100).toFixed(1) + '%', amount: fmt(tax) });
+        prev = b.to;
+    }
+    return { total, rows };
+}
+
+const engStandard = [
+    { to: 250000, rate: 0.00 }, { to: 925000, rate: 0.05 }, { to: 1500000, rate: 0.10 }, { to: 999999999, rate: 0.12 }
+];
+const engFtb = [
+    { to: 425000, rate: 0.00 }, { to: 625000, rate: 0.05 }, { to: 925000, rate: 0.05 }, { to: 1500000, rate: 0.10 }, { to: 999999999, rate: 0.12 }
+];
+const engSecond = [
+    { to: 250000, rate: 0.05 }, { to: 925000, rate: 0.10 }, { to: 1500000, rate: 0.15 }, { to: 999999999, rate: 0.17 }
+];
+
+function calcEngland() {
+    const price = parseFloat(document.getElementById('eng-price').value);
+    const buyer = document.getElementById('eng-buyer').value;
+    if (!price || price <= 0) { alert('Please enter the property price.'); return; }
+
+    let bands = buyer === 'ftb' && price <= 625000 ? engFtb : buyer === 'second' ? engSecond : engStandard;
+    const { total, rows } = calcBanded(price, bands);
+    const effective = price > 0 ? (total/price*100).toFixed(2) : 0;
+
+    document.getElementById('eng-total').textContent = fmt(total);
+    document.getElementById('eng-effective').textContent = effective + '%';
+    document.getElementById('eng-price-show').textContent = fmt(price);
+    document.getElementById('eng-total-cost').textContent = fmt(price + total);
+
+    let html = '<tr><th>Band</th><th>Rate</th><th>Tax</th></tr>';
+    rows.slice(1).forEach(r => { html += `<tr><td>${r.label}</td><td>${r.range}</td><td>${r.amount}</td></tr>`; });
+    html += `<tr class="total"><td colspan="2"><strong>Total SDLT</strong></td><td><strong>${fmt(total)}</strong></td></tr>`;
+    document.getElementById('eng-breakdown').innerHTML = html;
+    document.getElementById('eng-results').classList.add('show');
+    document.getElementById('eng-results').scrollIntoView({behavior:'smooth'});
+}
+function resetEng() { document.getElementById('eng-results').classList.remove('show'); }
+
+const scoBands = [
+    { to: 145000, rate: 0.00 }, { to: 250000, rate: 0.02 }, { to: 325000, rate: 0.05 }, { to: 750000, rate: 0.10 }, { to: 999999999, rate: 0.12 }
+];
+const scoFtbBands = [
+    { to: 175000, rate: 0.00 }, { to: 250000, rate: 0.02 }, { to: 325000, rate: 0.05 }, { to: 750000, rate: 0.10 }, { to: 999999999, rate: 0.12 }
+];
+
+function calcScotland() {
+    const price = parseFloat(document.getElementById('sco-price').value);
+    const buyer = document.getElementById('sco-buyer').value;
+    if (!price || price <= 0) { alert('Please enter the property price.'); return; }
+
+    const bands = buyer === 'ftb' ? scoFtbBands : scoBands;
+    const { total } = calcBanded(price, bands);
+    const ads = buyer === 'second' ? price * 0.08 : 0;
+    const grandTotal = total + ads;
+    const effective = price > 0 ? (grandTotal/price*100).toFixed(2) : 0;
+
+    document.getElementById('sco-total').textContent = fmt(grandTotal);
+    document.getElementById('sco-effective').textContent = effective + '%';
+    document.getElementById('sco-ads').textContent = ads > 0 ? fmt(ads) : 'N/A';
+    document.getElementById('sco-total-cost').textContent = fmt(price + grandTotal);
+
+    const { rows } = calcBanded(price, bands);
+    let html = '<tr><th>Band</th><th>Rate</th><th>Tax</th></tr>';
+    rows.slice(1).forEach(r => { html += `<tr><td>${r.label}</td><td>${r.range}</td><td>${r.amount}</td></tr>`; });
+    if (ads > 0) html += `<tr><td>ADS surcharge</td><td>8% on full price</td><td>${fmt(ads)}</td></tr>`;
+    html += `<tr class="total"><td colspan="2"><strong>Total LBTT</strong></td><td><strong>${fmt(grandTotal)}</strong></td></tr>`;
+    document.getElementById('sco-breakdown').innerHTML = html;
+    document.getElementById('sco-results').classList.add('show');
+    document.getElementById('sco-results').scrollIntoView({behavior:'smooth'});
+}
+function resetSco() { document.getElementById('sco-results').classList.remove('show'); }
+
+const walBands = [
+    { to: 225000, rate: 0.00 }, { to: 400000, rate: 0.06 }, { to: 750000, rate: 0.075 }, { to: 1500000, rate: 0.10 }, { to: 999999999, rate: 0.12 }
+];
+const walSecondBands = [
+    { to: 225000, rate: 0.04 }, { to: 400000, rate: 0.10 }, { to: 750000, rate: 0.115 }, { to: 1500000, rate: 0.14 }, { to: 999999999, rate: 0.16 }
+];
+
+function calcWales() {
+    const price = parseFloat(document.getElementById('wal-price').value);
+    const buyer = document.getElementById('wal-buyer').value;
+    if (!price || price <= 0) { alert('Please enter the property price.'); return; }
+
+    const bands = buyer === 'second' ? walSecondBands : walBands;
+    const { total, rows } = calcBanded(price, bands);
+    const effective = price > 0 ? (total/price*100).toFixed(2) : 0;
+
+    document.getElementById('wal-total').textContent = fmt(total);
+    document.getElementById('wal-effective').textContent = effective + '%';
+    document.getElementById('wal-price-show').textContent = fmt(price);
+    document.getElementById('wal-total-cost').textContent = fmt(price + total);
+
+    let html = '<tr><th>Band</th><th>Rate</th><th>Tax</th></tr>';
+    rows.slice(1).forEach(r => { html += `<tr><td>${r.label}</td><td>${r.range}</td><td>${r.amount}</td></tr>`; });
+    html += `<tr class="total"><td colspan="2"><strong>Total LTT</strong></td><td><strong>${fmt(total)}</strong></td></tr>`;
+    document.getElementById('wal-breakdown').innerHTML = html;
+    document.getElementById('wal-results').classList.add('show');
+    document.getElementById('wal-results').scrollIntoView({behavior:'smooth'});
+}
+function resetWal() { document.getElementById('wal-results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

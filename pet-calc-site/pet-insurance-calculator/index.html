@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Insurance Cost Estimator - Dog & Cat Insurance 2026</title>
+    <meta name="description" content="Free pet insurance cost estimator 2026. Find out how much dog and cat insurance costs based on breed, age, and location. Compare coverage types and understand what affects your premium.">
+    <meta name="keywords" content="pet insurance cost calculator, dog insurance cost, cat insurance cost estimator, pet insurance UK US, how much is pet insurance, pet insurance premiums">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="../main-site/styles.css">
+    <link rel="canonical" href="https://pet-insurance.pawcalculators.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Pet Insurance Cost Estimator 2026",
+  "url": "https://pet-insurance.pawcalculators.com",
+  "description": "Estimate monthly pet insurance premiums for dogs and cats. Based on breed, age, coverage type, and location.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "Paw Calculators", "url": "https://pawcalculators.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does pet insurance cost per month?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In the UK, average dog insurance costs £30–£80/month for accident and illness cover, or £15–£40/month for accident-only. Cat insurance averages £15–£40/month. In the US, dog insurance averages $30–$70/month (around $480–$840/year), while cat insurance averages $15–$40/month. Actual premiums vary greatly by breed, age, location, deductible chosen, and coverage limits." }
+    },
+    {
+      "@type": "Question",
+      "name": "What factors affect pet insurance premiums?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The main factors are: pet species (dogs are more expensive than cats); breed (breeds prone to hereditary conditions like hip dysplasia, heart disease, or cancer cost more); age (premiums rise steeply as pets get older, especially over 7–8 years); location (urban areas and regions with higher vet costs have higher premiums); coverage level (lifetime vs annual vs accident-only); chosen excess/deductible; and whether the pet is neutered or not." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is pet insurance worth it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For most pet owners, pet insurance is worth it as protection against large unexpected bills. Vet bills for serious conditions like cancer treatment, orthopaedic surgery, or serious accidents can run to £3,000–£15,000+ in the UK or $5,000–$20,000+ in the US. Even a single emergency surgery can cost more than years of insurance premiums. The value is greatest for younger pets with lifetime cover, where premiums are lower but the policy builds a claim history." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between lifetime and annual pet insurance?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Lifetime pet insurance covers conditions up to a set limit per year, and the limit renews each year — meaning long-term conditions like diabetes or arthritis are covered year after year. Annual (or time-limited) policies cover conditions for a maximum of 12 months per condition, then exclude them. Lifetime cover is more expensive but provides far better protection for chronic conditions that develop as your pet ages. Always check how ongoing conditions are handled before buying." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does pet insurance typically not cover?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most standard pet insurance policies do not cover: pre-existing conditions (conditions that existed before the policy start date); routine and preventive care (vaccinations, flea/worm treatment, dental cleanings) unless you add a wellness rider; pregnancy and whelping; cosmetic procedures; elective procedures; food and supplements even if prescribed; and conditions related to the pet's breed if listed as a breed exclusion. Always read the policy wording carefully." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>🏥 Pet Insurance Cost Estimator</h1>
+    <p class="subtitle">Estimate monthly premiums for dog &amp; cat insurance — UK &amp; US</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('uk')">🇬🇧 UK Estimate</button>
+        <button class="tab-btn" onclick="switchTab('us')">🇺🇸 US Estimate</button>
+    </div>
+
+    <div id="tab-uk">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Pet Type</label>
+                    <select id="uk-species">
+                        <option value="dog" selected>Dog</option>
+                        <option value="cat">Cat</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Age (years)</label>
+                    <input type="number" id="uk-age" placeholder="3" min="0" max="20" step="0.5">
+                </div>
+                <div class="input-group">
+                    <label>Breed Risk</label>
+                    <select id="uk-breed">
+                        <option value="low">Low risk (e.g. Mixed breed, Labrador)</option>
+                        <option value="medium" selected>Medium risk (e.g. Spaniel, Beagle)</option>
+                        <option value="high">High risk (e.g. French Bulldog, Pug, German Shepherd)</option>
+                        <option value="very-high">Very high risk (e.g. Great Dane, Irish Wolfhound)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Coverage Type</label>
+                    <select id="uk-coverage">
+                        <option value="accident">Accident only</option>
+                        <option value="annual">Annual (12-month per condition)</option>
+                        <option value="lifetime" selected>Lifetime cover (recommended)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcUK()">Estimate UK Premium</button>
+        </div>
+        <div id="uk-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="uk-monthly">£0/mo</div>
+                    <div class="big-label">Estimated Monthly Premium</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="uk-annual-cost">£0</div><div class="lbl">Per Year</div></div>
+                    <div class="result-box"><div class="val" id="uk-coverage-level">—</div><div class="lbl">Coverage Type</div></div>
+                    <div class="result-box"><div class="val" id="uk-range">£0–£0</div><div class="lbl">Typical Range/mo</div></div>
+                </div>
+                <div class="breed-result" id="uk-note"></div>
+                <button class="reset-btn" onclick="resetUK()">Recalculate</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-us" style="display:none;">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Pet Type</label>
+                    <select id="us-species">
+                        <option value="dog" selected>Dog</option>
+                        <option value="cat">Cat</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Age (years)</label>
+                    <input type="number" id="us-age" placeholder="3" min="0" max="20" step="0.5">
+                </div>
+                <div class="input-group">
+                    <label>Breed Risk</label>
+                    <select id="us-breed">
+                        <option value="low">Low risk / Mixed breed</option>
+                        <option value="medium" selected>Medium risk</option>
+                        <option value="high">High risk (Bulldog, Pug, etc.)</option>
+                        <option value="very-high">Very high risk (Giant breeds)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Annual Deductible</label>
+                    <select id="us-deductible">
+                        <option value="100">$100 (higher premium)</option>
+                        <option value="250" selected>$250 (standard)</option>
+                        <option value="500">$500 (lower premium)</option>
+                        <option value="1000">$1,000 (lowest premium)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Reimbursement Level</label>
+                    <select id="us-reimburse">
+                        <option value="70">70%</option>
+                        <option value="80" selected>80%</option>
+                        <option value="90">90%</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Location</label>
+                    <select id="us-location">
+                        <option value="rural">Rural / Lower cost state</option>
+                        <option value="suburban" selected>Suburban</option>
+                        <option value="urban">Urban / High cost city</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcUS()">Estimate US Premium</button>
+        </div>
+        <div id="us-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="us-monthly">$0/mo</div>
+                    <div class="big-label">Estimated Monthly Premium</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="us-annual-cost">$0</div><div class="lbl">Per Year</div></div>
+                    <div class="result-box"><div class="val" id="us-deductible-show">$250</div><div class="lbl">Annual Deductible</div></div>
+                    <div class="result-box"><div class="val" id="us-range">$0–$0</div><div class="lbl">Typical Range/mo</div></div>
+                </div>
+                <div class="breed-result" id="us-note"></div>
+                <button class="reset-btn" onclick="resetUS()">Recalculate</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>Pet Insurance: What You Need to Know</h2>
+        <p>Pet insurance helps spread the cost of unexpected vet bills. A single emergency — a broken leg, swallowed object, cancer diagnosis, or serious infection — can easily cost £2,000–£10,000 in the UK or $3,000–$15,000 in the US. Monthly premiums of £20–£80 or $20–$70 can make the difference between being able to afford treatment and having to make heartbreaking decisions.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How much does pet insurance cost per month?</h3>
+        <p>UK averages: cats £15–£35/month for accident and illness; dogs £25–£80/month for lifetime cover. Flat-nosed (brachycephalic) breeds like French Bulldogs and Pugs typically cost 50–100% more than other breeds. US averages: cats $15–$35/month; dogs $25–$65/month with standard coverage. Premiums rise significantly as pets age — a 10-year-old Labrador might cost 2–3× more to insure than a 3-year-old. Getting insurance while your pet is young is strongly advised.</p>
+
+        <h3>What factors affect pet insurance premiums?</h3>
+        <p>The biggest factors are: age (premiums increase 10–20% per year in middle age; after 8–10, increases can be 30–50%+ per year); breed (breeds with known hereditary conditions are rated higher); location (London/NYC premiums are typically 20–40% higher than rural areas); coverage type (lifetime cover costs 30–60% more than annual cover); excess/deductible chosen; and claim history (insurers can raise premiums or restrict cover at renewal after claims). Note: many insurers stop offering new policies for pets over 8–10 years old.</p>
+
+        <h3>Is pet insurance worth it?</h3>
+        <p>Statistically, for most pet owners, pet insurance provides valuable peace of mind even if you don't "come out ahead" financially every year. The real value is in being able to say "yes" to treatment without financial constraints — to do what's best for your pet rather than what's affordable. Emergency surgeries, cancer treatment (chemotherapy costs £3,000–£10,000), and chronic conditions that need lifelong medication are where insurance pays its way most clearly. Self-insuring (saving the premium amount each month) works only if you have significant savings already available from day one.</p>
+
+        <h3>What is the difference between lifetime and annual pet insurance?</h3>
+        <p>This is the most important distinction in UK pet insurance. Annual/time-limited cover: covers each condition for 12 months or up to a fixed sum, then permanently excludes it. If your dog develops arthritis at 3 years old, annual cover pays for 12 months, then excludes arthritis forever — right when it becomes most expensive to treat. Lifetime cover: renews the coverage limit each year for ongoing conditions. Your arthritic dog would be covered at renewal as long as you maintain the policy. Lifetime cover costs more but is far more valuable for the long term. In the US, most policies are accident and illness policies without this distinction.</p>
+
+        <h3>What does pet insurance typically not cover?</h3>
+        <p>Standard exclusions include: pre-existing conditions (crucial — get insurance before problems develop); routine and preventive care unless on a wellness add-on (vaccines, flea/tick/worm prevention, dental cleanings, neutering); pregnancy and whelping costs; cosmetic procedures; food and prescription diets even if vet-recommended; behaviour problems; and injuries during illegal activities. Some insurers also exclude breed-specific conditions. Read the policy wording and ask specifically about any conditions your breed is known for before buying.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ Disclaimer:</strong> Premium estimates are indicative only and based on typical market rates as of 2026. Actual premiums vary significantly by insurer, specific breed, health history, and individual underwriting. Always compare quotes from multiple insurers before buying. This is not financial advice.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>🐾 <a href="https://pawcalculators.com">Paw Calculators</a> &nbsp;|&nbsp; <a href="https://pawcalculators.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://pawcalculators.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Paw Calculators. Estimates only — get quotes directly from insurers.</p>
+</footer>
+<script>
+function switchTab(t) {
+    ['uk','us'].forEach(id => document.getElementById('tab-'+id).style.display = id===t?'block':'none');
+    document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', ['uk','us'][i]===t));
+}
+
+function calcUK() {
+    const species = document.getElementById('uk-species').value;
+    const age = parseFloat(document.getElementById('uk-age').value) || 3;
+    const breed = document.getElementById('uk-breed').value;
+    const coverage = document.getElementById('uk-coverage').value;
+
+    // Base rates (£/month)
+    const speciesBase = { dog: 35, cat: 18 }[species];
+    const breedMult = { low: 0.8, medium: 1.0, high: 1.5, 'very-high': 2.0 }[breed];
+    const coverageMult = { accident: 0.5, annual: 0.75, lifetime: 1.0 }[coverage];
+
+    // Age multiplier (increases steeply with age)
+    let ageMult = 1.0;
+    if (age < 1) ageMult = 0.7;
+    else if (age < 3) ageMult = 0.85;
+    else if (age < 5) ageMult = 1.0;
+    else if (age < 7) ageMult = 1.2;
+    else if (age < 9) ageMult = 1.6;
+    else if (age < 12) ageMult = 2.2;
+    else ageMult = 3.0;
+
+    const monthly = Math.round(speciesBase * breedMult * coverageMult * ageMult);
+    const low = Math.round(monthly * 0.7);
+    const high = Math.round(monthly * 1.4);
+
+    document.getElementById('uk-monthly').textContent = '£' + monthly + '/mo';
+    document.getElementById('uk-annual-cost').textContent = '£' + (monthly * 12).toLocaleString();
+    document.getElementById('uk-coverage-level').textContent = { accident: 'Accident only', annual: 'Annual limit', lifetime: 'Lifetime cover' }[coverage];
+    document.getElementById('uk-range').textContent = '£' + low + '–£' + high;
+    document.getElementById('uk-note').textContent = coverage === 'lifetime'
+        ? 'Lifetime cover is recommended — it covers ongoing conditions year after year. Annual policies exclude conditions after 12 months, which can leave older pets uninsured for their most expensive health issues.'
+        : 'Consider upgrading to lifetime cover. Annual and accident-only policies exclude conditions after 12 months or exclude all illness, which significantly limits protection as your pet ages.';
+    document.getElementById('uk-results').classList.add('show');
+}
+function resetUK() { document.getElementById('uk-results').classList.remove('show'); }
+
+function calcUS() {
+    const species = document.getElementById('us-species').value;
+    const age = parseFloat(document.getElementById('us-age').value) || 3;
+    const breed = document.getElementById('us-breed').value;
+    const deductible = parseInt(document.getElementById('us-deductible').value);
+    const reimburse = parseInt(document.getElementById('us-reimburse').value);
+    const location = document.getElementById('us-location').value;
+
+    const speciesBase = { dog: 40, cat: 22 }[species];
+    const breedMult = { low: 0.8, medium: 1.0, high: 1.5, 'very-high': 1.9 }[breed];
+    const deductibleMult = { 100: 1.25, 250: 1.0, 500: 0.8, 1000: 0.65 }[deductible];
+    const reimburseMult = { 70: 0.85, 80: 1.0, 90: 1.18 }[reimburse];
+    const locationMult = { rural: 0.8, suburban: 1.0, urban: 1.3 }[location];
+
+    let ageMult = 1.0;
+    if (age < 1) ageMult = 0.75;
+    else if (age < 3) ageMult = 0.9;
+    else if (age < 6) ageMult = 1.0;
+    else if (age < 8) ageMult = 1.25;
+    else if (age < 11) ageMult = 1.7;
+    else ageMult = 2.5;
+
+    const monthly = Math.round(speciesBase * breedMult * deductibleMult * reimburseMult * locationMult * ageMult);
+    const low = Math.round(monthly * 0.7);
+    const high = Math.round(monthly * 1.4);
+
+    document.getElementById('us-monthly').textContent = '$' + monthly + '/mo';
+    document.getElementById('us-annual-cost').textContent = '$' + (monthly * 12).toLocaleString();
+    document.getElementById('us-deductible-show').textContent = '$' + deductible;
+    document.getElementById('us-range').textContent = '$' + low + '–$' + high;
+    document.getElementById('us-note').textContent = 'US pet insurance typically reimburses ' + reimburse + '% of covered costs after your $' + deductible + ' annual deductible. Actual premiums vary by insurer, ZIP code, and benefit limit ($5,000–unlimited). Get quotes from multiple providers (Lemonade, Healthy Paws, Trupanion, Embrace) to compare.';
+    document.getElementById('us-results').classList.add('show');
+}
+function resetUS() { document.getElementById('us-results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance Tax Calculator UK 2026 - IHT Estimate</title>
+    <meta name="description" content="Free UK Inheritance Tax (IHT) calculator 2026. Estimate tax due on an estate including nil-rate band, residence nil-rate band, spouse exemption, and charity relief. Instant results.">
+    <meta name="keywords" content="inheritance tax calculator UK, IHT calculator 2026, inheritance tax estimate, nil rate band calculator, estate tax UK">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="../main-site/styles.css">
+    <meta property="og:title" content="Inheritance Tax Calculator UK 2026">
+    <meta property="og:description" content="Calculate UK Inheritance Tax on an estate. Includes nil-rate band, residence nil-rate band, spouse exemption, and charity relief.">
+    <meta property="og:url" content="https://inheritance-tax.legalcalctools.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Legal Calc Tools">
+    <link rel="canonical" href="https://inheritance-tax.legalcalctools.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "UK Inheritance Tax Calculator 2026",
+  "url": "https://inheritance-tax.legalcalctools.com",
+  "description": "Calculate UK Inheritance Tax including nil-rate band, residence nil-rate band, and exemptions. Free, instant estimate.",
+  "applicationCategory": "LegalApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+  "publisher": { "@type": "Organization", "name": "Legal Calc Tools", "url": "https://legalcalctools.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much is UK Inheritance Tax?",
+      "acceptedAnswer": { "@type": "Answer", "text": "UK Inheritance Tax (IHT) is charged at 40% on the value of an estate above the nil-rate band (£325,000). If you leave your home to direct descendants, the residence nil-rate band (£175,000) may also apply. Estates left to a spouse or civil partner are fully exempt." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the nil-rate band for Inheritance Tax in 2026?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The nil-rate band (NRB) is £325,000 and has been frozen until at least 2028. The residence nil-rate band (RNRB) adds a further £175,000 if a home is left to direct descendants, potentially giving a total threshold of £500,000 per person, or £1 million for a married couple using transferred allowances." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do spouses pay Inheritance Tax in the UK?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Assets passed between spouses or civil partners are completely exempt from Inheritance Tax, regardless of value. Additionally, any unused nil-rate band from the first spouse to die can be transferred to the surviving spouse's estate, potentially doubling the available threshold." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>🏦 Inheritance Tax Calculator</h1>
+    <p class="subtitle">UK IHT Estimate — 2025/26 rules</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Total Estate Value (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="estate-value" placeholder="600000" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Value of Residential Property (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="property-value" placeholder="350000" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Left to spouse / civil partner?</label>
+                <select id="spouse">
+                    <option value="no">No (or not applicable)</option>
+                    <option value="yes">Yes — spouse/civil partner inherits</option>
+                    <option value="partial">Partially — split between spouse and others</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Spouse's unused NRB transferable?</label>
+                <select id="transfer-nrb">
+                    <option value="no">No (first death or not applicable)</option>
+                    <option value="yes">Yes — deceased spouse's full NRB unused</option>
+                    <option value="partial">Partial — some NRB was used by spouse</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Property left to direct descendants?</label>
+                <select id="rnrb">
+                    <option value="yes">Yes — children/grandchildren inherit home</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Gifts to charity (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="charity" placeholder="0" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Debts & funeral costs to deduct (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="debts" placeholder="0" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Gifts given in last 7 years (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="gifts7" placeholder="0" min="0"></div>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcIHT()">Calculate Inheritance Tax</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="iht-due">£0</div>
+                <div class="big-label">Estimated Inheritance Tax Due</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="taxable-estate">£0</div><div class="lbl">Taxable Estate</div></div>
+                <div class="result-box"><div class="val" id="allowance-used">£0</div><div class="lbl">Total Allowance</div></div>
+                <div class="result-box"><div class="val" id="effective-rate">0%</div><div class="lbl">Effective Tax Rate</div></div>
+            </div>
+            <h3 style="font-size:1rem; margin:20px 0 14px; color:#1a2e44;">Tax Breakdown</h3>
+            <table class="breakdown-table" id="breakdown"></table>
+            <button class="reset-btn" onclick="resetCalc()">Recalculate</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>How UK Inheritance Tax Works</h2>
+        <p>Inheritance Tax (IHT) is a tax on the estate (money, property, and possessions) of a person who has died. The standard rate is <strong>40%</strong> on the value above the nil-rate band. If at least 10% of the net estate is left to charity, a reduced rate of <strong>36%</strong> applies instead.</p>
+        <p>The <strong>nil-rate band (NRB)</strong> is £325,000 and is frozen until 2028. The <strong>residence nil-rate band (RNRB)</strong> of £175,000 applies when a residential property is left to direct descendants (children, grandchildren). This gives a potential total threshold of £500,000 per person, or £1 million for a married couple using both sets of allowances.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How much is UK Inheritance Tax?</h3>
+        <p>Inheritance Tax is charged at 40% on the value of an estate above the nil-rate band (£325,000). A reduced rate of 36% applies if at least 10% of the estate is left to charity. The residence nil-rate band (RNRB) of £175,000 can be added to the NRB if a home is passed to direct descendants, raising the threshold to £500,000 per person. Estates left to a spouse or civil partner are fully exempt from IHT.</p>
+
+        <h3>What is the nil-rate band for Inheritance Tax in 2026?</h3>
+        <p>The nil-rate band remains frozen at £325,000 until at least April 2028. The residence nil-rate band adds a further £175,000 if a home is left to direct descendants, giving a potential £500,000 per person. If a spouse died before you and didn't use their full NRB, the unused amount can be transferred to your estate — potentially giving a combined NRB of £650,000 and RNRB of £350,000, totalling £1 million before IHT applies.</p>
+
+        <h3>Do spouses pay Inheritance Tax in the UK?</h3>
+        <p>No. Assets passed between married spouses or civil partners are completely exempt from Inheritance Tax regardless of value. This is known as the spouse exemption. Additionally, any unused nil-rate band from the first spouse to die is automatically transferred to the surviving spouse's estate. This is claimed by the executors of the second estate and can effectively double the available allowances.</p>
+
+        <h3>What gifts are exempt from Inheritance Tax?</h3>
+        <p>Several gifts are exempt: the annual exemption allows you to give up to £3,000 per year tax-free (and carry forward one year's unused allowance). Small gifts up to £250 per person per year are exempt. Wedding gifts up to certain limits are exempt (£5,000 to children, £2,500 to grandchildren, £1,000 to anyone else). Gifts to charity, political parties, and housing associations are also exempt. Gifts made more than 7 years before death are generally outside the estate.</p>
+
+        <h3>How do gifts in the last 7 years affect IHT?</h3>
+        <p>Gifts made within 7 years before death are included in the estate for IHT purposes and are called "potentially exempt transfers" (PETs). If you die within 3 years of making the gift, it is taxed at the full 40%. Between 3–7 years, a sliding scale called taper relief reduces the tax: 32% (3–4 yrs), 24% (4–5 yrs), 16% (5–6 yrs), 8% (6–7 yrs). After 7 years, the gift is completely outside the estate.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ Legal Disclaimer:</strong> This calculator provides an estimate for informational purposes only and does not constitute legal, financial, or tax advice. IHT rules are complex and fact-specific. Always consult a qualified solicitor, tax advisor, or financial planner regarding your estate.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>⚖️ <a href="https://legalcalctools.com">Legal Calc Tools</a> &nbsp;|&nbsp; <a href="https://legalcalctools.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://legalcalctools.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Legal Calc Tools. All rights reserved.</p>
+</footer>
+
+<script>
+function calcIHT() {
+    const estateValue = parseFloat(document.getElementById('estate-value').value) || 0;
+    const propertyValue = parseFloat(document.getElementById('property-value').value) || 0;
+    const spouse = document.getElementById('spouse').value;
+    const transferNRB = document.getElementById('transfer-nrb').value;
+    const rnrbEligible = document.getElementById('rnrb').value === 'yes';
+    const charity = parseFloat(document.getElementById('charity').value) || 0;
+    const debts = parseFloat(document.getElementById('debts').value) || 0;
+    const gifts7 = parseFloat(document.getElementById('gifts7').value) || 0;
+
+    let netEstate = estateValue - debts - charity + gifts7;
+    if (netEstate < 0) netEstate = 0;
+
+    // Determine NRB
+    let nrb = 325000;
+    if (transferNRB === 'yes') nrb += 325000;
+    else if (transferNRB === 'partial') nrb += 162500;
+
+    // Determine RNRB
+    let rnrb = 0;
+    if (rnrbEligible && propertyValue > 0) {
+        rnrb = Math.min(propertyValue, 175000);
+        if (transferNRB === 'yes') rnrb = Math.min(propertyValue, 350000);
+        else if (transferNRB === 'partial') rnrb = Math.min(propertyValue, 262500);
+        // Taper RNRB for large estates
+        if (netEstate > 2000000) rnrb = Math.max(0, rnrb - (netEstate - 2000000) / 2);
+    }
+
+    const totalAllowance = nrb + rnrb;
+    let taxable = Math.max(0, netEstate - totalAllowance);
+
+    // Charity rate reduction (if charity >= 10% of net estate)
+    const charityPct = estateValue > 0 ? charity / (estateValue - debts) : 0;
+    const rate = charityPct >= 0.10 ? 0.36 : 0.40;
+
+    // Spouse exemption — if full estate to spouse, no IHT
+    if (spouse === 'yes') taxable = 0;
+    if (spouse === 'partial') taxable = taxable / 2;
+
+    const ihtDue = taxable * rate;
+    const effectiveRate = estateValue > 0 ? (ihtDue / estateValue * 100) : 0;
+
+    document.getElementById('iht-due').textContent = '£' + ihtDue.toLocaleString('en-GB', {minimumFractionDigits:0, maximumFractionDigits:0});
+    document.getElementById('taxable-estate').textContent = '£' + taxable.toLocaleString('en-GB', {maximumFractionDigits:0});
+    document.getElementById('allowance-used').textContent = '£' + totalAllowance.toLocaleString('en-GB', {maximumFractionDigits:0});
+    document.getElementById('effective-rate').textContent = effectiveRate.toFixed(1) + '%';
+
+    const rows = `
+        <tr><th>Item</th><th>Amount</th></tr>
+        <tr><td>Gross estate</td><td>£${estateValue.toLocaleString('en-GB')}</td></tr>
+        <tr><td>Less: debts &amp; funeral costs</td><td>-£${debts.toLocaleString('en-GB')}</td></tr>
+        <tr><td>Less: charity gifts</td><td>-£${charity.toLocaleString('en-GB')}</td></tr>
+        <tr><td>Plus: gifts in last 7 years</td><td>+£${gifts7.toLocaleString('en-GB')}</td></tr>
+        <tr><td>Net chargeable estate</td><td>£${netEstate.toLocaleString('en-GB')}</td></tr>
+        <tr><td>Nil-rate band</td><td>-£${nrb.toLocaleString('en-GB')}</td></tr>
+        ${rnrb > 0 ? `<tr><td>Residence nil-rate band</td><td>-£${rnrb.toLocaleString('en-GB')}</td></tr>` : ''}
+        ${spouse !== 'no' ? `<tr><td>Spouse exemption applied</td><td>✓</td></tr>` : ''}
+        <tr class="total"><td><strong>Taxable amount @ ${(rate*100).toFixed(0)}%</strong></td><td><strong>£${taxable.toLocaleString('en-GB')}</strong></td></tr>
+        <tr class="total"><td><strong>IHT Due</strong></td><td><strong>£${ihtDue.toLocaleString('en-GB', {maximumFractionDigits:0})}</strong></td></tr>
+    `;
+    document.getElementById('breakdown').innerHTML = rows;
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+function resetCalc() { document.getElementById('results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

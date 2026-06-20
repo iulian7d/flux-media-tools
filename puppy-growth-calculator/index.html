@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puppy Growth Calculator - Predict Adult Weight 2026</title>
+    <meta name="description" content="Free puppy growth calculator 2026. Predict your puppy's adult weight based on current age and weight. Covers small, medium, large, and giant breeds with growth milestone tracking.">
+    <meta name="keywords" content="puppy growth calculator, puppy adult weight calculator, how big will my puppy get, puppy weight predictor, puppy growth chart">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://puppy-growth-calculator.fluxmediasystems.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Puppy Growth Calculator 2026",
+  "url": "https://puppy-growth-calculator.fluxmediasystems.com",
+  "description": "Predict your puppy's adult weight and track growth milestones. Covers all breed sizes. Free, instant, no sign-up.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "Flux Media Systems", "url": "https://fluxmediasystems.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can I predict my puppy's adult weight?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The most reliable formula is: for small and medium breeds, take the puppy's weight at 16 weeks and multiply by 2. For large breeds, divide the puppy's 20-week weight by the percentage of adult growth expected at that age (typically around 50%). For mixed breeds, the midpoint of the parents' weights is a good estimate. DNA breed tests can also help predict adult size." }
+    },
+    {
+      "@type": "Question",
+      "name": "When do puppies stop growing?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Growth completion depends on breed size: small breeds (under 10 kg adult) typically stop growing at 8–12 months; medium breeds at 12–15 months; large breeds at 15–18 months; giant breeds (Great Danes, Mastiffs) may not finish growing until 18–24 months. While physical height may stop sooner, puppies continue to fill out (add muscle and body mass) for several months after reaching full height." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I feed my puppy large-breed puppy food?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if your puppy will be over 25 kg as an adult. Large-breed puppy foods have controlled calcium and phosphorus levels and a lower calorie density. This slows growth to a healthy rate and reduces the risk of developmental orthopaedic diseases like osteochondrosis and hip dysplasia, which are linked to overly rapid growth. Small and medium breeds can use regular puppy food." }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast should a healthy puppy grow?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Small breeds gain about 5–10% of their body weight per week in the first few months. Medium breeds gain 10–15%. Large and giant breeds grow rapidly early on. If your puppy is losing weight, not gaining, or gaining very inconsistently, a vet check is recommended. Sudden plateaus can indicate illness or inadequate nutrition. Puppies should roughly double their birth weight in the first week." }
+    },
+    {
+      "@type": "Question",
+      "name": "What factors affect how big a puppy will grow?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The main factor is genetics (breed and parent size). Other factors include nutrition (underfeeding stunts growth; overfeeding in large breeds causes abnormal bone development), sex (males are typically larger than females), health (intestinal parasites and chronic disease can stunt growth), and spay/neuter timing (early neutering can cause delayed growth plate closure and slightly taller adults in some breeds)." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>🐾 Puppy Growth Calculator</h1>
+    <p class="subtitle">Predict your puppy's adult weight and track growth milestones</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Puppy's Current Age</label>
+                <input type="number" id="age-weeks" placeholder="12" min="4" max="52">
+            </div>
+            <div class="input-group">
+                <label>Age Unit</label>
+                <select id="age-unit">
+                    <option value="weeks" selected>Weeks</option>
+                    <option value="months">Months</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Puppy's Current Weight</label>
+                <input type="number" id="weight" placeholder="4.5" min="0.1" step="0.1">
+            </div>
+            <div class="input-group">
+                <label>Weight Unit</label>
+                <select id="weight-unit">
+                    <option value="kg">kg</option>
+                    <option value="lbs">lbs</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Expected Adult Size</label>
+                <select id="breed-size">
+                    <option value="toy">Toy (adult under 5 kg / 11 lbs)</option>
+                    <option value="small">Small (adult 5–10 kg / 11–22 lbs)</option>
+                    <option value="medium" selected>Medium (adult 10–25 kg / 22–55 lbs)</option>
+                    <option value="large">Large (adult 25–45 kg / 55–100 lbs)</option>
+                    <option value="giant">Giant (adult over 45 kg / 100 lbs)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Sex</label>
+                <select id="sex">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcGrowth()">Predict Adult Weight →</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="adult-weight">—</div>
+                <div class="big-label">Predicted Adult Weight</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="pct-grown">—</div><div class="lbl">% of Adult Size Now</div></div>
+                <div class="result-box"><div class="val" id="fully-grown">—</div><div class="lbl">Fully Grown By</div></div>
+                <div class="result-box"><div class="val" id="adult-lbs">—</div><div class="lbl">Predicted (lbs)</div></div>
+            </div>
+            <div class="breed-result" id="growth-note"></div>
+            <button class="reset-btn" onclick="resetCalc()">Try Another Puppy</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>How to Predict Puppy Adult Weight</h2>
+        <p>Puppy weight prediction uses growth curves that track what percentage of adult size puppies typically reach at each age. The formula varies by breed size because small and large breeds grow at very different rates.</p>
+        <p>A common rule of thumb: <strong>small/medium breeds</strong> are ~50% of adult weight at 16 weeks; <strong>large breeds</strong> are ~50% at 20 weeks; <strong>giant breeds</strong> are ~50% at 24–28 weeks. So: current weight ÷ percentage at current age × 100 = estimated adult weight.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How can I predict my puppy's adult weight?</h3>
+        <p>The most reliable formula for small and medium breeds: weight at 16 weeks × 2 = approximate adult weight. For large breeds: weight at 20 weeks ÷ 0.5 (i.e., × 2). For giant breeds: weight at 24 weeks ÷ 0.45. For mixed breeds, average the expected weights of both parents as a baseline. If you have the puppy's weight at multiple ages, growth curves (available from your vet) give the most accurate prediction.</p>
+
+        <h3>When do puppies stop growing?</h3>
+        <p>This varies significantly by size: Toy and small breeds stop growing at 8–12 months. Medium breeds at 12–15 months. Large breeds at 15–18 months. Giant breeds continue growing until 18–24 months — a Great Dane or Saint Bernard isn't fully grown until nearly two years old. Mental and emotional maturity often lags behind physical maturity by 6–12 months more.</p>
+
+        <h3>Should I feed my puppy large-breed puppy food?</h3>
+        <p>If your puppy will weigh more than 25 kg (55 lbs) as an adult, large-breed puppy food is strongly recommended. These formulas contain controlled calcium and phosphorus (around 1.1% calcium vs 1.4–1.6% in regular puppy foods) and lower calorie density. This slows growth to a biologically appropriate rate, reducing the risk of osteochondrosis (OCD), elbow dysplasia, and hip dysplasia — all of which are worsened by rapid, calcium-heavy growth.</p>
+
+        <h3>How fast should a healthy puppy grow?</h3>
+        <p>Healthy puppies roughly double their birth weight in the first 7–10 days. After that, small breeds gain ~5–10 g/day in early weeks; large breeds gain 70–90 g/day. Puppies should always be gaining weight, not losing it (except in the first 24–48 hours of life). A puppy that fails to gain weight for more than 2–3 days needs vet attention. Monthly weigh-ins help track growth and catch problems early.</p>
+
+        <h3>What factors affect how big a puppy will grow?</h3>
+        <p>Genetics are the biggest factor — the size of the parents predicts adult size more reliably than any formula. Other factors: sex (males typically weigh 10–20% more than females of the same breed); spay/neuter timing (early neutering delays growth plate closure, potentially adding 1–2 cm of height); nutrition (over-nutrition in large breeds causes abnormal bone development; under-nutrition stunts growth); and health (intestinal parasites, parvovirus, and chronic illness during puppyhood can affect adult size).</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>🐾 Disclaimer:</strong> Puppy adult weight predictions are estimates based on typical breed growth curves. Actual adult weight can vary by ±20% from predictions. Your veterinarian can provide more precise growth monitoring.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>🐾 <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Paw Calculators. Results are for informational purposes only — consult your vet.</p>
+</footer>
+<script>
+// Growth percentages by age (weeks) for each size category
+// Values represent % of adult weight typically reached at that age
+const growthCurves = {
+    toy:   { 4:18, 8:35, 12:52, 16:65, 20:76, 24:84, 30:92, 36:96, 40:98, 52:100 },
+    small: { 4:15, 8:30, 12:45, 16:57, 20:68, 24:76, 30:87, 36:93, 40:97, 52:100 },
+    medium:{ 4:12, 8:26, 12:39, 16:52, 20:62, 24:72, 30:82, 36:89, 40:94, 52:100 },
+    large: { 4:9,  8:20, 12:30, 16:43, 20:53, 24:63, 30:75, 36:84, 40:90, 52:98 },
+    giant: { 4:7,  8:15, 12:24, 16:35, 20:44, 24:53, 30:65, 36:75, 40:82, 52:93 }
+};
+const fullyGrownAge = { toy: '8–10 months', small: '10–12 months', medium: '12–15 months', large: '15–18 months', giant: '18–24 months' };
+const growthNotes = {
+    toy: 'Toy breeds grow quickly and are often fully mature by 8–10 months. Transition to adult food at around 9–12 months.',
+    small: 'Small breeds usually finish growing by 10–12 months. They can transition to adult food around 12 months.',
+    medium: 'Medium breeds typically finish growing at 12–15 months. Transition to adult food at 12–15 months.',
+    large: 'Large breeds take longer to mature — transition to adult food at 12–18 months, not when they "look big". Large breed adult food helps maintain joint health.',
+    giant: 'Giant breeds have the slowest growth and should stay on large-breed puppy food until 18–24 months. Do NOT transition to adult food early — they need the controlled nutrient ratios for safe bone development.'
+};
+
+function getGrowthPct(size, ageWeeks) {
+    const curve = growthCurves[size];
+    const keys = Object.keys(curve).map(Number).sort((a,b)=>a-b);
+    if (ageWeeks <= keys[0]) return curve[keys[0]];
+    if (ageWeeks >= keys[keys.length-1]) return curve[keys[keys.length-1]];
+    for (let i = 0; i < keys.length - 1; i++) {
+        if (ageWeeks >= keys[i] && ageWeeks <= keys[i+1]) {
+            const t = (ageWeeks - keys[i]) / (keys[i+1] - keys[i]);
+            return curve[keys[i]] + t * (curve[keys[i+1]] - curve[keys[i]]);
+        }
+    }
+    return 80;
+}
+
+function calcGrowth() {
+    let ageVal = parseFloat(document.getElementById('age-weeks').value);
+    let weight = parseFloat(document.getElementById('weight').value);
+    if (!ageVal || !weight) { alert('Please enter your puppy\'s age and weight.'); return; }
+    if (document.getElementById('age-unit').value === 'months') ageVal = ageVal * 4.33;
+    if (document.getElementById('weight-unit').value === 'lbs') weight = weight / 2.205;
+
+    const size = document.getElementById('breed-size').value;
+    const sex = document.getElementById('sex').value;
+    const sexFactor = sex === 'male' ? 1.08 : 0.95;
+
+    const pctNow = getGrowthPct(size, ageVal);
+    const adultKg = (weight / pctNow * 100) * sexFactor;
+    const adultLbs = adultKg * 2.205;
+
+    document.getElementById('adult-weight').textContent = adultKg.toFixed(1) + ' kg';
+    document.getElementById('pct-grown').textContent = Math.round(pctNow) + '%';
+    document.getElementById('fully-grown').textContent = fullyGrownAge[size];
+    document.getElementById('adult-lbs').textContent = adultLbs.toFixed(0) + ' lbs';
+    document.getElementById('growth-note').textContent = growthNotes[size];
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+function resetCalc() { document.getElementById('results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

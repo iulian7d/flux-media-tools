@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Tax Calculator 2026 - UK Council Tax &amp; US Property Tax</title>
+    <meta name="description" content="Free property tax calculator 2026. Estimate UK council tax by band and local authority, or calculate US property tax by state. Annual and monthly figures shown.">
+    <meta name="keywords" content="property tax calculator UK, council tax calculator 2026, US property tax calculator, council tax bands, annual property tax">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://property-tax-calculator.fluxmediasystems.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Property Tax Calculator 2026",
+  "url": "https://property-tax-calculator.fluxmediasystems.com",
+  "description": "Estimate UK council tax by band and local authority, or calculate US property tax by state. Annual and monthly amounts shown.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+  "publisher": { "@type": "Organization", "name": "Flux Media Systems", "url": "https://fluxmediasystems.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is council tax calculated in the UK?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Council tax in the UK is calculated based on two things: your property's council tax band (A to H in England and Scotland, A to I in Wales) and your local authority's annual charge for Band D properties. The Band D rate varies by council and is set annually. Other bands are calculated as a fraction of the Band D rate: Band A = 6/9; Band B = 7/9; Band C = 8/9; Band D = 9/9; Band E = 11/9; Band F = 13/9; Band G = 15/9; Band H = 18/9 (England). Your property's band was set in 1991 based on its value at that time." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the council tax bands and how much do they cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Council tax bands in England range from A (lowest value, cheapest) to H (highest value, most expensive). In 2025/26, the national average Band D council tax is approximately £2,171/year. Band A pays about £1,447/year; Band B £1,688; Band C £1,914; Band D £2,171; Band E £2,652; Band F £3,132; Band G £3,649; Band H £4,342. These are national averages — actual bills vary significantly by local council, with some charging over £3,000 for Band D." }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is exempt or gets a discount on council tax?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Key council tax discounts and exemptions: Single occupant discount (25% off); Student exemption (full-time students pay nothing; a property occupied only by students is exempt); Severely mentally impaired person exemption; Empty and unfurnished properties (some councils give a discount for up to 1 year, then may charge double); Care home residents are exempt. Council Tax Support (formerly Council Tax Benefit) is a means-tested discount for low-income households — apply through your local council." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the average property tax rate in the US?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The average effective property tax rate in the US is approximately 1.1% of assessed value per year, but it varies widely by state. New Jersey has the highest rate (~2.2%); Hawaii has the lowest (~0.3%). States like Texas (~1.6%), Illinois (~2.1%), and Connecticut (~1.8%) are high-tax states. California is relatively low (~0.7%) due to Proposition 13. Property tax rates also vary significantly within states, by county and municipality." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you appeal your council tax band in the UK?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — if you believe your property has been placed in the wrong band, you can appeal. Contact the Valuation Office Agency (VOA) in England and Wales, or the Scottish Assessors Association in Scotland. You'll need evidence that your property was wrongly banded in 1991 — typically by showing comparable properties nearby are in a lower band. Around 20–25% of council tax band appeals are successful. Note: in rare cases, an appeal can result in an upward rebanding, so check comparable properties before appealing." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>🏛️ Property Tax Calculator</h1>
+    <p class="subtitle">UK Council Tax by band &amp; US property tax by state</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="tab-bar">
+            <button class="tab-btn active" onclick="showTab('uk')">🇬🇧 UK Council Tax</button>
+            <button class="tab-btn" onclick="showTab('us')">🇺🇸 US Property Tax</button>
+        </div>
+
+        <!-- UK Tab -->
+        <div id="tab-uk" class="tab-content">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Council Tax Band</label>
+                    <select id="uk-band">
+                        <option value="A">Band A</option>
+                        <option value="B">Band B</option>
+                        <option value="C">Band C</option>
+                        <option value="D" selected>Band D</option>
+                        <option value="E">Band E</option>
+                        <option value="F">Band F</option>
+                        <option value="G">Band G</option>
+                        <option value="H">Band H</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Local Authority Type</label>
+                    <select id="uk-council-type" onchange="updateBandD()">
+                        <option value="2171">Average England council (£2,171 Band D)</option>
+                        <option value="2450">Higher-cost London/SE council (£2,450)</option>
+                        <option value="1900">Lower-cost council (£1,900)</option>
+                        <option value="2600">Highest-cost councils (£2,600+)</option>
+                        <option value="custom">Enter Band D rate manually</option>
+                    </select>
+                </div>
+                <div class="input-group" id="custom-band-d-group" style="display:none;">
+                    <label>Your Council's Band D Rate (£/year)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="uk-band-d" placeholder="2171" min="500" max="5000"></div>
+                </div>
+                <div class="input-group">
+                    <label>Discounts / Exemptions</label>
+                    <select id="uk-discount">
+                        <option value="0">None (full rate)</option>
+                        <option value="25">Single occupant (25% off)</option>
+                        <option value="50">Empty property (50% off)</option>
+                        <option value="100">Exempt (student/care home)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcUK()">Calculate Council Tax →</button>
+        </div>
+
+        <!-- US Tab -->
+        <div id="tab-us" class="tab-content" style="display:none;">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Property Assessed Value ($)</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="us-value" placeholder="350000" min="10000"></div>
+                </div>
+                <div class="input-group">
+                    <label>State</label>
+                    <select id="us-state">
+                        <option value="1.07">National Average (1.07%)</option>
+                        <option value="2.23">New Jersey (2.23%)</option>
+                        <option value="2.08">Illinois (2.08%)</option>
+                        <option value="1.83">Connecticut (1.83%)</option>
+                        <option value="1.76">Wisconsin (1.76%)</option>
+                        <option value="1.63">Texas (1.63%)</option>
+                        <option value="1.58">Nebraska (1.58%)</option>
+                        <option value="1.43">New York (1.43%)</option>
+                        <option value="1.31">Pennsylvania (1.31%)</option>
+                        <option value="1.20">Ohio (1.20%)</option>
+                        <option value="1.17">Michigan (1.17%)</option>
+                        <option value="1.07">Georgia (1.07%)</option>
+                        <option value="0.99">North Carolina (0.99%)</option>
+                        <option value="0.93">Virginia (0.93%)</option>
+                        <option value="0.89">Florida (0.89%)</option>
+                        <option value="0.83">Arizona (0.83%)</option>
+                        <option value="0.76">Washington (0.76%)</option>
+                        <option value="0.74">California (0.74%)</option>
+                        <option value="0.62">Utah (0.62%)</option>
+                        <option value="0.57">Colorado (0.57%)</option>
+                        <option value="0.29">Hawaii (0.29%)</option>
+                        <option value="custom">Custom rate</option>
+                    </select>
+                </div>
+                <div class="input-group" id="us-custom-rate-group" style="display:none;">
+                    <label>Custom Tax Rate (%)</label>
+                    <input type="number" id="us-custom-rate" placeholder="1.10" min="0" max="5" step="0.01">
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcUS()">Calculate Property Tax →</button>
+        </div>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="annual-tax">£0</div>
+                <div class="big-label" id="annual-label">Annual Property Tax</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="monthly-tax">£0</div><div class="lbl">Per Month</div></div>
+                <div class="result-box"><div class="val" id="weekly-tax">£0</div><div class="lbl">Per Week</div></div>
+                <div class="result-box"><div class="val" id="daily-tax">£0</div><div class="lbl">Per Day</div></div>
+            </div>
+            <table class="breakdown-table" id="tax-breakdown" style="margin-top:16px;"></table>
+            <button class="reset-btn" onclick="resetCalc()">Recalculate</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>Understanding Property Taxes</h2>
+        <p>In the UK, property tax takes the form of <strong>council tax</strong> — a locally-set annual charge paid by residents to fund local authority services including waste collection, road maintenance, libraries, and local policing. In the US, <strong>property tax</strong> is levied by state and local governments based on an assessed percentage of the property's market value.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How is council tax calculated in the UK?</h3>
+        <p>Council tax is based on your property's band (A–H in England, set by 1991 values) and your local council's annual Band D rate. Fractions of Band D apply to other bands: Band A = 6/9ths of Band D; Band B = 7/9ths; Band C = 8/9ths; Band D = full rate; Band E = 11/9ths; Band F = 13/9ths; Band G = 15/9ths; Band H = 18/9ths. In 2025/26, the average England Band D rate is ~£2,171/year — but councils in high-cost areas charge significantly more. Your local council's website will show the exact Band D rate for your area.</p>
+
+        <h3>What are the council tax bands and how much do they cost?</h3>
+        <p>England bands run from A (lowest) to H (highest). At the 2025/26 national average Band D rate of ~£2,171: Band A costs ~£1,447/year; Band B ~£1,688; Band C ~£1,914; Band D ~£2,171; Band E ~£2,652; Band F ~£3,132; Band G ~£3,649; Band H ~£4,342. Many councils charge 15–40% more than the national average. Check your council's website or gov.uk to find the exact rates in your area.</p>
+
+        <h3>Who is exempt or gets a discount on council tax?</h3>
+        <p>Single occupant discount: 25% off if you're the only adult in the property. Student exemption: full-time students pay nothing, and a property occupied solely by students is entirely exempt. Severely mentally impaired: disregarded for council tax purposes. Empty properties: some councils offer discounts for short-term vacancies, but many now charge 100–200% of the standard rate for long-term empty homes. Council Tax Support is a means-tested scheme offering a discount for low-income households — apply through your local council online. Disability relief is available if a room or extra bathroom is needed for a disabled resident.</p>
+
+        <h3>What is the average property tax rate in the US?</h3>
+        <p>The US national average effective property tax rate is approximately 1.07% of assessed value per year. New Jersey is highest at ~2.23%. Hawaii is lowest at ~0.29%. Texas (~1.63%), Illinois (~2.08%), and Wisconsin (~1.76%) are high-tax states; California (~0.74%, capped by Proposition 13), Colorado (~0.57%), and Utah (~0.62%) are lower. Within states, rates vary further by county and city. "Assessed value" also varies — some states assess at full market value, others at 60–80%.</p>
+
+        <h3>Can you appeal your council tax band in the UK?</h3>
+        <p>Yes — if you think your property is in too high a band, contact the Valuation Office Agency (VOA). Check comparable properties on the VOA website first (voa.gov.uk) to see what band similar homes in your street are in. If neighbours with similar properties are in a lower band, you may have grounds for appeal. Challenges must usually be made within 6 months of moving in, or at any time if you have new evidence. About 20–25% of appeals lead to a band reduction — but there's a small risk of being moved up a band, so do your research first.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ Disclaimer:</strong> Council tax rates shown are estimates based on national averages and may differ from your actual council's figures. US property tax estimates use state-level effective rates that vary by county and municipality. Check your local authority or county assessor for precise figures. This is not tax advice.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>🏠 <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Home Calc Tools. All rights reserved. Not tax advice.</p>
+</footer>
+<script>
+const bandMultipliers = { A: 6/9, B: 7/9, C: 8/9, D: 1, E: 11/9, F: 13/9, G: 15/9, H: 18/9 };
+
+function showTab(tab) {
+    document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tab).style.display = 'block';
+    event.target.classList.add('active');
+    document.getElementById('results').classList.remove('show');
+}
+
+function updateBandD() {
+    const v = document.getElementById('uk-council-type').value;
+    document.getElementById('custom-band-d-group').style.display = v === 'custom' ? 'block' : 'none';
+}
+
+document.getElementById('us-state').addEventListener('change', function() {
+    document.getElementById('us-custom-rate-group').style.display = this.value === 'custom' ? 'block' : 'none';
+});
+
+function calcUK() {
+    const band = document.getElementById('uk-band').value;
+    const councilType = document.getElementById('uk-council-type').value;
+    let bandD = councilType === 'custom' ? parseFloat(document.getElementById('uk-band-d').value) : parseFloat(councilType);
+    if (!bandD) { alert('Please enter a valid Band D rate.'); return; }
+    const discountPct = parseFloat(document.getElementById('uk-discount').value);
+    const mult = bandMultipliers[band];
+    const fullAnnual = bandD * mult;
+    const annual = fullAnnual * (1 - discountPct / 100);
+
+    showResults('£', annual, `
+        <tr><th>Item</th><th>Amount</th></tr>
+        <tr><td>Council's Band D rate</td><td>£${Math.round(bandD).toLocaleString('en-GB')}/yr</td></tr>
+        <tr><td>Your band (${band}) multiplier</td><td>${(mult * 9).toFixed(0)}/9 = ${(mult*100).toFixed(1)}%</td></tr>
+        <tr><td>Full Band ${band} charge</td><td>£${Math.round(fullAnnual).toLocaleString('en-GB')}/yr</td></tr>
+        <tr><td>Discount applied</td><td>${discountPct}% off</td></tr>
+        <tr class="total"><td><strong>Your annual council tax</strong></td><td><strong>£${Math.round(annual).toLocaleString('en-GB')}</strong></td></tr>
+    `, 'Annual Council Tax');
+}
+
+function calcUS() {
+    const value = parseFloat(document.getElementById('us-value').value) || 0;
+    let rateStr = document.getElementById('us-state').value;
+    let rate = rateStr === 'custom' ? parseFloat(document.getElementById('us-custom-rate').value) / 100 : parseFloat(rateStr) / 100;
+    if (!value || !rate) { alert('Please enter property value and select a state.'); return; }
+    const annual = value * rate;
+
+    showResults('$', annual, `
+        <tr><th>Item</th><th>Amount</th></tr>
+        <tr><td>Assessed property value</td><td>$${Math.round(value).toLocaleString('en-US')}</td></tr>
+        <tr><td>Effective tax rate</td><td>${(rate*100).toFixed(2)}%</td></tr>
+        <tr class="total"><td><strong>Annual property tax</strong></td><td><strong>$${Math.round(annual).toLocaleString('en-US')}</strong></td></tr>
+        <tr><td>Monthly escrow</td><td>$${Math.round(annual/12).toLocaleString('en-US')}/mo</td></tr>
+    `, 'Annual Property Tax', '$');
+}
+
+function showResults(symbol, annual, tableHTML, label, sym) {
+    const s = sym || symbol;
+    document.getElementById('annual-tax').textContent = s + Math.round(annual).toLocaleString();
+    document.getElementById('annual-label').textContent = label;
+    document.getElementById('monthly-tax').textContent = s + Math.round(annual/12).toLocaleString();
+    document.getElementById('weekly-tax').textContent = s + Math.round(annual/52).toLocaleString();
+    document.getElementById('daily-tax').textContent = s + (annual/365).toFixed(2);
+    document.getElementById('tax-breakdown').innerHTML = tableHTML;
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+function resetCalc() { document.getElementById('results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Support Calculator 2026 - UK CMS & US State Formula</title>
+    <meta name="description" content="Free child support calculator 2026 for the UK (Child Maintenance Service formula) and US (income shares model). Instant estimate, no sign-up required.">
+    <meta name="keywords" content="child support calculator, child maintenance calculator UK, child support estimator US, CMS calculator, how much child support">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta property="og:title" content="Child Support Calculator 2026 - UK & US">
+    <meta property="og:description" content="Estimate child support payments using UK Child Maintenance Service rates or US income shares model. Free, instant, no sign-up.">
+    <meta property="og:url" content="https://child-support-calculator.fluxmediasystems.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Legal Calc Tools">
+    <link rel="canonical" href="https://child-support-calculator.fluxmediasystems.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Child Support Calculator 2026",
+  "url": "https://child-support-calculator.fluxmediasystems.com",
+  "description": "Free child support calculator for the UK and US. Estimate payments using the UK CMS formula or US income shares model.",
+  "applicationCategory": "LegalApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "Flux Media Systems", "url": "https://fluxmediasystems.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is child support calculated in the UK?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The UK Child Maintenance Service (CMS) uses the paying parent's gross weekly income. The basic rate is 12% of gross income for 1 child, 16% for 2 children, and 19% for 3 or more. These rates are reduced if the paying parent has other children in their household." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is child support calculated in the US?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most US states use the Income Shares Model, which combines both parents' incomes to determine a total obligation, then splits it proportionally. A few states (including New York) use the Percentage of Income model based only on the non-custodial parent's income." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can child support be changed after it is set?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. In the UK you can request a CMS review annually or if circumstances change significantly (income changes by 25%+). In the US, either parent can petition the court for a modification if there is a substantial change in circumstances such as job loss, significant income change, or change in custody arrangements." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>👶 Child Support Calculator</h1>
+    <p class="subtitle">Estimate child maintenance payments — UK &amp; US</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('uk')">🇬🇧 UK (CMS)</button>
+        <button class="tab-btn" onclick="switchTab('us')">🇺🇸 US (Income Shares)</button>
+    </div>
+
+    <!-- UK Tab -->
+    <div id="tab-uk">
+        <div class="card">
+            <p style="color:#607d8b; font-size:0.9rem; margin-bottom:20px;">Based on the UK Child Maintenance Service (CMS) Basic Rate formula.</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Paying Parent's Gross Annual Income (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="uk-income" placeholder="35000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Number of Qualifying Children</label>
+                    <select id="uk-children">
+                        <option value="1">1 child</option>
+                        <option value="2">2 children</option>
+                        <option value="3">3 or more children</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Children in Paying Parent's Household</label>
+                    <select id="uk-other-children">
+                        <option value="0">None</option>
+                        <option value="1">1 child</option>
+                        <option value="2">2 children</option>
+                        <option value="3">3 or more children</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Overnight Stays Per Week</label>
+                    <select id="uk-nights">
+                        <option value="0">0 (no shared care)</option>
+                        <option value="1">1 night</option>
+                        <option value="2">2 nights</option>
+                        <option value="3">3 nights</option>
+                        <option value="4">4+ nights (shared care 50/50)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcUK()">Calculate UK Child Maintenance</button>
+        </div>
+        <div id="uk-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="uk-weekly">£0/wk</div>
+                    <div class="big-label">Weekly Child Maintenance</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="uk-monthly">£0</div><div class="lbl">Per Month</div></div>
+                    <div class="result-box"><div class="val" id="uk-annual">£0</div><div class="lbl">Per Year</div></div>
+                    <div class="result-box"><div class="val" id="uk-rate">12%</div><div class="lbl">Base Rate Applied</div></div>
+                </div>
+                <div id="uk-notes" style="margin-top:16px; padding:14px; background:#f0f4f8; border-radius:8px; font-size:0.88rem; color:#555;"></div>
+                <button class="reset-btn" onclick="resetUK()">Calculate Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- US Tab -->
+    <div id="tab-us" style="display:none;">
+        <div class="card">
+            <p style="color:#607d8b; font-size:0.9rem; margin-bottom:20px;">Based on the Income Shares Model (used by most US states). Results are estimates only.</p>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Your Gross Annual Income ($)</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="us-income1" placeholder="60000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Other Parent's Gross Annual Income ($)</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="us-income2" placeholder="40000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Number of Children</label>
+                    <select id="us-children">
+                        <option value="1">1 child</option>
+                        <option value="2">2 children</option>
+                        <option value="3">3 children</option>
+                        <option value="4">4 children</option>
+                        <option value="5">5+ children</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Custody Arrangement</label>
+                    <select id="us-custody">
+                        <option value="sole">Sole custody (you are custodial parent)</option>
+                        <option value="primary">Primary custody (you have child 65%+ of time)</option>
+                        <option value="shared">Shared custody (~50/50)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcUS()">Estimate US Child Support</button>
+        </div>
+        <div id="us-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="us-monthly">$0/mo</div>
+                    <div class="big-label">Estimated Monthly Child Support</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="us-annual">$0</div><div class="lbl">Per Year</div></div>
+                    <div class="result-box"><div class="val" id="us-obligation">$0</div><div class="lbl">Combined Obligation</div></div>
+                    <div class="result-box"><div class="val" id="us-share">0%</div><div class="lbl">Your Income Share</div></div>
+                </div>
+                <p style="color:#607d8b; font-size:0.85rem; margin-top:16px;">⚠️ Actual amounts vary significantly by state. This estimate uses average national guidelines. Consult a family law attorney for state-specific figures.</p>
+                <button class="reset-btn" onclick="resetUS()">Calculate Again</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>How Child Support Is Calculated</h2>
+        <p>In the UK, the Child Maintenance Service (CMS) uses a formula based on the paying parent's gross income. The base rates are 12% for 1 child, 16% for 2 children, and 19% for 3 or more. These rates are reduced if the paying parent has other dependent children living with them, and further reduced if the child spends overnight stays with them.</p>
+        <p>In the US, the majority of states use the Income Shares Model, which considers both parents' incomes. The combined income determines a total child support obligation from state-published tables, and each parent is responsible for their proportional share based on income.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How is child support calculated in the UK?</h3>
+        <p>The UK Child Maintenance Service uses the paying parent's gross weekly income. The basic rate is 12% of gross income for 1 qualifying child, 16% for 2, and 19% for 3 or more. These percentages are reduced by approximately 1/7th for each child the paying parent has in their own household. If the child spends 1–2 nights per week with the paying parent, the amount is reduced by 1/7th per night; 3 nights reduces it further; at 4+ nights (shared care), the amount is halved. Income above £3,000/week is not included in the calculation.</p>
+
+        <h3>How is child support calculated in the US?</h3>
+        <p>Most US states use the Income Shares Model. Both parents' gross incomes are combined to find a total support obligation from state guidelines tables. Each parent then pays their proportion — for example, if you earn 60% of the combined income and are the non-custodial parent, you pay 60% of the total obligation. Some states like New York and Texas use a Percentage of Income model based only on the non-custodial parent's income, with set percentages per child (17% for 1, 25% for 2, 29% for 3, etc.).</p>
+
+        <h3>Can child support be changed after it is set?</h3>
+        <p>In the UK, CMS arrangements are reviewed annually, and either parent can request an immediate review if circumstances change significantly (e.g., income changes by 25% or more). In the US, either parent can petition the court for a modification if there is a "substantial change in circumstances" — typically a job loss, significant income change, change in custody, or changes in the child's needs. Courts don't modify orders automatically; you must apply.</p>
+
+        <h3>What happens if child support isn't paid?</h3>
+        <p>In the UK, the CMS has enforcement powers including deducting from wages, bank accounts, or benefits, and can apply for a court order, driving licence suspension, or even imprisonment. In the US, enforcement is handled by state child support agencies — they can garnish wages, intercept tax refunds, suspend driving licences, report to credit agencies, and in serious cases pursue criminal charges for non-payment.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ Legal Disclaimer:</strong> This calculator provides estimates for informational purposes only and does not constitute legal or financial advice. Child support is determined by courts and agencies based on full circumstances. Always consult a qualified family law solicitor or attorney for advice specific to your case.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>⚖️ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Legal Calc Tools. All rights reserved.</p>
+</footer>
+
+<script>
+const tabs = ['uk','us'];
+function switchTab(t) {
+    tabs.forEach(id => {
+        document.getElementById('tab-'+id).style.display = id===t ? 'block' : 'none';
+    });
+    document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', tabs[i]===t));
+}
+
+// UK Calculation
+const UK_RATES = {1:0.12, 2:0.16, 3:0.19};
+const UK_OTHER_REDUCTION = {0:0, 1:1/15, 2:2/15, 3:3/15};
+const UK_NIGHTS_REDUCTION = {0:0, 1:1/7, 2:2/7, 3:3/7, 4:0.5};
+
+function calcUK() {
+    const annualIncome = parseFloat(document.getElementById('uk-income').value) || 0;
+    const children = document.getElementById('uk-children').value;
+    const otherChildren = document.getElementById('uk-other-children').value;
+    const nights = document.getElementById('uk-nights').value;
+
+    const weeklyIncome = Math.min(annualIncome / 52, 3000);
+    let rate = UK_RATES[Math.min(parseInt(children), 3)];
+    rate = rate * (1 - UK_OTHER_REDUCTION[Math.min(parseInt(otherChildren), 3)]);
+    let weekly = weeklyIncome * rate;
+    weekly = weekly * (1 - UK_NIGHTS_REDUCTION[Math.min(parseInt(nights), 4)]);
+    if (weekly < 7) weekly = 7; // flat rate minimum
+
+    document.getElementById('uk-weekly').textContent = '£' + weekly.toFixed(2) + '/wk';
+    document.getElementById('uk-monthly').textContent = '£' + (weekly * 52/12).toFixed(2);
+    document.getElementById('uk-annual').textContent = '£' + (weekly * 52).toFixed(2);
+    document.getElementById('uk-rate').textContent = (UK_RATES[Math.min(parseInt(children),3)] * 100).toFixed(0) + '%';
+
+    let notes = '';
+    if (parseInt(otherChildren) > 0) notes += `Rate reduced for ${otherChildren} other child(ren) in your household. `;
+    if (parseInt(nights) > 0) notes += `Amount reduced for ${nights} overnight stay(s) per week. `;
+    if (annualIncome/52 > 3000) notes += 'Income above £3,000/week is excluded from the calculation. ';
+    document.getElementById('uk-notes').textContent = notes || 'Standard rate applied with no reductions.';
+
+    document.getElementById('uk-results').classList.add('show');
+}
+function resetUK() { document.getElementById('uk-results').classList.remove('show'); }
+
+// US Calculation (simplified Income Shares)
+const US_OBLIGATION = {
+    1: [0.17, 0.16, 0.15, 0.14],
+    2: [0.25, 0.24, 0.23, 0.22],
+    3: [0.29, 0.28, 0.27, 0.26],
+    4: [0.31, 0.30, 0.29, 0.28],
+    5: [0.33, 0.32, 0.31, 0.30]
+};
+
+function calcUS() {
+    const income1 = parseFloat(document.getElementById('us-income1').value) || 0;
+    const income2 = parseFloat(document.getElementById('us-income2').value) || 0;
+    const children = parseInt(document.getElementById('us-children').value);
+    const custody = document.getElementById('us-custody').value;
+
+    const combined = income1 + income2;
+    if (combined === 0) { alert('Please enter at least one income.'); return; }
+
+    const incomeRange = combined < 50000 ? 0 : combined < 80000 ? 1 : combined < 120000 ? 2 : 3;
+    const rate = US_OBLIGATION[Math.min(children, 5)][incomeRange];
+    const totalObligation = combined / 12 * rate;
+    const myShare = income1 / combined;
+
+    let support = 0;
+    if (custody === 'sole') support = totalObligation * myShare;
+    else if (custody === 'primary') support = totalObligation * myShare * 0.65;
+    else support = totalObligation * Math.abs(myShare - 0.5) * 0.5;
+
+    document.getElementById('us-monthly').textContent = '$' + support.toFixed(2) + '/mo';
+    document.getElementById('us-annual').textContent = '$' + (support*12).toFixed(2);
+    document.getElementById('us-obligation').textContent = '$' + totalObligation.toFixed(2) + '/mo';
+    document.getElementById('us-share').textContent = (myShare * 100).toFixed(0) + '%';
+
+    document.getElementById('us-results').classList.add('show');
+}
+function resetUS() { document.getElementById('us-results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

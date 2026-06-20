@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statute of Limitations Calculator 2026 - US States & UK Limitation Periods</title>
+    <meta name="description" content="Free statute of limitations calculator 2026. Check if your legal claim is still within time. Covers personal injury, contracts, debt, and property by US state and UK limitation periods.">
+    <meta name="keywords" content="statute of limitations calculator, limitation period UK, how long to sue, time limit legal claim, statute of limitations by state">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://statute-of-limitations.fluxmediasystems.com">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Statute of Limitations Calculator 2026","url":"https://statute-of-limitations.fluxmediasystems.com","description":"Check if your legal claim is within time. Covers US states and UK limitation periods for injury, contracts, debt, and property.","applicationCategory":"LegalApplication","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Legal Calc Tools","url":"https://fluxmediasystems.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the statute of limitations for personal injury in the UK?","acceptedAnswer":{"@type":"Answer","text":"In England and Wales, the limitation period for personal injury claims is 3 years from the date of injury or from when you knew (or ought to have known) about it. For children, time starts running from their 18th birthday. Courts have discretion to extend time in exceptional cases."}},{"@type":"Question","name":"How long do I have to sue someone in the US?","acceptedAnswer":{"@type":"Answer","text":"The statute of limitations in the US varies by state and claim type. Personal injury typically ranges from 1–6 years (most states allow 2–3 years). Written contracts are usually 4–6 years. Oral contracts are shorter, typically 2–4 years. Debt collection varies by state and type of debt."}},{"@type":"Question","name":"What happens if I miss the statute of limitations?","acceptedAnswer":{"@type":"Answer","text":"If you file a claim after the limitation period has expired, the defendant can apply to have the case struck out. In most cases the court will dismiss the claim, and you lose your right to sue permanently. There are very limited exceptions — always act quickly if you think a claim may be approaching its deadline."}}]}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>⏱️ Statute of Limitations Calculator</h1>
+    <p class="subtitle">Check if your legal claim is still within time — UK &amp; US</p>
+</header>
+<div class="container">
+    <div class="ad-space"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('uk')">🇬🇧 UK Limitation Periods</button>
+        <button class="tab-btn" onclick="switchTab('us')">🇺🇸 US by State</button>
+    </div>
+
+    <div id="tab-uk">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Date of Incident / Breach</label>
+                    <input type="date" id="uk-date">
+                </div>
+                <div class="input-group">
+                    <label>Claim Type</label>
+                    <select id="uk-claim">
+                        <option value="3">Personal injury (3 years)</option>
+                        <option value="6">Contract / debt (6 years)</option>
+                        <option value="6">Negligence — property damage (6 years)</option>
+                        <option value="12">Mortgage debt (12 years)</option>
+                        <option value="12">Land / property (12 years)</option>
+                        <option value="3">Medical negligence (3 years)</option>
+                        <option value="6">Defamation (1 year — select and note below)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcUK()">Check UK Limitation</button>
+        </div>
+        <div id="uk-results" class="results">
+            <div class="card">
+                <div id="uk-status-box" style="text-align:center; padding:20px 0 16px;"></div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="uk-deadline">—</div><div class="lbl">Claim Deadline</div></div>
+                    <div class="result-box"><div class="val" id="uk-days-left">—</div><div class="lbl">Days Remaining</div></div>
+                    <div class="result-box"><div class="val" id="uk-period">—</div><div class="lbl">Limitation Period</div></div>
+                </div>
+                <div id="uk-advice" style="margin-top:16px; padding:14px; background:#f0f4f8; border-radius:8px; font-size:0.9rem; color:#555; line-height:1.6;"></div>
+                <button class="reset-btn" onclick="resetUK()">Check Another Claim</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-us" style="display:none;">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Date of Incident</label>
+                    <input type="date" id="us-date">
+                </div>
+                <div class="input-group">
+                    <label>State</label>
+                    <select id="us-state">
+                        <option value="CA,2,4,3">California — PI:2yr, Contract:4yr, Debt:3yr</option>
+                        <option value="NY,3,6,6">New York — PI:3yr, Contract:6yr, Debt:6yr</option>
+                        <option value="TX,2,4,4">Texas — PI:2yr, Contract:4yr, Debt:4yr</option>
+                        <option value="FL,4,5,5">Florida — PI:4yr, Contract:5yr, Debt:5yr</option>
+                        <option value="IL,2,5,5">Illinois — PI:2yr, Contract:5yr, Debt:5yr</option>
+                        <option value="PA,2,4,4">Pennsylvania — PI:2yr, Contract:4yr, Debt:4yr</option>
+                        <option value="OH,2,6,6">Ohio — PI:2yr, Contract:6yr, Debt:6yr</option>
+                        <option value="GA,2,6,6">Georgia — PI:2yr, Contract:6yr, Debt:6yr</option>
+                        <option value="NC,3,3,3">North Carolina — PI:3yr, Contract:3yr, Debt:3yr</option>
+                        <option value="MI,3,6,6">Michigan — PI:3yr, Contract:6yr, Debt:6yr</option>
+                        <option value="WA,3,6,6">Washington — PI:3yr, Contract:6yr, Debt:6yr</option>
+                        <option value="CO,2,3,6">Colorado — PI:2yr, Contract:3yr, Debt:6yr</option>
+                        <option value="AZ,2,6,6">Arizona — PI:2yr, Contract:6yr, Debt:6yr</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Claim Type</label>
+                    <select id="us-claim">
+                        <option value="0">Personal injury</option>
+                        <option value="1">Written contract</option>
+                        <option value="2">Debt / oral contract</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcUS()">Check US Limitation</button>
+        </div>
+        <div id="us-results" class="results">
+            <div class="card">
+                <div id="us-status-box" style="text-align:center; padding:20px 0 16px;"></div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="us-deadline">—</div><div class="lbl">Claim Deadline</div></div>
+                    <div class="result-box"><div class="val" id="us-days-left">—</div><div class="lbl">Days Remaining</div></div>
+                    <div class="result-box"><div class="val" id="us-period">—</div><div class="lbl">Limitation Period</div></div>
+                </div>
+                <div id="us-advice" style="margin-top:16px; padding:14px; background:#f0f4f8; border-radius:8px; font-size:0.9rem; color:#555;"></div>
+                <button class="reset-btn" onclick="resetUS()">Check Another</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-space"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+    <div class="info-section">
+        <h2>What Is a Statute of Limitations?</h2>
+        <p>A statute of limitations (called a "limitation period" in the UK) is the legal deadline for bringing a court claim. Once the period expires, the defendant can raise "limitation" as a complete defence and the court will dismiss the claim — no matter how strong it is. Time limits exist to ensure claims are brought while evidence is fresh and to give defendants certainty.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What is the statute of limitations for personal injury in the UK?</h3>
+        <p>In England and Wales, the limitation period for personal injury claims is 3 years from the date of injury — or from the date of knowledge, if later (meaning when you first knew or ought reasonably to have known that the injury was significant and caused by the defendant's act or omission). For children, the 3-year clock doesn't start until their 18th birthday. The court has discretion to extend the deadline in exceptional cases under section 33 of the Limitation Act 1980, but this is not guaranteed.</p>
+
+        <h3>How long do I have to sue someone in the US?</h3>
+        <p>Statutes of limitations in the US vary significantly by state and claim type. For personal injury, most states allow 2–3 years (with some as low as 1 year, like Louisiana, and some as high as 6 years). Written contracts typically allow 4–6 years. Oral contracts are often shorter (2–4 years). Medical malpractice is commonly 2–3 years from the date of discovery. Some states "toll" (pause) the clock for minors, fraud, or when the defendant leaves the state.</p>
+
+        <h3>What happens if I miss the statute of limitations?</h3>
+        <p>Missing the limitation deadline is almost always fatal to a claim. The defendant can file a motion to dismiss, and courts routinely grant these without considering the merits. There are very narrow exceptions: the "discovery rule" delays the clock until you discovered (or should have discovered) the harm; "fraudulent concealment" by the defendant may toll time; and for minors or those lacking capacity, time may not run until capacity is restored. If you think a deadline is approaching, consult a solicitor or attorney immediately.</p>
+
+        <h3>When does the limitation clock start in contract disputes?</h3>
+        <p>In the UK, for breach of contract claims, time runs from the date of the breach — not when you discovered it. For simple contracts the limit is 6 years; for contracts under seal (deeds) it is 12 years. In the US, contract limitation periods range from 3–6 years for written contracts and 2–4 years for oral contracts, usually starting from the date of breach. For continuing breaches, each new breach may trigger a new limitation period.</p>
+    </div>
+
+    <div class="disclaimer-box"><strong>⚠️ Legal Disclaimer:</strong> This tool provides general guidance only. Limitation rules are complex, jurisdiction-specific, and fact-sensitive. Always consult a qualified solicitor or attorney before a deadline passes — missing a limitation period typically destroys your claim permanently.</div>
+
+    <div class="ad-space"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+</div>
+<footer class="footer">
+    <p>⚖️ <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Legal Calc Tools. All rights reserved.</p>
+</footer>
+<script>
+const tabs=['uk','us'];
+function switchTab(t){tabs.forEach(id=>document.getElementById('tab-'+id).style.display=id===t?'block':'none');document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',tabs[i]===t));}
+function checkStatus(deadlineDate, period, periodLabel, boxId, deadlineId, daysId, periodId, adviceId) {
+    const today = new Date(); today.setHours(0,0,0,0);
+    const daysLeft = Math.ceil((deadlineDate - today) / (24*3600*1000));
+    const box = document.getElementById(boxId);
+    if (daysLeft < 0) {
+        box.innerHTML='<div style="font-size:2rem;">❌</div><div style="font-size:1.2rem; font-weight:700; color:#c0392b; margin-top:8px;">Limitation period has EXPIRED</div><div style="color:#c0392b; font-size:0.9rem;">You may have lost the right to bring this claim.</div>';
+    } else if (daysLeft <= 90) {
+        box.innerHTML='<div style="font-size:2rem;">⚠️</div><div style="font-size:1.2rem; font-weight:700; color:#f59e0b; margin-top:8px;">URGENT — Deadline in '+daysLeft+' days</div><div style="color:#555; font-size:0.9rem;">Seek legal advice immediately.</div>';
+    } else {
+        box.innerHTML='<div style="font-size:2rem;">✅</div><div style="font-size:1.2rem; font-weight:700; color:#1a3a5c; margin-top:8px;">Claim still within time</div>';
+    }
+    document.getElementById(deadlineId).textContent = deadlineDate.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+    document.getElementById(daysId).textContent = daysLeft > 0 ? daysLeft + ' days' : 'EXPIRED';
+    document.getElementById(periodId).textContent = periodLabel;
+    document.getElementById(adviceId).textContent = daysLeft < 0 ? 'The limitation period has expired. In exceptional cases courts have discretion to extend time — consult a solicitor urgently to explore any options.' : daysLeft <= 90 ? 'You have fewer than 90 days left. Do not delay — instruct a solicitor or attorney immediately. Gathering evidence and preparing a claim takes time.' : 'You appear to have time remaining. However, always act promptly — do not wait until close to the deadline. Evidence becomes harder to gather over time.';
+}
+function calcUK(){
+    const d = new Date(document.getElementById('uk-date').value);
+    const years = parseInt(document.getElementById('uk-claim').value);
+    const label = document.getElementById('uk-claim').options[document.getElementById('uk-claim').selectedIndex].text;
+    if(!d.getTime()){alert('Please enter a date.');return;}
+    const deadline = new Date(d); deadline.setFullYear(deadline.getFullYear()+years);
+    checkStatus(deadline, years, years+' years', 'uk-status-box','uk-deadline','uk-days-left','uk-period','uk-advice');
+    document.getElementById('uk-results').classList.add('show');
+}
+function resetUK(){document.getElementById('uk-results').classList.remove('show');}
+function calcUS(){
+    const d = new Date(document.getElementById('us-date').value);
+    const stateData = document.getElementById('us-state').value.split(',');
+    const claimIdx = parseInt(document.getElementById('us-claim').value);
+    const years = parseInt(stateData[1+claimIdx]);
+    const stateName = document.getElementById('us-state').options[document.getElementById('us-state').selectedIndex].text.split('—')[0].trim();
+    if(!d.getTime()){alert('Please enter a date.');return;}
+    const deadline = new Date(d); deadline.setFullYear(deadline.getFullYear()+years);
+    checkStatus(deadline, years, years+' years ('+stateName+')', 'us-status-box','us-deadline','us-days-left','us-period','us-advice');
+    document.getElementById('us-results').classList.add('show');
+}
+function resetUS(){document.getElementById('us-results').classList.remove('show');}
+</script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});(adsbygoogle=window.adsbygoogle||[]).push({});(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</body>
+</html>

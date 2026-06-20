@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LTV Calculator 2026 - Loan to Value Ratio for UK Mortgages</title>
+    <meta name="description" content="Free LTV calculator 2026. Calculate your loan-to-value ratio for a UK mortgage. See which LTV band you fall into and how it affects your interest rate and available deals.">
+    <meta name="keywords" content="LTV calculator, loan to value calculator UK, mortgage LTV, what LTV do I need for best rates, LTV ratio mortgage">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://ltv-calculator.fluxmediasystems.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "LTV Calculator 2026",
+  "url": "https://ltv-calculator.fluxmediasystems.com",
+  "description": "Calculate your mortgage loan-to-value ratio and see which LTV band you fall into for UK mortgage deals.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+  "publisher": { "@type": "Organization", "name": "Flux Media Systems", "url": "https://fluxmediasystems.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is LTV and why does it matter for a mortgage?",
+      "acceptedAnswer": { "@type": "Answer", "text": "LTV (Loan-to-Value) is the ratio of your mortgage loan amount to the property value, expressed as a percentage. For example, a £180,000 mortgage on a £200,000 property is 90% LTV. LTV matters because lenders use it to assess risk — higher LTV means less equity as security, so lenders charge higher interest rates. The best mortgage rates are typically available at 60% LTV and below." }
+    },
+    {
+      "@type": "Question",
+      "name": "What LTV do I need for the best mortgage rates?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In the UK, the best mortgage rates are typically available at 60% LTV or below. There are usually rate tiers at 60%, 65%, 70%, 75%, 80%, 85%, 90%, and 95% LTV. Each step up in LTV band increases the interest rate. The difference between 60% LTV and 90% LTV on a £200,000 mortgage can be 1–1.5% interest rate, which translates to thousands of pounds over the mortgage term." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate my LTV?",
+      "acceptedAnswer": { "@type": "Answer", "text": "LTV = (Mortgage amount ÷ Property value) × 100. For a purchase: if the property costs £300,000 and you have a £60,000 deposit, your mortgage is £240,000, and LTV = (240,000 ÷ 300,000) × 100 = 80% LTV. For remortgaging: if your outstanding mortgage is £150,000 and the property is now worth £250,000, LTV = (150,000 ÷ 250,000) × 100 = 60% LTV." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the maximum LTV for a UK mortgage?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most mainstream UK lenders offer mortgages up to 95% LTV, meaning a minimum 5% deposit. Some government-backed schemes (like the Mortgage Guarantee Scheme) help lenders offer 95% LTV mortgages. A very small number of specialist lenders offer 100% mortgages (no deposit) in limited circumstances. The Skipton Building Society has offered a Track Record mortgage at 100% LTV for renters with good payment history." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does LTV affect remortgaging?",
+      "acceptedAnswer": { "@type": "Answer", "text": "When remortgaging, your LTV is based on the current outstanding mortgage divided by the current property value (not the original purchase price). If house prices have risen or you've paid down significant capital, your LTV may have improved substantially — potentially dropping you into a lower LTV band with better rates. Getting an up-to-date valuation (or free estimate from portals like Zoopla/Rightmove) helps you understand your current LTV before remortgaging." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>📊 LTV Calculator</h1>
+    <p class="subtitle">Calculate your Loan-to-Value ratio — see which mortgage deals you qualify for</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('purchase')">🏠 Property Purchase</button>
+        <button class="tab-btn" onclick="switchTab('remortgage')">🔄 Remortgage</button>
+    </div>
+
+    <div id="tab-purchase">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Property Value / Purchase Price (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="p-value" placeholder="300000" min="1000"></div>
+                </div>
+                <div class="input-group">
+                    <label>Deposit Amount (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="p-deposit" placeholder="45000" min="0"></div>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcPurchase()">Calculate LTV →</button>
+        </div>
+        <div id="p-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="p-ltv">0%</div>
+                    <div class="big-label">Loan-to-Value (LTV)</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="p-loan">£0</div><div class="lbl">Mortgage Needed</div></div>
+                    <div class="result-box"><div class="val" id="p-deposit-pct">0%</div><div class="lbl">Deposit %</div></div>
+                    <div class="result-box"><div class="val" id="p-band">—</div><div class="lbl">LTV Band</div></div>
+                </div>
+                <div class="result-note" id="p-band-note"></div>
+                <button class="reset-btn" onclick="resetP()">Calculate Again</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-remortgage" style="display:none;">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Current Property Value (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="r-value" placeholder="350000" min="1000"></div>
+                </div>
+                <div class="input-group">
+                    <label>Outstanding Mortgage Balance (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="r-balance" placeholder="190000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>Additional Borrowing (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="r-extra" placeholder="0" min="0"></div>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcRemortgage()">Calculate LTV →</button>
+        </div>
+        <div id="r-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="r-ltv">0%</div>
+                    <div class="big-label">Remortgage LTV</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="r-loan">£0</div><div class="lbl">New Mortgage Amount</div></div>
+                    <div class="result-box"><div class="val" id="r-equity">£0</div><div class="lbl">Home Equity</div></div>
+                    <div class="result-box"><div class="val" id="r-band">—</div><div class="lbl">LTV Band</div></div>
+                </div>
+                <div class="result-note" id="r-band-note"></div>
+                <button class="reset-btn" onclick="resetR()">Calculate Again</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>UK Mortgage LTV Bands &amp; Typical Rates (2026)</h2>
+        <table class="breakdown-table">
+            <tr><th>LTV</th><th>Deposit %</th><th>Rate Indication</th><th>Availability</th></tr>
+            <tr><td>≤60%</td><td>40%+</td><td>Best rates available</td><td>All mainstream lenders</td></tr>
+            <tr><td>65%</td><td>35%</td><td>Excellent</td><td>All mainstream lenders</td></tr>
+            <tr><td>70%</td><td>30%</td><td>Very good</td><td>All mainstream lenders</td></tr>
+            <tr><td>75%</td><td>25%</td><td>Good</td><td>All mainstream lenders</td></tr>
+            <tr><td>80%</td><td>20%</td><td>Average</td><td>Most lenders</td></tr>
+            <tr><td>85%</td><td>15%</td><td>Higher rate</td><td>Most lenders</td></tr>
+            <tr><td>90%</td><td>10%</td><td>Higher rate</td><td>Many lenders</td></tr>
+            <tr><td>95%</td><td>5%</td><td>Highest rate</td><td>Selected lenders</td></tr>
+        </table>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What is LTV and why does it matter for a mortgage?</h3>
+        <p>LTV (Loan-to-Value) is the percentage of the property value you're borrowing. A 90% LTV mortgage means you're borrowing 90% of the property value and contributing 10% as a deposit. Lenders use LTV as a key risk indicator — if you default and the property has to be sold, a lower LTV provides more buffer to cover their losses. The lower your LTV, the less risk for the lender, and the better the interest rate you'll be offered.</p>
+
+        <h3>What LTV do I need for the best mortgage rates?</h3>
+        <p>The best mortgage rates in the UK are typically available at 60% LTV or below. That means putting down at least 40% of the purchase price. Rate tiers typically step up at 65%, 70%, 75%, 80%, 85%, 90%, and 95% LTV. The rate difference between 60% LTV and 90% LTV can be 1–1.5% — on a £200,000 mortgage, this equates to £2,000–£3,000 per year in additional interest. Even improving from 85% to 80% LTV can save hundreds per year.</p>
+
+        <h3>How do I calculate my LTV?</h3>
+        <p>LTV = (Mortgage amount ÷ Property value) × 100. For a purchase: property worth £250,000, deposit £37,500 = mortgage of £212,500, LTV = (212,500 ÷ 250,000) × 100 = 85% LTV. For remortgaging: outstanding balance £120,000, property now worth £280,000, LTV = (120,000 ÷ 280,000) × 100 = 42.9% — this would qualify for the best 60% LTV deals. Getting an accurate current valuation is key for remortgaging LTV calculations.</p>
+
+        <h3>What is the maximum LTV for a UK mortgage?</h3>
+        <p>Most mainstream lenders go up to 95% LTV (5% deposit minimum). The UK Mortgage Guarantee Scheme helps lenders offer 95% mortgages. Skipton Building Society has offered a 100% mortgage (no deposit) for renters with a track record of paying rent. For buy-to-let mortgages, the maximum LTV is typically 75–80%. For interest-only mortgages, many lenders cap at 75% LTV. New-build properties sometimes have lower maximum LTVs (typically 85%).</p>
+
+        <h3>How does LTV affect remortgaging?</h3>
+        <p>Remortgage LTV is calculated on your current outstanding balance vs current property value — not the original purchase details. If you bought at 90% LTV three years ago and have both paid down capital and seen house price growth, your LTV may now be 70–75%, unlocking much better rates. When your fixed-rate term ends, calculate your current LTV before accepting your lender's standard variable rate (SVR). Switching to a new deal or lender based on your improved LTV can save thousands.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ Disclaimer:</strong> LTV calculations and rate band information are for guidance only. Actual mortgage rates and availability depend on your individual circumstances, credit history, and lender criteria. Always consult a whole-of-market mortgage adviser.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>🏠 <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Home Calc Tools. All rights reserved. Not financial advice.</p>
+</footer>
+<script>
+function switchTab(t) {
+    ['purchase','remortgage'].forEach(id => document.getElementById('tab-'+id).style.display = id===t?'block':'none');
+    document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', ['purchase','remortgage'][i]===t));
+}
+function fmt(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
+function getBand(ltv) {
+    if (ltv <= 60) return { band: '≤60% LTV', note: '✅ Excellent! You qualify for the very best mortgage rates available. Lenders compete for borrowers at this LTV — use a mortgage broker to access the full market.' };
+    if (ltv <= 65) return { band: '65% LTV', note: '✅ Very good LTV. You have access to excellent rates with most mainstream lenders.' };
+    if (ltv <= 70) return { band: '70% LTV', note: '✅ Good LTV. Strong rate availability from all mainstream lenders.' };
+    if (ltv <= 75) return { band: '75% LTV', note: '👍 Solid LTV. Good rate availability. The sweet spot for many buy-to-let mortgages.' };
+    if (ltv <= 80) return { band: '80% LTV', note: '👍 Reasonable LTV. Average market rates apply. If you can get to 75%, you may unlock better deals.' };
+    if (ltv <= 85) return { band: '85% LTV', note: '⚠️ Higher LTV. Fewer lenders and higher rates. If possible, a larger deposit to reach 80% LTV would improve your options.' };
+    if (ltv <= 90) return { band: '90% LTV', note: '⚠️ High LTV. A 10% deposit meets the minimum for many lenders, but rates will be higher. Most suitable for first-time buyers.' };
+    if (ltv <= 95) return { band: '95% LTV', note: '⚠️ Very high LTV. Limited lender availability. Rates significantly higher. Government Mortgage Guarantee Scheme may help.' };
+    return { band: '>95% LTV', note: '❌ Above 95% LTV. Most mainstream lenders do not offer mortgages at this ratio. Specialist lenders or government schemes required.' };
+}
+
+function calcPurchase() {
+    const value = parseFloat(document.getElementById('p-value').value) || 0;
+    const deposit = parseFloat(document.getElementById('p-deposit').value) || 0;
+    if (!value) { alert('Please enter the property value.'); return; }
+    const loan = Math.max(0, value - deposit);
+    const ltv = (loan / value * 100);
+    const depPct = (deposit / value * 100).toFixed(1);
+    const { band, note } = getBand(ltv);
+
+    document.getElementById('p-ltv').textContent = ltv.toFixed(1) + '%';
+    document.getElementById('p-loan').textContent = fmt(loan);
+    document.getElementById('p-deposit-pct').textContent = depPct + '%';
+    document.getElementById('p-band').textContent = band;
+    document.getElementById('p-band-note').textContent = note;
+    document.getElementById('p-results').classList.add('show');
+    document.getElementById('p-results').scrollIntoView({behavior:'smooth'});
+}
+function resetP() { document.getElementById('p-results').classList.remove('show'); }
+
+function calcRemortgage() {
+    const value = parseFloat(document.getElementById('r-value').value) || 0;
+    const balance = parseFloat(document.getElementById('r-balance').value) || 0;
+    const extra = parseFloat(document.getElementById('r-extra').value) || 0;
+    if (!value || !balance) { alert('Please fill in property value and outstanding balance.'); return; }
+    const loan = balance + extra;
+    const ltv = (loan / value * 100);
+    const equity = value - loan;
+    const { band, note } = getBand(ltv);
+
+    document.getElementById('r-ltv').textContent = ltv.toFixed(1) + '%';
+    document.getElementById('r-loan').textContent = fmt(loan);
+    document.getElementById('r-equity').textContent = fmt(equity);
+    document.getElementById('r-band').textContent = band;
+    document.getElementById('r-band-note').textContent = note;
+    document.getElementById('r-results').classList.add('show');
+    document.getElementById('r-results').scrollIntoView({behavior:'smooth'});
+}
+function resetR() { document.getElementById('r-results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

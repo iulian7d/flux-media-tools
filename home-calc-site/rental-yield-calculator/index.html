@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Yield Calculator 2026 - Gross & Net Yield for Buy-to-Let</title>
+    <meta name="description" content="Free rental yield calculator 2026. Calculate gross and net rental yield on a buy-to-let property. Include mortgage, agent fees, maintenance, insurance, and voids for accurate net yield.">
+    <meta name="keywords" content="rental yield calculator, buy to let yield calculator, gross rental yield, net rental yield calculator UK, property investment yield">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="../main-site/styles.css">
+    <link rel="canonical" href="https://rental-yield.homecalctools.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Rental Yield Calculator 2026",
+  "url": "https://rental-yield.homecalctools.com",
+  "description": "Calculate gross and net rental yield on a buy-to-let property. Includes mortgage costs, agent fees, maintenance and voids.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+  "publisher": { "@type": "Organization", "name": "Home Calc Tools", "url": "https://homecalctools.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a good rental yield in the UK?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In the UK, a gross rental yield of 5–7% is generally considered good for a standard buy-to-let investment. Yields above 7–8% are excellent and typically found in northern England, Scotland, and some Midlands cities. London and the South East tend to have lower gross yields (3–5%) due to high property prices, though capital appreciation potential is typically higher. Net yields (after mortgage, fees, and maintenance) are usually 1–3% lower than gross yields." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between gross and net rental yield?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Gross rental yield = (Annual rent ÷ Property value) × 100. This is the simple, headline figure. Net rental yield accounts for all costs: mortgage interest, letting agent fees (8–15% of rent), property management, maintenance (typically 1% of property value per year), landlord insurance, ground rent/service charges for leasehold, void periods (typically 1–2 months per year), and sometimes tax. Net yield is always lower than gross but gives a more realistic return figure." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate rental yield?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Gross yield: (Monthly rent × 12) ÷ Property purchase price × 100 = Gross yield %. Example: £1,200/month rent on a £200,000 property: (1,200 × 12) ÷ 200,000 × 100 = 7.2% gross yield. For net yield, subtract annual costs (mortgage interest, fees, maintenance, insurance, voids) from annual rent, then divide by property value. A 7.2% gross yield might yield 4–5% net." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is buy-to-let still worth it in 2026?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Buy-to-let in 2026 faces headwinds including higher mortgage rates, reduced tax relief (Section 24 limiting mortgage interest deductions for higher-rate taxpayers), tighter EPC requirements, and potential rent control regulations. However, residential property in the right locations still offers attractive yields combined with capital growth. The key is careful selection: focus on high-demand rental areas, strong net yields (5%+ after all costs), and long-term holding strategy. Always model worst-case scenarios including higher interest rates and void periods." }
+    },
+    {
+      "@type": "Question",
+      "name": "What costs should I include when calculating buy-to-let profit?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Key costs to include: mortgage interest payments; letting agent fees (8–12% of rent for letting only; 12–18% full management); annual maintenance budget (typically 1% of property value); landlord insurance (£150–£400/year); gas safety certificate (£60–£100/year); electrical inspection (EICR, every 5 years); void periods (budget 4–8 weeks per year); potential ground rent/service charges for leasehold flats; and income tax on profits above personal allowance. SDLT (stamp duty) second home surcharge and capital gains tax on eventual sale should also factor into total return calculations." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>🔑 Rental Yield Calculator</h1>
+    <p class="subtitle">Gross &amp; net rental yield for buy-to-let properties</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Property Purchase Price (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="price" placeholder="200000" min="10000"></div>
+            </div>
+            <div class="input-group">
+                <label>Monthly Rent (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="monthly-rent" placeholder="1100" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Annual Mortgage Interest (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="mortgage-interest" placeholder="6000" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Letting Agent Fees (%)</label>
+                <input type="number" id="agent-fees" placeholder="10" min="0" max="20" step="0.5" value="10">
+            </div>
+            <div class="input-group">
+                <label>Annual Maintenance Budget (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="maintenance" placeholder="2000" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Void Period (weeks/year)</label>
+                <input type="number" id="void-weeks" placeholder="4" min="0" max="52" step="1" value="4">
+            </div>
+            <div class="input-group">
+                <label>Other Annual Costs (insurance, ground rent, etc.) (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="other-costs" placeholder="600" min="0"></div>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcYield()">Calculate Rental Yield →</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="net-yield">0%</div>
+                <div class="big-label">Net Rental Yield</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="gross-yield">0%</div><div class="lbl">Gross Yield</div></div>
+                <div class="result-box"><div class="val" id="annual-profit">£0</div><div class="lbl">Annual Net Profit</div></div>
+                <div class="result-box"><div class="val" id="monthly-profit">£0/mo</div><div class="lbl">Monthly Net Profit</div></div>
+            </div>
+            <table class="breakdown-table" id="yield-breakdown" style="margin-top:16px;"></table>
+            <div class="result-note" id="yield-note"></div>
+            <button class="reset-btn" onclick="resetCalc()">Recalculate</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>Understanding Rental Yield</h2>
+        <p><strong>Gross yield</strong> is simple: annual rent divided by property value. It's the headline figure used to compare properties quickly. <strong>Net yield</strong> is more useful: it deducts all realistic costs to show your actual return on the property value. A property with a 7% gross yield might deliver only 3–4% net yield once all costs are accounted for.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What is a good rental yield in the UK?</h3>
+        <p>Gross yield benchmarks vary widely by location. London: 3–5%; South East: 4–6%; Midlands and northern cities: 6–9%; some northern towns: 8–12%. As a rule of thumb, gross yields above 7% are strong for UK residential property. Net yields (after all costs) of 4–5% are solid; anything above 6% net is excellent. Don't be seduced by very high gross yields in depressed areas — tenant demand, void risk, and capital growth potential matter as much as yield.</p>
+
+        <h3>What is the difference between gross and net rental yield?</h3>
+        <p>Gross yield: (annual rent ÷ property value) × 100. Simple and quick to calculate, useful for initial comparisons. Net yield: (annual rent − all annual costs) ÷ property value × 100. Costs typically subtract 25–45% from gross rent. If a property generates £12,000/year gross rent but costs £5,500 per year (mortgage interest, agent, maintenance, insurance, voids), the net profit is £6,500. On a £200,000 property, that's a 3.25% net yield vs 6% gross.</p>
+
+        <h3>How do I calculate rental yield?</h3>
+        <p>Gross yield = (Monthly rent × 12) ÷ Purchase price × 100. Example: £900/month × 12 = £10,800/year. £10,800 ÷ £180,000 × 100 = 6.0% gross yield. Net yield: subtract all annual costs from £10,800. If total annual costs are £4,500 (mortgage interest, agent 10%, maintenance £1,500, insurance £300, 4-week void), net income = £6,300. Net yield = £6,300 ÷ £180,000 × 100 = 3.5%.</p>
+
+        <h3>Is buy-to-let still worth it in 2026?</h3>
+        <p>Buy-to-let remains viable but requires more careful analysis than it did a decade ago. Section 24 (tax changes limiting mortgage interest relief for higher-rate taxpayers) means highly leveraged portfolios face a much higher tax burden. Higher mortgage rates in 2024–2026 have squeezed cash flow significantly. EPC requirements (properties must achieve EPC rating C or above to rent legally after 2028) may require upfront capital expenditure. Despite this, strong rental demand, shortage of housing supply, and long-term capital growth in quality areas continue to attract investors. The key: buy in areas with strong rental demand, aim for higher yields, and run the numbers carefully.</p>
+
+        <h3>What costs should I include when calculating buy-to-let profit?</h3>
+        <p>Comprehensive cost checklist: mortgage interest (not capital repayment for cash-flow calculation); letting agent fees (8–12% for let-only, 12–18% for full management); annual maintenance budget (1% of property value is a common rule of thumb); landlord building and contents insurance (£150–£400/year); annual gas safety certificate (£60–£100); EICR (electrical inspection, £150–£250, every 5 years); void periods (budget 4–8 weeks/year); ground rent and service charges (leasehold flats); property management for self-managing landlords (time cost); and income tax on profits. Don't forget acquisition costs (SDLT second home surcharge, legal fees, survey) and eventual capital gains tax when modelling total return.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ Disclaimer:</strong> Rental yield calculations are estimates. Tax treatment varies by individual circumstances, particularly regarding Section 24 mortgage interest restrictions and capital gains tax. Always consult a qualified accountant and financial adviser before making property investment decisions.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>🏠 <a href="https://homecalctools.com">Home Calc Tools</a> &nbsp;|&nbsp; <a href="https://homecalctools.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://homecalctools.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Home Calc Tools. All rights reserved. Not financial advice.</p>
+</footer>
+<script>
+function fmt(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
+
+function calcYield() {
+    const price = parseFloat(document.getElementById('price').value) || 0;
+    const monthlyRent = parseFloat(document.getElementById('monthly-rent').value) || 0;
+    const mortgageInt = parseFloat(document.getElementById('mortgage-interest').value) || 0;
+    const agentFeesPct = parseFloat(document.getElementById('agent-fees').value) || 0;
+    const maintenance = parseFloat(document.getElementById('maintenance').value) || 0;
+    const voidWeeks = parseFloat(document.getElementById('void-weeks').value) || 0;
+    const otherCosts = parseFloat(document.getElementById('other-costs').value) || 0;
+
+    if (!price || !monthlyRent) { alert('Please enter property price and monthly rent.'); return; }
+
+    const annualRent = monthlyRent * 12;
+    const voidLoss = (monthlyRent / 4.33) * voidWeeks; // weeks × weekly rent
+    const effectiveRent = annualRent - voidLoss;
+    const agentFees = effectiveRent * agentFeesPct / 100;
+    const totalCosts = mortgageInt + agentFees + maintenance + otherCosts;
+    const annualProfit = effectiveRent - totalCosts;
+    const grossYield = (annualRent / price * 100).toFixed(2);
+    const netYield = (annualProfit / price * 100).toFixed(2);
+
+    document.getElementById('gross-yield').textContent = grossYield + '%';
+    document.getElementById('net-yield').textContent = netYield + '%';
+    document.getElementById('annual-profit').textContent = fmt(annualProfit);
+    document.getElementById('monthly-profit').textContent = fmt(annualProfit / 12) + '/mo';
+
+    document.getElementById('yield-breakdown').innerHTML = `
+        <tr><th>Item</th><th>Annual Amount</th></tr>
+        <tr><td>Gross annual rent</td><td>${fmt(annualRent)}</td></tr>
+        <tr><td>Void loss (${voidWeeks} weeks)</td><td>−${fmt(voidLoss)}</td></tr>
+        <tr><td>Effective annual rent</td><td>${fmt(effectiveRent)}</td></tr>
+        <tr><td>Mortgage interest</td><td>−${fmt(mortgageInt)}</td></tr>
+        <tr><td>Agent fees (${agentFeesPct}%)</td><td>−${fmt(agentFees)}</td></tr>
+        <tr><td>Maintenance</td><td>−${fmt(maintenance)}</td></tr>
+        <tr><td>Other costs</td><td>−${fmt(otherCosts)}</td></tr>
+        <tr><td>Total costs</td><td>−${fmt(totalCosts)}</td></tr>
+        <tr class="total"><td><strong>Net annual profit</strong></td><td><strong>${fmt(annualProfit)}</strong></td></tr>
+    `;
+
+    let note = `Gross yield: ${grossYield}% | Net yield: ${netYield}%. `;
+    const yieldNum = parseFloat(netYield);
+    if (yieldNum >= 5) note += '✅ Strong net yield. This property generates solid returns after costs.';
+    else if (yieldNum >= 3) note += '👍 Acceptable yield. Many UK landlords see 3–4% net — consider whether capital growth potential makes up for modest income.';
+    else if (yieldNum >= 1) note += '⚠️ Low yield. Review costs and rent potential before proceeding. Ensure long-term capital appreciation justifies the investment.';
+    else note += '❌ Negative yield — costs exceed income. Reconsider the investment or find ways to reduce costs / increase rent.';
+
+    document.getElementById('yield-note').textContent = note;
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+function resetCalc() { document.getElementById('results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Overpayment Calculator 2026 - Save Interest & Pay Off Early</title>
+    <meta name="description" content="Free mortgage overpayment calculator 2026. See exactly how much interest you save and how many years you cut off your mortgage by making monthly or lump sum overpayments.">
+    <meta name="keywords" content="mortgage overpayment calculator, should I overpay mortgage, mortgage overpayment savings, pay off mortgage early calculator, lump sum mortgage overpayment">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://mortgage-overpayment-calculator.fluxmediasystems.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Mortgage Overpayment Calculator 2026",
+  "url": "https://mortgage-overpayment-calculator.fluxmediasystems.com",
+  "description": "Calculate interest savings and time reduction from overpaying your mortgage. Includes monthly overpayment and lump sum options.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+  "publisher": { "@type": "Organization", "name": "Flux Media Systems", "url": "https://fluxmediasystems.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much can I save by overpaying my mortgage?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The savings from mortgage overpayments can be substantial. On a £200,000 mortgage at 5% over 25 years, overpaying just £200/month saves approximately £27,000 in interest and reduces the term by over 6 years. The earlier in the mortgage you start overpaying, the greater the impact, because interest is front-loaded. Use our calculator to see the exact savings for your specific mortgage." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much can I overpay on my mortgage per year without penalty?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most UK mortgage lenders allow overpayments of up to 10% of the outstanding balance per year without triggering an Early Repayment Charge (ERC). So if your outstanding balance is £200,000, you can overpay up to £20,000 per year penalty-free. This limit typically applies during the initial fixed-rate period — once you move to a standard variable rate, most lenders allow unlimited overpayments. Always check your specific mortgage terms." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it better to overpay your mortgage or invest?",
+      "acceptedAnswer": { "@type": "Answer", "text": "This depends on your mortgage rate vs expected investment returns. If your mortgage rate is 5% and you expect a diversified investment portfolio to return 7–8% annually, investing typically wins mathematically. However, mortgage overpayment offers a guaranteed, risk-free return equal to your interest rate, while investment returns vary. Factors to consider: your tax situation, whether you have a stocks and shares ISA allowance available, your risk tolerance, and whether you have an emergency fund in place first." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I make a lump sum overpayment or monthly overpayments?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Both reduce the outstanding balance and save interest, but timing matters. A lump sum overpayment immediately reduces the balance you're paying interest on. Monthly overpayments gradually reduce the balance over time. If you have a windfall (bonus, inheritance, or savings), a lump sum tends to be more impactful. Both strategies work well and can be combined — you don't need to choose one or the other." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does overpaying a mortgage reduce monthly payments or the term?",
+      "acceptedAnswer": { "@type": "Answer", "text": "This depends on your lender and mortgage type. Most lenders automatically keep your monthly payment the same and reduce the mortgage term, meaning you pay off sooner. Some lenders will recalculate and reduce your monthly payment, keeping the same term. You should specify which outcome you want — reducing the term saves the most interest. Check with your lender about how they process overpayments." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>🏦 Mortgage Overpayment Calculator</h1>
+    <p class="subtitle">How much time and interest can you save by overpaying?</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Outstanding Mortgage Balance (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="balance" placeholder="200000" min="1000"></div>
+            </div>
+            <div class="input-group">
+                <label>Annual Interest Rate (%)</label>
+                <input type="number" id="rate" placeholder="4.75" min="0.1" max="20" step="0.05">
+            </div>
+            <div class="input-group">
+                <label>Remaining Mortgage Term</label>
+                <input type="number" id="term-years" placeholder="22" min="1" max="35">
+            </div>
+            <div class="input-group">
+                <label>Term Unit</label>
+                <select id="term-unit">
+                    <option value="years">Years</option>
+                    <option value="months">Months</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Monthly Overpayment (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="monthly-over" placeholder="200" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>One-Off Lump Sum Overpayment (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="lump-sum" placeholder="0" min="0"></div>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcOverpayment()">Calculate Savings →</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="interest-saved">£0</div>
+                <div class="big-label">Total Interest Saved</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="years-saved">—</div><div class="lbl">Years Saved</div></div>
+                <div class="result-box"><div class="val" id="new-payoff">—</div><div class="lbl">New Pay-off Date</div></div>
+                <div class="result-box"><div class="val" id="total-interest-without">£0</div><div class="lbl">Interest Without Overpaying</div></div>
+            </div>
+            <table class="breakdown-table" id="comparison-table" style="margin-top:16px;"></table>
+            <div class="result-note" id="overpayment-note"></div>
+            <button class="reset-btn" onclick="resetCalc()">Recalculate</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>Why Mortgage Overpayments Work</h2>
+        <p>When you overpay your mortgage, the extra payment goes directly towards reducing the outstanding capital balance. Since interest is calculated on the outstanding balance, a lower balance means less interest accrues each month. This creates a compounding effect — less interest means more of each regular payment goes to capital, which reduces the balance faster, which reduces interest further, and so on.</p>
+        <p>The interest savings are particularly powerful early in the mortgage term when the outstanding balance is largest. A £200/month overpayment on a £200,000 mortgage at 5% in year 1 reduces the eventual interest bill by much more than the same £200/month overpayment in year 20.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How much can I save by overpaying my mortgage?</h3>
+        <p>The savings scale with the interest rate and how much you overpay. At 4.75% on a £200,000 mortgage over 25 years: a £100/month overpayment saves approximately £14,000 and reduces the term by 3 years; a £200/month overpayment saves ~£25,000 and cuts 5–6 years; a £500/month overpayment saves ~£47,000 and reduces the term by 10+ years. Use the calculator above for your exact figures, which depend on your specific balance, rate, and remaining term.</p>
+
+        <h3>How much can I overpay per year without penalty?</h3>
+        <p>Most UK fixed-rate mortgages allow overpayments of up to 10% of the outstanding balance per year without an Early Repayment Charge (ERC). ERCs typically range from 1–5% of the amount overpaid above the limit. Once your fixed rate expires and you move to a tracker or SVR, unlimited overpayments are usually allowed. Always check your specific mortgage offer document or call your lender before making a large overpayment. Some specialist lenders allow 20% or even unlimited overpayments.</p>
+
+        <h3>Is it better to overpay your mortgage or invest?</h3>
+        <p>The mathematical answer depends on comparing your mortgage interest rate (a guaranteed, risk-free saving) against your expected investment return (variable and not guaranteed). At current UK mortgage rates of 4–5%, investing in a diversified global equity fund might reasonably be expected to outperform over a 10+ year horizon — but with market risk. Overpaying the mortgage reduces risk and provides a guaranteed return equal to your rate. Most financial advisers suggest: first, build an emergency fund (3–6 months expenses); second, maximise any employer pension matching; third, choose between mortgage overpayment and additional investment based on risk tolerance.</p>
+
+        <h3>Should I make a lump sum or monthly overpayments?</h3>
+        <p>Both reduce outstanding balance and save interest. A lump sum has immediate impact — from the day you make it, interest is calculated on a lower balance. Monthly overpayments compound over time. If you have a windfall (work bonus, tax refund, sale of assets), a lump sum overpayment often makes more sense. If you can afford slightly more each month, regular overpayments build into substantial savings over time and are easy to set up as a standing order. The key is to start as soon as possible.</p>
+
+        <h3>Does overpaying reduce monthly payments or the term?</h3>
+        <p>Most UK mortgage lenders keep monthly payments constant when you overpay — so the benefit goes to reducing the term (you pay off sooner). Some lenders will recalculate monthly payments to reflect the lower outstanding balance, reducing what you owe each month but not shortening the term. Reducing the term saves more interest in total. If your lender reduces monthly payments automatically, you may need to re-request higher payments to keep the term reduction benefit. Ask your lender explicitly which approach they use.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ Disclaimer:</strong> This calculator provides estimates for informational purposes. Check your mortgage terms for Early Repayment Charges before overpaying. Always consult a qualified mortgage adviser for personalised advice.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>🏠 <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Home Calc Tools. All rights reserved. Not financial advice.</p>
+</footer>
+<script>
+function fmt(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
+function calcMonths(balance, monthlyRate, months, extraMonthly) {
+    let bal = balance;
+    let totalInterest = 0;
+    let monthsActual = 0;
+    for (let i = 0; i < months * 12 + 600; i++) {
+        if (bal <= 0) break;
+        const interest = bal * monthlyRate;
+        totalInterest += interest;
+        // Standard payment
+        const stdPmt = balance * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
+        bal = bal - (stdPmt - interest) - extraMonthly;
+        monthsActual++;
+        if (bal <= 0) break;
+    }
+    return { totalInterest, months: monthsActual };
+}
+
+function calcOverpayment() {
+    const balance = parseFloat(document.getElementById('balance').value) || 0;
+    const rate = parseFloat(document.getElementById('rate').value) || 0;
+    let term = parseFloat(document.getElementById('term-years').value) || 0;
+    if (document.getElementById('term-unit').value === 'years') term = Math.round(term * 12);
+    const monthlyOver = parseFloat(document.getElementById('monthly-over').value) || 0;
+    const lumpSum = parseFloat(document.getElementById('lump-sum').value) || 0;
+
+    if (!balance || !rate || !term) { alert('Please fill in balance, rate, and remaining term.'); return; }
+
+    const monthlyRate = rate / 100 / 12;
+    const stdPmt = balance * monthlyRate * Math.pow(1 + monthlyRate, term) / (Math.pow(1 + monthlyRate, term) - 1);
+
+    // Without overpayment
+    let bal = balance, intWithout = 0;
+    for (let i = 0; i < term; i++) { const int = bal * monthlyRate; intWithout += int; bal -= (stdPmt - int); }
+
+    // With overpayment
+    let bal2 = balance - lumpSum;
+    if (bal2 < 0) bal2 = 0;
+    let intWith = 0, monthsNew = 0;
+    for (let i = 0; i < term + 600; i++) {
+        if (bal2 <= 0.01) break;
+        const int = bal2 * monthlyRate;
+        intWith += int;
+        const payment = stdPmt + monthlyOver - int;
+        bal2 -= payment;
+        monthsNew++;
+    }
+
+    const intSaved = intWithout - intWith;
+    const monthsSaved = term - monthsNew;
+    const yearsSaved = (monthsSaved / 12).toFixed(1);
+    const today = new Date();
+    const payoffDate = new Date(today.getFullYear(), today.getMonth() + monthsNew, 1);
+    const payoffStr = payoffDate.toLocaleDateString('en-GB', {month:'long', year:'numeric'});
+
+    document.getElementById('interest-saved').textContent = fmt(intSaved);
+    document.getElementById('years-saved').textContent = yearsSaved > 0 ? yearsSaved + ' years' : 'See below';
+    document.getElementById('new-payoff').textContent = payoffStr;
+    document.getElementById('total-interest-without').textContent = fmt(intWithout);
+
+    document.getElementById('comparison-table').innerHTML = `
+        <tr><th></th><th>Without Overpaying</th><th>With Overpaying</th><th>Saving</th></tr>
+        <tr><td>Total interest</td><td>${fmt(intWithout)}</td><td>${fmt(intWith)}</td><td class="val">${fmt(intSaved)}</td></tr>
+        <tr><td>Mortgage term</td><td>${(term/12).toFixed(1)} years</td><td>${(monthsNew/12).toFixed(1)} years</td><td class="val">${yearsSaved} years shorter</td></tr>
+        <tr><td>Monthly payment</td><td>${fmt(stdPmt)}</td><td>${fmt(stdPmt + monthlyOver)}</td><td>£${Math.round(monthlyOver)}/mo extra</td></tr>
+        ${lumpSum > 0 ? `<tr><td>Lump sum</td><td>—</td><td>${fmt(lumpSum)}</td><td>Applied now</td></tr>` : ''}
+        <tr class="total"><td colspan="2"><strong>Total cost (capital + interest)</strong></td><td><strong>${fmt(balance + intWith)}</strong></td><td><strong>${fmt(intSaved)} less</strong></td></tr>
+    `;
+
+    const maxAnnual = balance * 0.10;
+    const annualOverpayment = monthlyOver * 12 + (lumpSum > maxAnnual ? lumpSum : 0);
+    document.getElementById('overpayment-note').textContent = `Most lenders allow overpayments of up to 10% of outstanding balance per year without penalties — that's ${fmt(maxAnnual)} for your mortgage. Your monthly overpayment of ${fmt(monthlyOver)}/mo = ${fmt(monthlyOver*12)}/year. Check your mortgage terms for any Early Repayment Charges if overpaying more.`;
+
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+function resetCalc() { document.getElementById('results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

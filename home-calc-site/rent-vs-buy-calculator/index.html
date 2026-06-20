@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent vs Buy Calculator UK 2026 - Is It Cheaper to Rent or Buy?</title>
+    <meta name="description" content="Free UK rent vs buy calculator 2026. Compare the true long-term cost of renting vs buying a home including house price growth, opportunity cost of deposit, and all ownership costs.">
+    <meta name="keywords" content="rent vs buy calculator UK, is it cheaper to rent or buy, renting vs buying calculator, should I rent or buy 2026, rent or buy comparison UK">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="../main-site/styles.css">
+    <link rel="canonical" href="https://rent-vs-buy.homecalctools.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Rent vs Buy Calculator UK 2026",
+  "url": "https://rent-vs-buy.homecalctools.com",
+  "description": "Compare the true long-term cost of renting vs buying in the UK. Includes opportunity cost, capital growth, and all ownership costs.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+  "publisher": { "@type": "Organization", "name": "Home Calc Tools", "url": "https://homecalctools.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it cheaper to rent or buy a house in the UK?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In many UK cities in 2026, monthly mortgage payments are higher than comparable rents due to higher interest rates and elevated house prices. However, buying builds equity over time (both through paying down the mortgage and through house price growth), while renting provides flexibility and avoids maintenance costs and stamp duty. The 'break-even horizon' — the point at which buying becomes financially better than renting — is typically 5–10 years in most UK areas." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the hidden costs of buying vs renting?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Buying costs you don't face when renting: stamp duty, legal fees (£1,000–£2,500), mortgage arrangement fees, survey costs, maintenance (budget 1% of property value per year), buildings insurance, and potentially ground rent/service charges. Renting costs you avoid when buying: contents insurance is cheaper as a renter; no stamp duty, mortgage fees, or survey costs; and no responsibility for major repairs. Renters also keep their deposit liquid for investment." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do you need to own a house for it to be worth buying?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The break-even point depends heavily on house price growth and your local rent-to-price ratio. With typical assumptions (3% house price growth, 4.75% mortgage rate), buying generally becomes financially superior to renting after 5–8 years in most UK markets. In high-rent areas (London), the break-even can be shorter. In areas with very low rental yields and high buying costs, it can take longer. The key factors are: transaction costs (high in UK due to SDLT and legal fees), rental savings, and expected house price growth." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the opportunity cost of a house deposit?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The opportunity cost is the return you could have earned by investing your deposit elsewhere rather than using it to buy a house. If your deposit is £50,000 and you invest it in a diversified portfolio averaging 7% returns per year, it could be worth ~£98,000 after 10 years. This is an investment opportunity you forgo when you put the money into a house deposit. Buying is still often rational (because you're also getting mortgage leverage and an appreciating asset), but this opportunity cost should be factored into rent vs buy analysis." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I buy or continue renting in 2026?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In 2026, the rent vs buy decision depends on: your financial situation (deposit size, income stability, credit score); how long you plan to stay in the area (buying makes less sense for under 5 years); local market conditions (rent vs buy ratio varies hugely by city); and life circumstances (family plans, job flexibility needs). With mortgage rates still elevated compared to 2020–2022, the immediate monthly cost of buying often exceeds renting — but equity building and potential price appreciation still favour buying for those with a 7+ year horizon and stable circumstances." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>⚖️ Rent vs Buy Calculator</h1>
+    <p class="subtitle">Is it cheaper to rent or buy? Compare long-term costs</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Property Purchase Price (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="house-price" placeholder="280000" min="10000"></div>
+            </div>
+            <div class="input-group">
+                <label>Deposit (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="deposit" placeholder="42000" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Mortgage Rate (%)</label>
+                <input type="number" id="rate" placeholder="4.75" min="1" max="15" step="0.05">
+            </div>
+            <div class="input-group">
+                <label>Mortgage Term (years)</label>
+                <input type="number" id="term" placeholder="25" min="5" max="35">
+            </div>
+            <div class="input-group">
+                <label>Monthly Rent for Equivalent Property (£)</label>
+                <div class="input-prefix"><span>£</span><input type="number" id="monthly-rent" placeholder="1200" min="0"></div>
+            </div>
+            <div class="input-group">
+                <label>Annual House Price Growth (%)</label>
+                <input type="number" id="price-growth" placeholder="3.0" min="0" max="20" step="0.5" value="3.0">
+            </div>
+            <div class="input-group">
+                <label>Annual Rent Increase (%)</label>
+                <input type="number" id="rent-growth" placeholder="3.0" min="0" max="10" step="0.5" value="3.0">
+            </div>
+            <div class="input-group">
+                <label>Comparison Period (years)</label>
+                <input type="number" id="years" placeholder="10" min="1" max="30" value="10">
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcRentVsBuy()">Compare Rent vs Buy →</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="verdict">—</div>
+                <div class="big-label">Over your comparison period</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="buy-net-cost">£0</div><div class="lbl">Net Cost of Buying</div></div>
+                <div class="result-box"><div class="val" id="rent-net-cost">£0</div><div class="lbl">Net Cost of Renting</div></div>
+                <div class="result-box"><div class="val" id="difference">£0</div><div class="lbl">Difference</div></div>
+            </div>
+            <table class="breakdown-table" id="rvb-breakdown" style="margin-top:16px;"></table>
+            <div class="result-note" id="rvb-note"></div>
+            <button class="reset-btn" onclick="resetCalc()">Recalculate</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>How to Compare Renting vs Buying</h2>
+        <p>A true rent vs buy comparison must account for all costs and benefits on both sides. Buying involves: mortgage payments, maintenance (~1%/year), stamp duty, legal fees, insurance — offset by equity built and property appreciation. Renting involves: rent payments, contents insurance — offset by the investment returns on your freed-up deposit capital.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Is it cheaper to rent or buy a house in the UK?</h3>
+        <p>In 2026, monthly mortgage costs often exceed equivalent rent in many UK cities, particularly at higher LTVs. However, buying builds equity over time — both through mortgage capital repayment and property appreciation — while rent payments build nothing. The financial advantage of buying typically emerges after 5–10 years in most UK markets. In high-rent areas like London, the break-even can be faster. Short-term (under 5 years), renting is often cheaper due to high buying transaction costs (SDLT, legal fees).</p>
+
+        <h3>What are the hidden costs of buying vs renting?</h3>
+        <p>Buying includes costs you don't face renting: stamp duty (£0 to tens of thousands), conveyancer fees (£1,000–£2,500), mortgage arrangement and valuation fees, building survey (£400–£1,500), annual maintenance (budget 1% of property value — £2,800/year on a £280,000 home), buildings insurance (£200–£400/year), and potential service charges on leasehold properties. Renters must buy contents insurance but avoid all of the above. Renters also retain their deposit capital, which could be invested.</p>
+
+        <h3>How long do you need to own a house for it to be worth buying?</h3>
+        <p>UK buying transaction costs (stamp duty, legal fees, mortgage fees) typically run to 3–5% of the purchase price. At modest house price growth rates of 3% per year, it takes roughly 3–5 years just to recover these transaction costs. After accounting for higher mortgage costs vs rent in the current rate environment, the full break-even is often 6–10 years. If you're likely to move within 5 years, renting is usually the financially prudent choice. For a 10+ year horizon, buying typically wins in most UK markets.</p>
+
+        <h3>What is the opportunity cost of a house deposit?</h3>
+        <p>If you invest your £50,000 deposit in a diversified equity portfolio averaging 7% per year instead of buying, after 10 years it could grow to ~£98,000. This is the return you sacrifice by putting the money into a property purchase. However, your mortgage also gives you leverage — you're controlling a £280,000 asset with £50,000 equity. If the property grows 3%/year over 10 years, it adds £83,000 in value, while you also build ~£45,000 in equity through mortgage repayments. Leverage significantly changes the maths in favour of buying — but also increases risk if property prices fall.</p>
+
+        <h3>Should I buy or continue renting in 2026?</h3>
+        <p>The rational answer depends on: time horizon (buy for 7+ years; rent for under 5 years); income stability (secure employment makes buying less risky); life flexibility needs (buying reduces ability to move quickly); local rent-to-price ratio (better value to buy where yields are low / rents are high relative to prices); and mortgage affordability (can you comfortably afford repayments including a financial buffer?). For most people with stable circumstances and a 10+ year horizon, buying remains the better long-term wealth-building strategy in the UK — but the right answer is personal, not universal.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ Disclaimer:</strong> Rent vs buy comparisons involve projections that may not materialise. House price growth and investment returns are uncertain. This calculator provides estimates for educational purposes only — not financial advice. Consult a qualified financial adviser before making major housing decisions.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>🏠 <a href="https://homecalctools.com">Home Calc Tools</a> &nbsp;|&nbsp; <a href="https://homecalctools.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://homecalctools.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Home Calc Tools. All rights reserved. Not financial advice.</p>
+</footer>
+<script>
+function fmt(n) { return '£' + Math.round(Math.abs(n)).toLocaleString('en-GB'); }
+
+function calcRentVsBuy() {
+    const housePrice = parseFloat(document.getElementById('house-price').value) || 0;
+    const deposit = parseFloat(document.getElementById('deposit').value) || 0;
+    const rate = parseFloat(document.getElementById('rate').value) || 4.75;
+    const term = parseFloat(document.getElementById('term').value) || 25;
+    const monthlyRent = parseFloat(document.getElementById('monthly-rent').value) || 0;
+    const priceGrowth = parseFloat(document.getElementById('price-growth').value) / 100 || 0.03;
+    const rentGrowth = parseFloat(document.getElementById('rent-growth').value) / 100 || 0.03;
+    const years = parseInt(document.getElementById('years').value) || 10;
+    const months = years * 12;
+
+    if (!housePrice || !deposit || !monthlyRent) { alert('Please fill in the required fields.'); return; }
+
+    const mortgage = housePrice - deposit;
+    const monthlyRate = rate / 100 / 12;
+    const termMonths = term * 12;
+    const monthlyPayment = mortgage * monthlyRate * Math.pow(1+monthlyRate,termMonths) / (Math.pow(1+monthlyRate,termMonths) - 1);
+
+    // Buying costs
+    const stamp = calcStamp(housePrice);
+    const legalFees = 1500;
+    const maintenance = housePrice * 0.01; // annual
+    const insurance = 350; // annual
+    const upfrontBuying = stamp + legalFees + 1000; // arrangement fee
+
+    // Total buying cost over period
+    let totalMortgagePayments = monthlyPayment * months;
+    let totalMaintenanceCost = 0;
+    for (let i = 0; i < years; i++) { totalMaintenanceCost += maintenance; } // simplified
+    let totalBuying = upfrontBuying + totalMortgagePayments + totalMaintenanceCost + insurance * years;
+
+    // Property value at end
+    const finalPropertyValue = housePrice * Math.pow(1 + priceGrowth, years);
+
+    // Equity at end
+    let bal = mortgage;
+    for (let i = 0; i < months; i++) { bal -= (monthlyPayment - bal * monthlyRate); if (bal < 0) { bal = 0; break; } }
+    const equityAtEnd = finalPropertyValue - bal;
+
+    const netBuyingCost = totalBuying - equityAtEnd;
+
+    // Renting costs
+    let totalRent = 0, r = monthlyRent;
+    for (let i = 0; i < years; i++) { totalRent += r * 12; r *= (1 + rentGrowth); }
+
+    // Opportunity cost of deposit (invested at ~6% p.a.)
+    const depositGrown = deposit * Math.pow(1.06, years);
+    const depositOpportunityCost = -(depositGrown - deposit); // net "cost" of not investing
+
+    const netRentingCost = totalRent + depositOpportunityCost;
+
+    const diff = netRentingCost - netBuyingCost;
+    const buyingWins = diff > 0;
+
+    document.getElementById('verdict').textContent = buyingWins ? 'Buying is ahead' : 'Renting is ahead';
+    document.getElementById('verdict').style.color = buyingWins ? '#1e5c2e' : '#c62828';
+    document.getElementById('buy-net-cost').textContent = (netBuyingCost < 0 ? '+' : '') + '£' + Math.round(Math.abs(netBuyingCost)).toLocaleString('en-GB') + (netBuyingCost < 0 ? ' gain' : '');
+    document.getElementById('rent-net-cost').textContent = '£' + Math.round(netRentingCost).toLocaleString('en-GB');
+    document.getElementById('difference').textContent = '£' + Math.round(Math.abs(diff)).toLocaleString('en-GB') + ' ' + (buyingWins ? 'in favour of buying' : 'in favour of renting');
+
+    document.getElementById('rvb-breakdown').innerHTML = `
+        <tr><th>Item</th><th>Buying</th><th>Renting</th></tr>
+        <tr><td>Upfront costs</td><td>£${Math.round(upfrontBuying).toLocaleString()} (SDLT + fees)</td><td>£0</td></tr>
+        <tr><td>Monthly payments</td><td>£${Math.round(monthlyPayment).toLocaleString()}/mo mortgage</td><td>£${Math.round(monthlyRent).toLocaleString()}/mo (rising)</td></tr>
+        <tr><td>Total payments over ${years} yrs</td><td>£${Math.round(totalMortgagePayments).toLocaleString()}</td><td>£${Math.round(totalRent).toLocaleString()}</td></tr>
+        <tr><td>Maintenance / insurance</td><td>£${Math.round(totalMaintenanceCost + insurance*years).toLocaleString()}</td><td>~£${Math.round(years * 200).toLocaleString()} (contents)</td></tr>
+        <tr><td>Property value after ${years} yrs</td><td>£${Math.round(finalPropertyValue).toLocaleString()}</td><td>£0 (no ownership)</td></tr>
+        <tr><td>Equity built</td><td>£${Math.round(equityAtEnd).toLocaleString()}</td><td>£0</td></tr>
+        <tr><td>Deposit invested at 6%</td><td>N/A</td><td>£${Math.round(depositGrown).toLocaleString()}</td></tr>
+        <tr class="total"><td><strong>Net position</strong></td><td><strong>${netBuyingCost < 0 ? '+£' + Math.round(Math.abs(netBuyingCost)).toLocaleString() + ' gain' : '£' + Math.round(netBuyingCost).toLocaleString() + ' cost'}</strong></td><td><strong>£${Math.round(netRentingCost).toLocaleString()} total cost</strong></td></tr>
+    `;
+
+    document.getElementById('rvb-note').textContent = `These estimates assume ${(priceGrowth*100).toFixed(1)}% annual house price growth, ${(rentGrowth*100).toFixed(1)}% annual rent increases, and 6% annual return if the deposit were invested instead. Over ${years} years, ${buyingWins ? 'buying comes out ahead by approximately £' + Math.round(Math.abs(diff)).toLocaleString() : 'renting comes out ahead by approximately £' + Math.round(Math.abs(diff)).toLocaleString()}. All projections involve uncertainty — actual results will differ.`;
+
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+
+function calcStamp(price) {
+    if (price <= 250000) return 0;
+    if (price <= 925000) return (price - 250000) * 0.05;
+    return 675000 * 0.05 + (price - 925000) * 0.10;
+}
+function resetCalc() { document.getElementById('results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

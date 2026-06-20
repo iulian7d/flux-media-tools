@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Age Calculator - Cat Years to Human Years 2026</title>
+    <meta name="description" content="Free cat age calculator 2026. Convert your cat's age to human years using AAHA/AAFP life-stage guidelines. More accurate than the old 'multiply by 7' rule.">
+    <meta name="keywords" content="cat age calculator, cat years to human years, cat human years, how old is my cat in human years, cat age conversion">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="../main-site/styles.css">
+    <link rel="canonical" href="https://cat-age.pawcalculators.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Cat Age Calculator 2026",
+  "url": "https://cat-age.pawcalculators.com",
+  "description": "Convert your cat's age to human years using AAHA/AAFP life-stage guidelines. Free, instant, no sign-up.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "Paw Calculators", "url": "https://pawcalculators.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How old is my cat in human years?",
+      "acceptedAnswer": { "@type": "Answer", "text": "According to the AAHA/AAFP Feline Life Stage Guidelines: the first year equals about 15 human years; the second year adds about 9 more (so a 2-year-old cat ≈ 24 human years); then each additional year equals roughly 4 human years. So a 10-year-old cat ≈ 56 human years, and a 15-year-old cat ≈ 76 human years." }
+    },
+    {
+      "@type": "Question",
+      "name": "What life stage is my cat in?",
+      "acceptedAnswer": { "@type": "Answer", "text": "AAHA/AAFP defines 6 feline life stages: Kitten (0–6 months), Junior (7 months–2 years), Prime (3–6 years), Mature (7–10 years), Senior (11–14 years), and Geriatric (15+ years). Each stage has different nutritional and health monitoring needs." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do cats live on average?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Indoor cats live an average of 12–18 years; some reach their mid-20s. Outdoor cats average 10–15 years due to risks like cars, predators, and disease. The oldest verified cat was Creme Puff of Austin, Texas, who lived to 38 years and 3 days." }
+    },
+    {
+      "@type": "Question",
+      "name": "At what age is a cat considered senior?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most vets and the AAHA/AAFP guidelines consider cats senior from around 11 years of age. At this stage, cats benefit from twice-yearly vet check-ups (instead of annual), senior-formula food, blood pressure monitoring, and regular kidney function tests, as chronic kidney disease is the most common health issue in older cats." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do indoor cats age differently than outdoor cats?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Indoor cats tend to live significantly longer (12–18 years vs 10–15 years on average) because they're protected from traffic, predators, infectious diseases, and harsh weather. However, indoor-only cats have higher rates of obesity, dental disease, and boredom-related stress. Regular vet care, a healthy diet, dental hygiene, and environmental enrichment (toys, climbing structures) help indoor cats thrive." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>🐱 Cat Age Calculator</h1>
+    <p class="subtitle">Convert cat years to human years — AAHA/AAFP life-stage guidelines</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Cat's Age</label>
+                <input type="number" id="cat-age" placeholder="5" min="0" max="30" step="0.5">
+            </div>
+            <div class="input-group">
+                <label>Age Unit</label>
+                <select id="age-unit">
+                    <option value="years">Years</option>
+                    <option value="months">Months</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Cat Type</label>
+                <select id="cat-type">
+                    <option value="indoor">Indoor cat</option>
+                    <option value="outdoor">Indoor/outdoor cat</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Formula</label>
+                <select id="formula">
+                    <option value="aaha" selected>AAHA/AAFP Guidelines (recommended)</option>
+                    <option value="rule7">Old rule: × 7 (less accurate)</option>
+                </select>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcCatAge()">Calculate Human Age →</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="human-age">0</div>
+                <div class="big-label">Human Years</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="life-stage">—</div><div class="lbl">Life Stage</div></div>
+                <div class="result-box"><div class="val" id="cat-age-display">—</div><div class="lbl">Cat's Actual Age</div></div>
+                <div class="result-box"><div class="val" id="vet-visits">—</div><div class="lbl">Vet Visits/Year</div></div>
+            </div>
+            <div class="breed-result" id="life-stage-detail"></div>
+            <button class="reset-btn" onclick="resetCalc()">Calculate Another Cat</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>How Cat Age Conversion Works</h2>
+        <p>Cats develop very rapidly in their first two years. A 1-year-old cat has gone through the equivalent of puberty, young adulthood, and is physically and sexually mature. The AAHA (American Animal Hospital Association) and AAFP (American Association of Feline Practitioners) developed guidelines that reflect this non-linear ageing:</p>
+        <ul style="margin: 12px 0 16px 24px; color: #555; line-height: 1.8;">
+            <li>Year 1 = ~15 human years</li>
+            <li>Year 2 = ~9 more human years (total ~24)</li>
+            <li>Each year after = ~4 human years</li>
+        </ul>
+        <p>So a 10-year-old cat ≈ 24 + (8 × 4) = 56 human years. A 15-year-old cat ≈ 24 + (13 × 4) = 76 human years.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How old is my cat in human years?</h3>
+        <p>Use the AAHA/AAFP formula: Year 1 = 15 human years; Year 2 = 24 human years; each additional year adds 4. Examples: 3 years = 28 human years; 5 years = 36; 8 years = 48; 12 years = 64; 16 years = 80; 20 years = 96. These are more accurate than multiplying by 7 because they account for cats' rapid early development.</p>
+
+        <h3>What life stage is my cat in?</h3>
+        <p>The AAHA/AAFP defines 6 feline life stages: Kitten (0–6 months) — explosive growth and development; Junior (7 months–2 years) — reaching full size, becoming socially mature; Prime (3–6 years) — peak condition, lowest disease risk; Mature (7–10 years) — equivalent to a 44–56 year old human, routine health monitoring important; Senior (11–14 years) — more frequent vet visits recommended; Geriatric (15+ years) — close monitoring for age-related diseases including kidney disease, hyperthyroidism, and dental disease.</p>
+
+        <h3>How long do cats live on average?</h3>
+        <p>Indoor cats average 12–18 years, with many reaching their late teens or early 20s. Outdoor cats have shorter average lifespans (typically 10–15 years) due to exposure to hazards. Mixed-breed cats often outlive purebreds. Some breeds like Siamese and Manx are known for longevity. The world's oldest verified cat, Creme Puff, reached 38 years and 3 days.</p>
+
+        <h3>At what age is a cat considered senior?</h3>
+        <p>Most veterinary guidelines consider cats "senior" from 11 years of age. Senior cats need more frequent vet check-ups (ideally every 6 months), bloodwork to monitor kidney and thyroid function, blood pressure checks, dental care, and may benefit from senior-formulated food with adjusted protein levels. Chronic kidney disease affects around 30–40% of cats over 12 years, so early detection is important.</p>
+
+        <h3>Do indoor cats age differently than outdoor cats?</h3>
+        <p>Indoor cats typically live longer (12–18 years vs 10–15 years for indoor/outdoor cats) but face different health challenges. Indoor cats are more prone to obesity (due to less exercise), dental disease, urinary tract issues, and boredom-related stress. Providing climbing structures, interactive toys, and regular dental care helps indoor cats stay healthier. Both types benefit from regular vaccination and parasite prevention.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>🐾 Disclaimer:</strong> Cat age conversions are estimates based on population averages. Individual cats vary based on genetics, diet, and health. Always consult your veterinarian for health advice specific to your cat.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>🐾 <a href="https://pawcalculators.com">Paw Calculators</a> &nbsp;|&nbsp; <a href="https://pawcalculators.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://pawcalculators.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Paw Calculators. Results are for informational purposes only — consult your vet.</p>
+</footer>
+<script>
+function catHumanAge(years) {
+    if (years <= 1) return Math.round(15 * years);
+    if (years <= 2) return Math.round(15 + (years - 1) * 9);
+    return Math.round(24 + (years - 2) * 4);
+}
+function getLifeStage(years) {
+    if (years < 0.5) return 'Kitten';
+    if (years < 2) return 'Junior';
+    if (years < 7) return 'Prime';
+    if (years < 11) return 'Mature';
+    if (years < 15) return 'Senior';
+    return 'Geriatric';
+}
+const stageDetails = {
+    Kitten: 'Kitten (0–6 months): Explosive growth, vaccinations, socialisation. Most important time for handling and exposure to new experiences.',
+    Junior: 'Junior (7 months–2 years): Reaching full size and social maturity. Consider spay/neuter if not done. Dental care habits start here.',
+    Prime: 'Prime (3–6 years): Your cat is at peak health. Annual vet check-ups, regular dental care, and parasite prevention are the main priorities.',
+    Mature: 'Mature (7–10 years): Weight tends to creep up — watch calories. Annual bloodwork recommended to catch kidney/thyroid issues early.',
+    Senior: 'Senior (11–14 years): Bi-annual vet visits recommended. Blood pressure, kidney function, and thyroid checks are important at this stage.',
+    Geriatric: 'Geriatric (15+ years): Comfort and quality of life are the focus. Chronic kidney disease and hyperthyroidism are common — close monitoring helps manage symptoms.'
+};
+const vetVisits = { Kitten: '3–4 (vaccines)', Junior: '1–2', Prime: '1', Mature: '1–2', Senior: '2', Geriatric: '2–3' };
+
+function calcCatAge() {
+    let age = parseFloat(document.getElementById('cat-age').value);
+    if (!age && age !== 0) { alert('Please enter your cat\'s age.'); return; }
+    if (document.getElementById('age-unit').value === 'months') age = age / 12;
+
+    const formula = document.getElementById('formula').value;
+    let humanAge;
+    if (formula === 'aaha') {
+        humanAge = catHumanAge(age);
+    } else {
+        humanAge = Math.round(age * 7);
+    }
+
+    const stage = getLifeStage(age);
+    document.getElementById('human-age').textContent = humanAge;
+    document.getElementById('life-stage').textContent = stage;
+    document.getElementById('cat-age-display').textContent = age % 1 === 0 ? age + ' year' + (age === 1 ? '' : 's') : age.toFixed(1) + ' yrs';
+    document.getElementById('vet-visits').textContent = vetVisits[stage];
+    document.getElementById('life-stage-detail').textContent = stageDetails[stage];
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+function resetCalc() { document.getElementById('results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

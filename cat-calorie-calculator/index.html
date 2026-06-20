@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Calorie Calculator - Daily Calorie Needs for Cats 2026</title>
+    <meta name="description" content="Free cat calorie calculator 2026. Calculate how many calories your cat needs per day based on weight, age, neuter status, and activity. Prevent feline obesity and malnutrition.">
+    <meta name="keywords" content="cat calorie calculator, how many calories should my cat eat, cat daily calorie needs, cat food calorie calculator, RER cat calculator">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://cat-calorie-calculator.fluxmediasystems.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Cat Calorie Calculator 2026",
+  "url": "https://cat-calorie-calculator.fluxmediasystems.com",
+  "description": "Calculate your cat's daily calorie needs using RER and MER formulas. Accounts for weight, age, neuter status, and life stage.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "Flux Media Systems", "url": "https://fluxmediasystems.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many calories does a cat need per day?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The feline RER formula is: RER = 70 × (body weight in kg)^0.75. A typical 4 kg (9 lb) neutered adult indoor cat needs approximately 200–250 kcal per day. This is lower than most cat food packaging suggests, which is why over 50% of indoor cats are overweight. Kittens need 2–2.5× RER; senior cats need slightly less than adults." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much food should I feed my cat per day?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Portion size depends on the calorie density of the food. A typical dry cat food has about 350–400 kcal/100g. A 4 kg neutered adult indoor cat needing 200 kcal/day would need approximately 50–57 g of dry food per day (about 1/4 cup). Wet food (at ~90–100 kcal/100g) would require about 200–220 g per day. Most cat food labels overestimate correct portions." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are so many indoor cats overweight?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The main causes of feline obesity are: overfeeding (most owners feed based on label guidelines, which are often too generous); free feeding (leaving dry food out all day, leading to overeating); high-carbohydrate dry food (cats are obligate carnivores and prone to overconsumption of calorie-dense kibble); indoor sedentary lifestyle (no hunting or territory marking); neutering (reduces calorie needs by 25–30%); and feeding too many treats. Obesity in cats significantly increases the risk of diabetes, liver disease, joint problems, and urinary tract issues." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do neutered cats need fewer calories?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Neutering reduces a cat's metabolic rate and calorie needs by approximately 25–30%. A neutered cat that previously needed 250 kcal/day may only need 175–190 kcal/day after neutering. This is why many cats gain weight rapidly after being spayed or neutered if their food intake isn't adjusted. Switch to a neutered or indoor cat formula (lower calorie density) and reduce portions by 20–25% after the procedure." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should cats eat wet food or dry food?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Both are nutritionally valid, but wet food has some advantages for cats. Cats evolved as desert animals with low thirst drive and get much of their hydration from prey (which is 70–80% water). Dry food has only 8–10% moisture, which can contribute to chronic dehydration and urinary tract problems. Wet food at 70–80% moisture more closely mimics a natural prey diet. Many vets recommend a mix of wet and dry, or primarily wet food, especially for cats with urinary or kidney issues." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>🐟 Cat Calorie Calculator</h1>
+    <p class="subtitle">Daily calorie needs for your cat — based on RER &amp; MER formulas</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card">
+        <div class="form-grid">
+            <div class="input-group">
+                <label>Cat's Weight</label>
+                <input type="number" id="weight" placeholder="4.5" min="0.5" step="0.1">
+            </div>
+            <div class="input-group">
+                <label>Weight Unit</label>
+                <select id="weight-unit">
+                    <option value="kg">kg</option>
+                    <option value="lbs">lbs</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Life Stage</label>
+                <select id="life-stage">
+                    <option value="kitten">Kitten (under 6 months)</option>
+                    <option value="junior">Junior (6–12 months)</option>
+                    <option value="adult-intact">Adult intact (unneutered)</option>
+                    <option value="adult-neutered" selected>Adult neutered</option>
+                    <option value="indoor-neutered">Indoor neutered (less active)</option>
+                    <option value="senior">Senior (11+ years)</option>
+                    <option value="weight-loss">Weight loss diet</option>
+                    <option value="pregnant">Pregnant</option>
+                    <option value="lactating">Lactating</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Food Type</label>
+                <select id="food-type">
+                    <option value="dry" selected>Dry kibble (~370 kcal/100g)</option>
+                    <option value="wet">Wet / canned (~95 kcal/100g)</option>
+                    <option value="mixed">Mixed dry + wet</option>
+                    <option value="raw">Raw (~130 kcal/100g)</option>
+                </select>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calcCatCalories()">Calculate Daily Calories →</button>
+    </div>
+
+    <div id="results" class="results">
+        <div class="card">
+            <div class="result-highlight">
+                <div class="big-number" id="mer">0</div>
+                <div class="big-label">kcal/day Needed</div>
+            </div>
+            <div class="result-grid">
+                <div class="result-box"><div class="val" id="rer">0</div><div class="lbl">RER (at rest)</div></div>
+                <div class="result-box"><div class="val" id="grams-per-day">0g</div><div class="lbl">Food Per Day (est.)</div></div>
+                <div class="result-box"><div class="val" id="meals">0</div><div class="lbl">kcal per meal (2×/day)</div></div>
+            </div>
+            <div class="breed-result" id="feeding-note"></div>
+            <button class="reset-btn" onclick="resetCalc()">Recalculate</button>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>Cat Calorie Needs: Why They're Lower Than You Think</h2>
+        <p>Many cats are overfed because their owners follow the feeding guides on food packaging. These guides are often set to maximise food sales and can be 20–40% above a typical indoor neutered cat's actual needs. The veterinary standard formula is:</p>
+        <p style="font-family: monospace; background: #fdf6ee; padding: 12px; border-radius: 6px; margin: 12px 0;"><strong>RER (kcal/day) = 70 × (body weight in kg)^0.75</strong></p>
+        <p>For a 4 kg neutered indoor cat: RER ≈ 166 kcal. Multiply by a life-stage factor (1.2 for indoor neutered) = ~200 kcal/day. Most packaging suggests 300–350 kcal/day for the same cat — a 50–75% overestimate.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How many calories does a cat need per day?</h3>
+        <p>It varies by weight and life stage. Rough guidance: 3 kg cat: ~150–180 kcal/day; 4 kg cat: ~190–230 kcal/day; 5 kg cat: ~230–270 kcal/day; 6 kg cat: ~265–310 kcal/day (if that's their ideal weight — 6 kg is overweight for most cats). Kittens need around 250–300 kcal/day as a flat amount due to growth needs. Pregnant and lactating cats need significantly more — always consult your vet for these stages.</p>
+
+        <h3>How much food should I feed my cat per day?</h3>
+        <p>Take your cat's daily calorie need and divide by the food's kcal content per 100g. A 4 kg indoor neutered cat needing 200 kcal/day on dry food at 370 kcal/100g: 200 ÷ 370 × 100 = 54 g/day (~3.5 tablespoons). On wet food at 95 kcal/100g: 200 ÷ 95 × 100 = 210 g/day (roughly half a standard 400g can). Always check your specific food's calorie content, as it varies considerably between brands.</p>
+
+        <h3>Why are so many indoor cats overweight?</h3>
+        <p>Studies suggest 50–60% of cats in the US and UK are overweight or obese. The main culprits are free-feeding (leaving dry food out 24/7 allows cats to graze and overeat), following inflated package guidelines, not adjusting food after neutering, and excessive treats. Indoor cats also expend fewer calories than outdoor cats. Obesity in cats increases risk of type 2 diabetes, hepatic lipidosis (fatty liver disease), joint pain, urinary tract disease, and reduced lifespan by 2+ years.</p>
+
+        <h3>Do neutered cats need fewer calories?</h3>
+        <p>Yes — by around 25–30%. Oestrogens and androgens boost metabolic rate, so removing them reduces calorie needs. A cat that needed 250 kcal/day before neutering may only need 175–195 kcal/day after. Many cats gain weight rapidly in the first 6–12 months post-neutering if food isn't reduced. Switch to a "neutered" or "indoor" formula cat food (lower calorie density) and reduce portions immediately after surgery, not when weight gain is already noticeable.</p>
+
+        <h3>Should cats eat wet food or dry food?</h3>
+        <p>From a nutritional standpoint, both can be complete and balanced if they meet AAFCO or FEDIAF standards. However, wet food has advantages for most cats: it provides hydration (cats have low thirst drive and often don't drink enough when eating dry food), is more satiating per calorie (higher protein, lower carbohydrate), and may reduce risk of urinary crystals and kidney disease. Many vets recommend primarily wet food, with dry used as a supplement or for dental health. Raw food can be excellent if properly balanced — consult a veterinary nutritionist.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>🐾 Disclaimer:</strong> Calorie estimates are based on standard veterinary formulas. Individual cats vary significantly. Always consult your veterinarian before changing your cat's diet, especially if they have a health condition.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>🐾 <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Paw Calculators. Results are for informational purposes only — consult your vet.</p>
+</footer>
+<script>
+const stageFactors = {
+    kitten: { factor: 2.5, note: 'Kittens need ~2.5× RER for rapid growth. Feed 3–4 small meals per day. Never restrict kittens — their growing bodies need consistent fuel.' },
+    junior: { factor: 2.0, note: 'Adolescent cats (6–12 months) still growing. Continue kitten food until 12 months. 2–3 meals per day recommended.' },
+    'adult-intact': { factor: 1.8, note: 'Intact adult cats have slightly higher metabolic needs due to hormones. Consider spay/neuter for health and population control benefits.' },
+    'adult-neutered': { factor: 1.4, note: 'Standard adult neutered cat. Feed 2 measured meals per day — avoid free-feeding dry food as it makes it very easy to overeat.' },
+    'indoor-neutered': { factor: 1.2, note: 'Indoor neutered cats are the most prone to weight gain. Use a low-calorie indoor formula, feed exactly measured portions, and provide playtime for activity.' },
+    senior: { factor: 1.3, note: 'Senior cats (11+) often need fewer calories but more digestible protein. Monitor body condition closely — some seniors lose weight (muscle wasting) rather than gain it.' },
+    'weight-loss': { factor: 0.8, note: 'Weight loss in cats must be gradual (1–2% body weight per week maximum). Rapid weight loss causes hepatic lipidosis (fatty liver disease). Always vet-supervise a feline weight loss plan.' },
+    pregnant: { factor: 1.8, note: 'Pregnant cats gradually increase food intake. By the last 2 weeks, switch to kitten food for higher calorie density. Do NOT restrict pregnant cats.' },
+    lactating: { factor: 2.5, note: 'Lactating cats have very high energy needs — allow free-choice feeding of kitten food. Ensure constant access to fresh water. Kittens nursing heavily can cause significant weight loss in the mother.' }
+};
+const foodKcal = { dry: 370, wet: 95, mixed: 220, raw: 130 };
+
+function calcCatCalories() {
+    let weight = parseFloat(document.getElementById('weight').value);
+    if (!weight || weight <= 0) { alert('Please enter your cat\'s weight.'); return; }
+    if (document.getElementById('weight-unit').value === 'lbs') weight = weight / 2.205;
+
+    const stage = document.getElementById('life-stage').value;
+    const foodType = document.getElementById('food-type').value;
+    const sf = stageFactors[stage];
+    const rer = 70 * Math.pow(weight, 0.75);
+    const mer = Math.round(rer * sf.factor);
+    const grams = Math.round(mer / foodKcal[foodType] * 100);
+
+    document.getElementById('rer').textContent = Math.round(rer) + ' kcal';
+    document.getElementById('mer').textContent = mer;
+    document.getElementById('grams-per-day').textContent = grams + 'g';
+    document.getElementById('meals').textContent = Math.round(mer / 2) + ' kcal';
+    document.getElementById('feeding-note').textContent = sf.note;
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+function resetCalc() { document.getElementById('results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

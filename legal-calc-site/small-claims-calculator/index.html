@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Claims Court Calculator 2026 - Limits & Court Fees UK & US</title>
+    <meta name="description" content="Free small claims court calculator 2026. Check if your claim qualifies, find court fee costs, and see small claims limits for UK (England, Wales, Scotland) and all US states.">
+    <meta name="keywords" content="small claims court calculator, small claims limit UK, small claims limit US, court fees calculator, how to sue in small claims court">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="../main-site/styles.css">
+    <link rel="canonical" href="https://small-claims.legalcalctools.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Small Claims Court Calculator 2026",
+  "url": "https://small-claims.legalcalctools.com",
+  "description": "Check small claims court limits and estimate court fees for UK and US jurisdictions. Free, instant, no sign-up.",
+  "applicationCategory": "LegalApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "Legal Calc Tools", "url": "https://legalcalctools.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the small claims limit in the UK?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In England and Wales, the small claims limit is £10,000 for most claims, or £1,000 for personal injury and housing disrepair claims. In Scotland (Simple Procedure), the limit is £5,000. In Northern Ireland, the limit is £3,000." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to make a small claim in the UK?",
+      "acceptedAnswer": { "@type": "Answer", "text": "UK court fees depend on the claim amount: £35 for claims up to £300; £70 for £300.01–£500; £115 for £500.01–£1,000; £205 for £1,000.01–£1,500; £455 for £5,000.01–£10,000. These fees can be added to your claim if you win." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the small claims limit by US state?",
+      "acceptedAnswer": { "@type": "Answer", "text": "US small claims limits vary by state from $2,500 (Kentucky) to $25,000 (Tennessee). Most states fall in the $7,500–$10,000 range. California allows $10,000 for individuals, $5,000 for businesses. New York allows $10,000 in NYC Civil Court." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>📄 Small Claims Court Calculator</h1>
+    <p class="subtitle">Check limits, court fees, and eligibility — UK &amp; US</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('uk')">🇬🇧 UK Small Claims</button>
+        <button class="tab-btn" onclick="switchTab('us')">🇺🇸 US Small Claims by State</button>
+    </div>
+
+    <div id="tab-uk">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Claim Amount (£)</label>
+                    <div class="input-prefix"><span>£</span><input type="number" id="uk-amount" placeholder="2500" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>UK Region</label>
+                    <select id="uk-region">
+                        <option value="ew">England &amp; Wales</option>
+                        <option value="scot">Scotland (Simple Procedure)</option>
+                        <option value="ni">Northern Ireland</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Claim Type</label>
+                    <select id="uk-type">
+                        <option value="general">General (money, goods, services)</option>
+                        <option value="pi">Personal injury</option>
+                        <option value="housing">Housing disrepair</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcUK()">Check My UK Claim</button>
+        </div>
+        <div id="uk-results" class="results">
+            <div class="card">
+                <div id="uk-eligible-box" style="text-align:center; padding:20px 0 16px;"></div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="uk-limit">£0</div><div class="lbl">Small Claims Limit</div></div>
+                    <div class="result-box"><div class="val" id="uk-fee">£0</div><div class="lbl">Court Issue Fee</div></div>
+                    <div class="result-box"><div class="val" id="uk-net">£0</div><div class="lbl">Net If You Win</div></div>
+                </div>
+                <div id="uk-advice" style="margin-top:16px; padding:14px; background:#f0f4f8; border-radius:8px; font-size:0.9rem; color:#555; line-height:1.6;"></div>
+                <button class="reset-btn" onclick="resetUK()">Check Another Claim</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-us" style="display:none;">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Claim Amount ($)</label>
+                    <div class="input-prefix"><span>$</span><input type="number" id="us-amount" placeholder="5000" min="0"></div>
+                </div>
+                <div class="input-group">
+                    <label>State</label>
+                    <select id="us-state">
+                        <option value="CA,10000,5000">California ($10,000 individual / $5,000 business)</option>
+                        <option value="NY,10000,5000">New York ($10,000)</option>
+                        <option value="TX,20000,20000">Texas ($20,000)</option>
+                        <option value="FL,8000,8000">Florida ($8,000)</option>
+                        <option value="IL,10000,10000">Illinois ($10,000)</option>
+                        <option value="PA,12000,12000">Pennsylvania ($12,000)</option>
+                        <option value="OH,6000,6000">Ohio ($6,000)</option>
+                        <option value="GA,15000,15000">Georgia ($15,000)</option>
+                        <option value="NC,10000,10000">North Carolina ($10,000)</option>
+                        <option value="MI,6500,6500">Michigan ($6,500)</option>
+                        <option value="WA,10000,10000">Washington ($10,000)</option>
+                        <option value="AZ,3500,3500">Arizona ($3,500)</option>
+                        <option value="CO,7500,7500">Colorado ($7,500)</option>
+                        <option value="TN,25000,25000">Tennessee ($25,000)</option>
+                        <option value="NJ,3000,3000">New Jersey ($3,000)</option>
+                        <option value="VA,5000,5000">Virginia ($5,000)</option>
+                        <option value="MA,7000,7000">Massachusetts ($7,000)</option>
+                        <option value="IN,10000,10000">Indiana ($10,000)</option>
+                        <option value="MO,5000,5000">Missouri ($5,000)</option>
+                        <option value="WI,10000,10000">Wisconsin ($10,000)</option>
+                        <option value="MN,15000,15000">Minnesota ($15,000)</option>
+                        <option value="OR,10000,10000">Oregon ($10,000)</option>
+                        <option value="KY,2500,2500">Kentucky ($2,500)</option>
+                        <option value="NV,10000,10000">Nevada ($10,000)</option>
+                        <option value="SC,7500,7500">South Carolina ($7,500)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Claimant Type</label>
+                    <select id="us-claimant">
+                        <option value="individual">Individual / Consumer</option>
+                        <option value="business">Business</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcUS()">Check My US Claim</button>
+        </div>
+        <div id="us-results" class="results">
+            <div class="card">
+                <div id="us-eligible-box" style="text-align:center; padding:20px 0 16px;"></div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="us-limit">$0</div><div class="lbl">State Limit</div></div>
+                    <div class="result-box"><div class="val" id="us-fee">~$30–$75</div><div class="lbl">Filing Fee (est.)</div></div>
+                    <div class="result-box"><div class="val" id="us-net">$0</div><div class="lbl">Net If You Win</div></div>
+                </div>
+                <div id="us-advice" style="margin-top:16px; padding:14px; background:#f0f4f8; border-radius:8px; font-size:0.9rem; color:#555; line-height:1.6;"></div>
+                <button class="reset-btn" onclick="resetUS()">Check Another Claim</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>Small Claims Court — What You Need to Know</h2>
+        <p>Small claims court (called the "small claims track" in England & Wales) is designed to handle straightforward disputes quickly and cheaply without needing a solicitor or attorney. Cases typically involve unpaid invoices, faulty goods or services, property damage, landlord deposit disputes, and minor personal injury claims.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What is the small claims limit in the UK?</h3>
+        <p>In England and Wales, most claims up to £10,000 are allocated to the small claims track in the County Court. However, personal injury and housing disrepair claims have a lower limit of £1,000. In Scotland, the Simple Procedure handles claims up to £5,000. In Northern Ireland, the limit is £3,000. Claims above these limits go to more formal court tracks with higher costs and risk.</p>
+
+        <h3>How much does it cost to make a small claim in the UK?</h3>
+        <p>UK small claims court fees (2025) are: £35 for up to £300; £70 for £300.01–£500; £115 for £500.01–£1,000; £205 for £1,000.01–£1,500; £260 for £1,500.01–£3,000; £410 for £3,000.01–£5,000; £455 for £5,000.01–£10,000. You can file online at Money Claim Online (MCOL) for claims up to £100,000. If you win, the court fee is usually added to your award.</p>
+
+        <h3>Do I need a solicitor for small claims court?</h3>
+        <p>No — and in fact it's usually not worth hiring one. The small claims track is designed to be accessible without legal representation. Even if the other party has a solicitor, you cannot recover their legal costs if you win (and if you lose, you won't owe their legal fees either). You can bring a "lay representative" such as a friend to help you. Citizens Advice can also help you prepare your case for free.</p>
+
+        <h3>What types of cases can I bring to small claims court?</h3>
+        <p>Common small claims include: unpaid invoices or debts; faulty goods or poor services; landlord refusing to return a tenancy deposit; property damage; holiday or travel complaints; and minor personal injuries (below the limit). You cannot use small claims for most employment disputes (use Employment Tribunal instead), most family law matters, or claims involving complex points of law. The claim must be for a specific sum of money, not an order to do something.</p>
+
+        <h3>What happens if I win and the other party doesn't pay?</h3>
+        <p>Winning a small claims judgment does not automatically mean you get paid. If the defendant doesn't pay voluntarily, you need to enforce the judgment. Options include: asking the court to instruct enforcement agents (bailiffs) to seize assets; an attachment of earnings order (deducted from wages); a charging order on property; or a third-party debt order against a bank account. There are additional fees for enforcement, which can also be added to the total owed.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ Legal Disclaimer:</strong> Court limits and fees change periodically. Always verify current limits and fees on GOV.UK (England & Wales), mygov.scot (Scotland), or your state court's website (US). This tool is for informational purposes only and does not constitute legal advice.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+<footer class="footer">
+    <p>⚖️ <a href="https://legalcalctools.com">Legal Calc Tools</a> &nbsp;|&nbsp; <a href="https://legalcalctools.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://legalcalctools.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Legal Calc Tools. All rights reserved.</p>
+</footer>
+<script>
+const tabs = ['uk','us'];
+function switchTab(t) {
+    tabs.forEach(id => document.getElementById('tab-'+id).style.display = id===t?'block':'none');
+    document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', tabs[i]===t));
+}
+
+const UK_LIMITS = { ew: { general: 10000, pi: 1000, housing: 1000 }, scot: { general: 5000, pi: 5000, housing: 5000 }, ni: { general: 3000, pi: 3000, housing: 3000 } };
+function getUKFee(amount) {
+    if (amount <= 300) return 35;
+    if (amount <= 500) return 70;
+    if (amount <= 1000) return 115;
+    if (amount <= 1500) return 205;
+    if (amount <= 3000) return 260;
+    if (amount <= 5000) return 410;
+    if (amount <= 10000) return 455;
+    return null;
+}
+function calcUK() {
+    const amount = parseFloat(document.getElementById('uk-amount').value) || 0;
+    const region = document.getElementById('uk-region').value;
+    const type = document.getElementById('uk-type').value;
+    const limit = UK_LIMITS[region][type];
+    const eligible = amount <= limit && amount > 0;
+    const fee = eligible ? getUKFee(amount) : null;
+
+    const box = document.getElementById('uk-eligible-box');
+    if (eligible) {
+        box.innerHTML = '<div style="font-size:2rem;">✅</div><div style="font-size:1.2rem; font-weight:700; color:#1a3a5c; margin-top:8px;">Your claim qualifies for small claims!</div>';
+    } else if (amount > limit) {
+        box.innerHTML = '<div style="font-size:2rem;">⚠️</div><div style="font-size:1.2rem; font-weight:700; color:#c0392b; margin-top:8px;">Claim exceeds small claims limit</div><div style="font-size:0.9rem; color:#607d8b;">Your claim will be allocated to a higher court track.</div>';
+    } else {
+        box.innerHTML = '<div style="font-size:2rem;">❌</div><div style="color:#c0392b; font-weight:700; margin-top:8px;">Please enter a valid claim amount.</div>';
+    }
+
+    document.getElementById('uk-limit').textContent = '£' + limit.toLocaleString('en-GB');
+    document.getElementById('uk-fee').textContent = fee ? '£' + fee : 'N/A';
+    document.getElementById('uk-net').textContent = fee ? '£' + (amount - fee).toLocaleString('en-GB') : 'N/A';
+
+    let advice = '';
+    if (eligible) {
+        advice = `You can file online at Money Claim Online (MCOL) at gov.uk/make-court-claim-for-money. The £${fee} court fee is recoverable if you win. `;
+        if (region === 'scot') advice = `File at mygov.scot/simple-procedure. `;
+        advice += 'You do not need a solicitor for small claims.';
+    } else if (amount > limit) {
+        advice = `Your £${amount.toLocaleString('en-GB')} claim exceeds the £${limit.toLocaleString('en-GB')} small claims limit. It will be allocated to the ${amount <= 25000 ? 'fast track' : 'multi-track'} where costs rules are stricter and you may need legal representation.`;
+    }
+    document.getElementById('uk-advice').textContent = advice;
+    document.getElementById('uk-results').classList.add('show');
+}
+function resetUK() { document.getElementById('uk-results').classList.remove('show'); }
+
+function calcUS() {
+    const amount = parseFloat(document.getElementById('us-amount').value) || 0;
+    const stateData = document.getElementById('us-state').value.split(',');
+    const claimant = document.getElementById('us-claimant').value;
+    const stateName = document.getElementById('us-state').options[document.getElementById('us-state').selectedIndex].text.split('(')[0].trim();
+    const limit = parseInt(claimant === 'individual' ? stateData[1] : stateData[2]);
+    const eligible = amount <= limit && amount > 0;
+    const estFee = amount <= 1500 ? 30 : amount <= 5000 ? 50 : 75;
+
+    const box = document.getElementById('us-eligible-box');
+    box.innerHTML = eligible
+        ? '<div style="font-size:2rem;">✅</div><div style="font-size:1.2rem; font-weight:700; color:#1a3a5c; margin-top:8px;">Qualifies for small claims in ' + stateName + '!</div>'
+        : '<div style="font-size:2rem;">⚠️</div><div style="font-size:1.2rem; font-weight:700; color:#c0392b; margin-top:8px;">Exceeds small claims limit in ' + stateName + '</div>';
+
+    document.getElementById('us-limit').textContent = '$' + limit.toLocaleString();
+    document.getElementById('us-fee').textContent = '~$' + estFee + '–$' + (estFee + 30);
+    document.getElementById('us-net').textContent = eligible ? '$' + (amount - estFee).toLocaleString() : 'N/A';
+
+    let advice = eligible
+        ? `Your $${amount.toLocaleString()} claim qualifies for small claims court in ${stateName}. Filing fees are typically $${estFee}–$${estFee+30}. You can usually file in person at your county courthouse or online. You do not need an attorney.`
+        : `Your $${amount.toLocaleString()} claim exceeds the $${limit.toLocaleString()} small claims limit in ${stateName}. You would need to file in a higher court where attorneys are typically needed.`;
+    document.getElementById('us-advice').textContent = advice;
+    document.getElementById('us-results').classList.add('show');
+}
+function resetUS() { document.getElementById('us-results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>
