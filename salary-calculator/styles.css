@@ -43,3 +43,4 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
     .result-grid { grid-template-columns: 1fr 1fr; }
     .card { padding: 20px 16px; }
 }
+.disclaimer-box { margin: 0 auto 24px; max-width: 860px; padding: 14px 18px; background: #fff8e1; border-left: 4px solid #f59e0b; border-radius: 8px; font-size: 0.85rem; color: #555; }

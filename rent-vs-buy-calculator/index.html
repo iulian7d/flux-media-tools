@@ -241,10 +241,15 @@ function calcRentVsBuy() {
     document.getElementById('results').scrollIntoView({behavior:'smooth'});
 }
 
+// England SDLT standard rates from 1 April 2025
 function calcStamp(price) {
-    if (price <= 250000) return 0;
-    if (price <= 925000) return (price - 250000) * 0.05;
-    return 675000 * 0.05 + (price - 925000) * 0.10;
+    if (price <= 125000) return 0;
+    let tax = Math.min(price, 250000) - 125000; // 2% band
+    tax *= 0.02;
+    if (price > 250000) tax += (Math.min(price, 925000) - 250000) * 0.05;
+    if (price > 925000) tax += (Math.min(price, 1500000) - 925000) * 0.10;
+    if (price > 1500000) tax += (price - 1500000) * 0.12;
+    return tax;
 }
 function resetCalc() { document.getElementById('results').classList.remove('show'); }
 </script>

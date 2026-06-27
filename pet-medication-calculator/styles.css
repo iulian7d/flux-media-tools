@@ -120,3 +120,14 @@ body {
 .footer { background: #2d1a0e; color: white; padding: 32px 20px; text-align: center; }
 .footer a { color: #ffb380; text-decoration: none; }
 .footer a:hover { text-decoration: underline; }
+
+.vet-warning { max-width: 860px; margin: 0 auto 20px; padding: 14px 18px; background: #fff3e0; border-left: 4px solid #ff6b35; border-radius: 8px; font-size: 0.9rem; color: #2d1a0e; }
+.weight-row { display: flex; gap: 8px; }
+.weight-row input { flex: 1; padding: 11px 14px; border: 1.5px solid #e8c9a8; border-radius: 8px; font-size: 0.95rem; }
+.weight-row select { width: 72px; padding: 11px 8px; border: 1.5px solid #e8c9a8; border-radius: 8px; font-size: 0.95rem; background: white; }
+.med-info { background: #fdf6ee; border-radius: 10px; padding: 14px 16px; margin-top: 16px; font-size: 0.9rem; line-height: 1.65; color: #2d1a0e; }
+.dose-table-wrap { margin-top: 16px; overflow-x: auto; }
+.breakdown-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.breakdown-table th { background: #ff6b35; color: white; padding: 9px 12px; text-align: left; }
+.breakdown-table td { padding: 8px 12px; border-bottom: 1px solid #f0e0cc; }
+.breakdown-table tr:last-child td { border-bottom: none; }

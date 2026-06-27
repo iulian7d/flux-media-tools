@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Medication Dosage Calculator - Dog & Cat 2026</title>
+    <meta name="description" content="Free pet medication dosage calculator for dogs and cats. Calculate safe doses for common medications by weight including amoxicillin, metronidazole, carprofen, and more.">
+    <meta name="keywords" content="pet medication dosage calculator, dog medication dosage, cat medication dosage, dog amoxicillin dose, carprofen dosage calculator, metronidazole dog dose, pet medicine calculator">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://pet-medication-calculator.fluxmediasystems.com">
+    <meta property="og:title" content="Pet Medication Dosage Calculator - Dog & Cat">
+    <meta property="og:description" content="Calculate medication dosages for dogs and cats by weight. Based on published veterinary dosing guidelines.">
+    <meta property="og:url" content="https://pet-medication-calculator.fluxmediasystems.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Pet Medication Dosage Calculator",
+  "url": "https://pet-medication-calculator.fluxmediasystems.com",
+  "description": "Calculate safe medication dosages for dogs and cats by weight. Covers common antibiotics, anti-inflammatories, and antiparasitics.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "Flux Media Systems", "url": "https://fluxmediasystems.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my dog's medication dosage?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most veterinary medications are dosed by body weight (mg/kg or mg/lb). To calculate the dose: multiply your dog's weight in kg by the mg/kg dose rate, then divide by the tablet or liquid concentration. For example, amoxicillin at 10 mg/kg for a 10 kg dog = 100 mg per dose. Always confirm with your vet before administering any medication." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I give my dog human medications?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most human medications are NOT safe for dogs or cats. Common human drugs that are toxic to pets include ibuprofen (NSAIDs), paracetamol/acetaminophen (especially deadly for cats), aspirin (unsafe at human doses), and many antidepressants. Even medications that seem similar to vet drugs can be formulated differently. Never give your pet human medication without explicit veterinary guidance." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is paracetamol (acetaminophen) safe for cats?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No — paracetamol (Tylenol/acetaminophen) is extremely toxic to cats and can be fatal even in very small doses. Cats lack the liver enzyme needed to metabolise it safely. It is also harmful to dogs. Never give paracetamol to any pet. If you suspect your pet has ingested paracetamol, contact your vet or animal poison control immediately." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is carprofen used for in dogs?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Carprofen (brands: Rimadyl, Canidryl) is a non-steroidal anti-inflammatory drug (NSAID) used in dogs to relieve pain and inflammation, particularly from osteoarthritis, post-surgical pain, and soft tissue injuries. It is NOT safe for cats. The standard dose is 2–4 mg/kg once daily or 2 mg/kg twice daily. Long-term use requires regular liver and kidney monitoring." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much metronidazole do I give my dog?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Metronidazole (Flagyl) is commonly used in dogs for gastrointestinal issues and certain infections. The typical dose is 10–25 mg/kg twice daily for 5–7 days, depending on the condition. For cats, the dose is similar but must be prescribed by a vet. Metronidazole has a bitter taste and some dogs refuse it — it is sometimes compounded into a flavoured form. Always use under veterinary supervision." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="header">
+    <h1>💊 Pet Medication Dosage Calculator</h1>
+    <p class="subtitle">Calculate safe medication doses for dogs &amp; cats by weight</p>
+</header>
+<div class="container">
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="4825833720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="vet-warning">
+        <strong>⚕️ Always consult your vet before giving any medication.</strong> This calculator is for reference only and does not replace professional veterinary advice. Never administer medications without a diagnosis and prescription from a licensed veterinarian.
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('dog')">🐕 Dog</button>
+        <button class="tab-btn" onclick="switchTab('cat')">🐈 Cat</button>
+    </div>
+
+    <!-- Dog Tab -->
+    <div id="tab-dog">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Dog's Weight</label>
+                    <div class="weight-row">
+                        <input type="number" id="dog-weight" placeholder="10" min="0.5" max="120" step="0.1">
+                        <select id="dog-unit">
+                            <option value="kg">kg</option>
+                            <option value="lb">lb</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Medication</label>
+                    <select id="dog-med">
+                        <option value="amoxicillin">Amoxicillin (antibiotic)</option>
+                        <option value="amox-clav">Amoxicillin-Clavulanate (Synulox/Augmentin)</option>
+                        <option value="metronidazole">Metronidazole (Flagyl)</option>
+                        <option value="carprofen">Carprofen (Rimadyl)</option>
+                        <option value="meloxicam">Meloxicam (Metacam)</option>
+                        <option value="cefalexin">Cefalexin (antibiotic)</option>
+                        <option value="doxycycline">Doxycycline (antibiotic)</option>
+                        <option value="prednisolone">Prednisolone (steroid)</option>
+                        <option value="omeprazole">Omeprazole (stomach acid)</option>
+                        <option value="famotidine">Famotidine (Pepcid)</option>
+                        <option value="tramadol">Tramadol (pain relief)</option>
+                        <option value="fenbendazole">Fenbendazole (Panacur)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcDog()">Calculate Dose →</button>
+        </div>
+
+        <div id="dog-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="dog-dose">0 mg</div>
+                    <div class="big-label" id="dog-dose-label">Per dose</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="dog-freq">—</div><div class="lbl">Frequency</div></div>
+                    <div class="result-box"><div class="val" id="dog-duration">—</div><div class="lbl">Typical Duration</div></div>
+                    <div class="result-box"><div class="val" id="dog-weight-show">—</div><div class="lbl">Dog Weight</div></div>
+                </div>
+                <div class="med-info" id="dog-med-info"></div>
+                <div class="dose-table-wrap">
+                    <table class="breakdown-table" id="dog-breakdown"></table>
+                </div>
+                <button class="reset-btn" onclick="resetDog()">Calculate Another</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cat Tab -->
+    <div id="tab-cat" style="display:none;">
+        <div class="card">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Cat's Weight</label>
+                    <div class="weight-row">
+                        <input type="number" id="cat-weight" placeholder="4" min="0.5" max="15" step="0.1">
+                        <select id="cat-unit">
+                            <option value="kg">kg</option>
+                            <option value="lb">lb</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Medication</label>
+                    <select id="cat-med">
+                        <option value="amoxicillin">Amoxicillin (antibiotic)</option>
+                        <option value="amox-clav">Amoxicillin-Clavulanate (Synulox)</option>
+                        <option value="metronidazole">Metronidazole (Flagyl)</option>
+                        <option value="meloxicam">Meloxicam (Metacam) — short term only</option>
+                        <option value="prednisolone">Prednisolone (steroid)</option>
+                        <option value="cefalexin">Cefalexin (antibiotic)</option>
+                        <option value="doxycycline">Doxycycline (antibiotic)</option>
+                        <option value="famotidine">Famotidine (Pepcid)</option>
+                        <option value="omeprazole">Omeprazole (stomach acid)</option>
+                        <option value="fenbendazole">Fenbendazole (Panacur)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="calc-btn" onclick="calcCat()">Calculate Dose →</button>
+        </div>
+
+        <div id="cat-results" class="results">
+            <div class="card">
+                <div class="result-highlight">
+                    <div class="big-number" id="cat-dose">0 mg</div>
+                    <div class="big-label" id="cat-dose-label">Per dose</div>
+                </div>
+                <div class="result-grid">
+                    <div class="result-box"><div class="val" id="cat-freq">—</div><div class="lbl">Frequency</div></div>
+                    <div class="result-box"><div class="val" id="cat-duration">—</div><div class="lbl">Typical Duration</div></div>
+                    <div class="result-box"><div class="val" id="cat-weight-show">—</div><div class="lbl">Cat Weight</div></div>
+                </div>
+                <div class="med-info" id="cat-med-info"></div>
+                <div class="dose-table-wrap">
+                    <table class="breakdown-table" id="cat-breakdown"></table>
+                </div>
+                <button class="reset-btn" onclick="resetCat()">Calculate Another</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="8670391187" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="info-section">
+        <h2>Common Pet Medications — Dosing Guide</h2>
+        <p>Veterinary medications are typically dosed by body weight (mg/kg). The doses shown are based on published veterinary references including Plumb's Veterinary Drug Handbook and BSAVA Small Animal Formulary. Individual animals may require adjustments — always follow your vet's specific instructions.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How do I calculate my dog's medication dosage?</h3>
+        <p>Most vet medications are dosed in mg per kg of body weight. Multiply your pet's weight in kg by the mg/kg dose rate to get the total mg needed per dose. Then divide by the tablet or liquid concentration to find how many tablets or ml to give. For example: amoxicillin at 10 mg/kg for a 10 kg dog = 100 mg per dose. If tablets are 250 mg, give 0.4 tablets per dose.</p>
+
+        <h3>Can I give my dog human medications?</h3>
+        <p>Most human medications are not safe for pets. Ibuprofen and other NSAIDs can cause severe kidney and gastrointestinal damage in dogs. Paracetamol (acetaminophen) is fatal to cats and harmful to dogs. Aspirin is generally not recommended. Even medications that appear similar to vet drugs may be differently formulated. Never give human medication to your pet without explicit veterinary instruction.</p>
+
+        <h3>Is paracetamol safe for cats?</h3>
+        <p>No — paracetamol (Tylenol/acetaminophen) is extremely toxic to cats and can be fatal even in very small amounts. Cats lack the liver enzyme needed to break it down safely. It is also harmful to dogs. If you suspect your pet has ingested paracetamol, contact your vet or animal poison control (UK: 01202 509000 — Animal Poison Line; US: ASPCA 888-426-4435) immediately.</p>
+
+        <h3>What is carprofen used for in dogs?</h3>
+        <p>Carprofen (Rimadyl, Canidryl) is an NSAID used to treat pain and inflammation in dogs — particularly osteoarthritis, post-surgical pain, and soft tissue injuries. It is not safe for cats. The standard dose is 2–4 mg/kg once daily. Dogs on long-term carprofen require regular blood tests to monitor liver and kidney function.</p>
+
+        <h3>How much metronidazole do I give my dog?</h3>
+        <p>Metronidazole (Flagyl) is used for gastrointestinal upsets, giardia, and certain anaerobic infections. The typical dose in dogs is 10–25 mg/kg twice daily for 5–7 days depending on the condition. It has a very bitter taste — giving it wrapped in food or a pill pocket helps. Cats can also take metronidazole but at vet-directed doses. Never give more than prescribed as high doses can cause neurological side effects.</p>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ Medical Disclaimer:</strong> This calculator provides reference dosage information based on published veterinary guidelines. It does not constitute veterinary advice and must not replace a consultation with a licensed veterinarian. Medication doses vary based on your pet's health status, other medications, and the condition being treated. Never administer any medication to your pet without a veterinary diagnosis and prescription.
+    </div>
+
+    <div class="ad-space">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>🐾 <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved. Not veterinary advice.</p>
+</footer>
+
+<script>
+// Medication data: { low_dose_mg_kg, high_dose_mg_kg, frequency, duration, notes, catSafe }
+const dogMeds = {
+    'amoxicillin':    { low: 10, high: 20, freq: 'Twice daily (every 12h)', dur: '5–7 days', notes: 'Broad-spectrum antibiotic. Give with food to reduce stomach upset. Complete the full course even if symptoms improve.' },
+    'amox-clav':      { low: 12.5, high: 25, freq: 'Twice daily (every 12h)', dur: '5–7 days', notes: 'Amoxicillin with clavulanic acid for resistant infections. Brands: Synulox (UK), Clavamox (US). Give with food.' },
+    'metronidazole':  { low: 10, high: 25, freq: 'Twice daily (every 12h)', dur: '5–7 days', notes: 'Used for GI upset, giardia, anaerobic infections. Very bitter — wrap in food. High doses can cause neurological effects.' },
+    'carprofen':      { low: 2, high: 4, freq: 'Once daily (or 2 mg/kg twice daily)', dur: 'As directed', notes: 'NSAID for pain and inflammation. Not safe for cats. Requires regular liver/kidney blood monitoring on long-term use. Give with food.' },
+    'meloxicam':      { low: 0.1, high: 0.2, freq: 'Once daily (initial dose 0.2 mg/kg)', dur: 'As directed', notes: 'NSAID — loading dose 0.2 mg/kg on day 1, then 0.1 mg/kg daily. Give with food. Monitor kidney function with long-term use.' },
+    'cefalexin':      { low: 15, high: 30, freq: 'Twice daily (every 12h)', dur: '7–14 days', notes: 'Antibiotic for skin, ear, and soft tissue infections. Can be given with or without food.' },
+    'doxycycline':    { low: 5, high: 10, freq: 'Once or twice daily', dur: '7–21 days', notes: 'Antibiotic for tick-borne diseases (Lyme, anaplasmosis), respiratory infections. Always give with food or water — can cause oesophageal damage if dry-swallowed. Do not give within 2h of dairy or antacids.' },
+    'prednisolone':   { low: 0.5, high: 2, freq: 'Once daily (morning)', dur: 'As directed — taper dose', notes: 'Corticosteroid for allergies, inflammation, immune conditions. Never stop abruptly. Long-term use causes side effects — use lowest effective dose.' },
+    'omeprazole':     { low: 0.5, high: 1, freq: 'Once daily (before food)', dur: 'As directed', notes: 'Proton pump inhibitor for stomach ulcers and acid reflux. Give 30 minutes before first meal. May be used alongside NSAIDs to protect the stomach.' },
+    'famotidine':     { low: 0.5, high: 1, freq: 'Once or twice daily', dur: 'As directed', notes: 'H2 blocker for stomach acid reduction and nausea. Generally well tolerated. Human tablets (20 mg) are commonly used — confirm dose with vet.' },
+    'tramadol':       { low: 2, high: 5, freq: 'Every 8–12 hours', dur: 'As directed', notes: 'Opioid pain reliever. May cause sedation, panting, or GI upset. Do not use with MAOIs or SSRIs. Some dogs metabolise it inefficiently — response varies.' },
+    'fenbendazole':   { low: 50, high: 50, freq: 'Once daily', dur: '3–5 days (or 3 days/month)', notes: 'Broad-spectrum dewormer (Panacur). Treats roundworms, hookworms, whipworms, and giardia. Usually given with food. Very safe — wide margin.' }
+};
+
+const catMeds = {
+    'amoxicillin':   { low: 10, high: 20, freq: 'Twice daily (every 12h)', dur: '5–7 days', notes: 'Antibiotic for bacterial infections. Give with food. Some cats are difficult to pill — flavoured suspensions available.' },
+    'amox-clav':     { low: 12.5, high: 25, freq: 'Twice daily (every 12h)', dur: '5–7 days', notes: 'Amoxicillin with clavulanic acid (Synulox). Give with food. Palatable drops formulation available for cats.' },
+    'metronidazole': { low: 10, high: 15, freq: 'Twice daily (every 12h)', dur: '5–7 days', notes: 'Used for GI disease and giardia. Cats are more sensitive to high doses — keep to lower end of range. Very bitter taste — use compounded flavoured form if possible.' },
+    'meloxicam':     { low: 0.05, high: 0.1, freq: 'Once daily — short term only', dur: 'Max 3–5 days (acute use)', notes: '⚠️ Cats are very sensitive to NSAIDs — meloxicam is licensed for short-term use only in cats in the UK/EU. Long-term use can cause kidney failure. Use only as prescribed. Do NOT use in cats with kidney disease.' },
+    'prednisolone':  { low: 0.5, high: 2, freq: 'Once daily (morning)', dur: 'As directed — taper dose', notes: 'Corticosteroid for asthma, IBD, allergies, immune conditions. Cats tolerate steroids better than dogs. Never stop abruptly — taper dose.' },
+    'cefalexin':     { low: 15, high: 30, freq: 'Twice daily (every 12h)', dur: '7–14 days', notes: 'Antibiotic for skin and soft tissue infections. Generally well tolerated in cats.' },
+    'doxycycline':   { low: 5, high: 10, freq: 'Once or twice daily', dur: '7–21 days', notes: '⚠️ Always give with food and water — doxycycline can cause oesophageal strictures in cats if not swallowed fully. Liquid formulation preferred in cats. Used for Mycoplasma, Chlamydia, URIs.' },
+    'famotidine':    { low: 0.5, high: 1, freq: 'Once or twice daily', dur: 'As directed', notes: 'H2 blocker for stomach acid and nausea. Commonly used in cats with kidney disease or hepatic lipidosis. Generally safe and well tolerated.' },
+    'omeprazole':    { low: 0.5, high: 1, freq: 'Once daily (before food)', dur: 'As directed', notes: 'Proton pump inhibitor for stomach ulcers. Give 30 minutes before first meal. Less commonly used in cats than famotidine but effective.' },
+    'fenbendazole':  { low: 50, high: 50, freq: 'Once daily', dur: '3–5 days', notes: 'Dewormer (Panacur) for roundworms, hookworms, and giardia. Give with food. Very safe — wide therapeutic margin in cats.' }
+};
+
+function switchTab(t) {
+    ['dog','cat'].forEach(id => document.getElementById('tab-'+id).style.display = id===t?'block':'none');
+    document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', ['dog','cat'][i]===t));
+}
+
+function toKg(val, unit) { return unit === 'lb' ? val * 0.453592 : val; }
+function round2(n) { return Math.round(n * 10) / 10; }
+
+function buildResult(weightKg, weightDisplay, med, data, doseId, labelId, freqId, durId, weightShowId, infoId, tableId) {
+    const low = round2(weightKg * data.low);
+    const high = data.low === data.high ? null : round2(weightKg * data.high);
+    const doseText = high ? `${low}–${high} mg` : `${low} mg`;
+
+    document.getElementById(doseId).textContent = doseText;
+    document.getElementById(labelId).textContent = 'Per dose (based on ' + weightDisplay + ')';
+    document.getElementById(freqId).textContent = data.freq;
+    document.getElementById(durId).textContent = data.dur;
+    document.getElementById(weightShowId).textContent = weightDisplay;
+    document.getElementById(infoId).textContent = '💡 ' + data.notes;
+
+    const medName = document.getElementById(med === 'dog' ? 'dog-med' : 'cat-med');
+    const selectedText = medName ? medName.options[medName.selectedIndex].text : '';
+
+    let html = `<tr><th>Parameter</th><th>Value</th></tr>
+        <tr><td>Medication</td><td>${selectedText}</td></tr>
+        <tr><td>Pet weight</td><td>${weightDisplay}</td></tr>
+        <tr><td>Dose rate</td><td>${data.low}${data.low !== data.high ? '–'+data.high : ''} mg/kg</td></tr>
+        <tr><td>Calculated dose</td><td><strong>${doseText}</strong></td></tr>
+        <tr><td>Frequency</td><td>${data.freq}</td></tr>
+        <tr><td>Typical course</td><td>${data.dur}</td></tr>`;
+    document.getElementById(tableId).innerHTML = html;
+}
+
+function calcDog() {
+    const rawWeight = parseFloat(document.getElementById('dog-weight').value);
+    const unit = document.getElementById('dog-unit').value;
+    const medKey = document.getElementById('dog-med').value;
+    if (!rawWeight || rawWeight <= 0) { alert('Please enter your dog\'s weight.'); return; }
+    const weightKg = toKg(rawWeight, unit);
+    const weightDisplay = unit === 'kg' ? rawWeight + ' kg' : rawWeight + ' lb (' + round2(weightKg) + ' kg)';
+    buildResult(weightKg, weightDisplay, 'dog', dogMeds[medKey], 'dog-dose', 'dog-dose-label', 'dog-freq', 'dog-duration', 'dog-weight-show', 'dog-med-info', 'dog-breakdown');
+    document.getElementById('dog-results').classList.add('show');
+    document.getElementById('dog-results').scrollIntoView({behavior:'smooth'});
+}
+function resetDog() { document.getElementById('dog-results').classList.remove('show'); }
+
+function calcCat() {
+    const rawWeight = parseFloat(document.getElementById('cat-weight').value);
+    const unit = document.getElementById('cat-unit').value;
+    const medKey = document.getElementById('cat-med').value;
+    if (!rawWeight || rawWeight <= 0) { alert('Please enter your cat\'s weight.'); return; }
+    const weightKg = toKg(rawWeight, unit);
+    const weightDisplay = unit === 'kg' ? rawWeight + ' kg' : rawWeight + ' lb (' + round2(weightKg) + ' kg)';
+    buildResult(weightKg, weightDisplay, 'cat', catMeds[medKey], 'cat-dose', 'cat-dose-label', 'cat-freq', 'cat-duration', 'cat-weight-show', 'cat-med-info', 'cat-breakdown');
+    document.getElementById('cat-results').classList.add('show');
+    document.getElementById('cat-results').scrollIntoView({behavior:'smooth'});
+}
+function resetCat() { document.getElementById('cat-results').classList.remove('show'); }
+</script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>
