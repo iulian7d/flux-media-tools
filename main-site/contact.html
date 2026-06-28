@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Flux Media Systems</title>
+    <meta name="description" content="Get in touch with Flux Media Systems — report an error, suggest a tool, or ask a question.">
+    <meta name="google-adsense-account" content="ca-pub-6784909791643403">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://fluxmediasystems.com/contact.html">
+    <meta property="og:title" content="Contact — Flux Media Systems">
+    <meta property="og:description" content="Report an error, suggest a tool, or get in touch with the team at Flux Media Systems.">
+    <meta property="og:url" content="https://fluxmediasystems.com/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://fluxmediasystems.com/social-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact — Flux Media Systems">
+    <meta name="twitter:description" content="Report an error, suggest a tool, or get in touch with the team at Flux Media Systems.">
+    <meta name="twitter:image" content="https://fluxmediasystems.com/social-preview.png">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="https://fluxmediasystems.com" class="nav-logo">⚡ Flux Media Systems</a>
+        <div class="nav-links">
+            <a href="https://fluxmediasystems.com/guides/">Guides</a>
+            <a href="https://fluxmediasystems.com/about.html">About</a>
+            <a href="https://fluxmediasystems.com/contact.html">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<div class="page-hero">
+    <h1>Get in touch</h1>
+    <p>Report an error, suggest a tool, or ask a question.</p>
+</div>
+
+<div class="page-body">
+
+    <p>Use the form below to reach out. A few things that are particularly useful:</p>
+    <ul>
+        <li><strong>Errors or outdated figures</strong> — if a calculator is giving wrong results or a rate has changed, please flag it. Include the tool name and what you think the correct figure should be.</li>
+        <li><strong>Tool suggestions</strong> — if there's something you'd like to see built, describe what it should calculate and who it's for.</li>
+        <li><strong>General questions</strong> — anything else.</li>
+    </ul>
+    <p>Note: We can't give legal, financial, medical, or veterinary advice. For those, please consult a qualified professional.</p>
+
+    <form class="contact-form" id="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+        </div>
+        <div class="form-group">
+            <label for="subject">What's this about?</label>
+            <select id="subject" name="subject">
+                <option value="error">Error or wrong figure in a calculator</option>
+                <option value="suggestion">Tool suggestion</option>
+                <option value="guide">Guide or content suggestion</option>
+                <option value="other">Something else</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Please describe your question or feedback..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send message</button>
+    </form>
+
+    <div id="form-success" class="form-success" style="display:none;">
+        <h3>✅ Message sent</h3>
+        <p>Thanks for getting in touch. We'll get back to you as soon as we can — usually within a couple of days.</p>
+    </div>
+
+
+    <h2 style="margin-top:48px;">Common questions</h2>
+
+    <h3 style="margin-top:24px; font-size:1rem; color:#1e293b;">How quickly will I get a reply?</h3>
+    <p>Usually within a couple of working days. If you're reporting an error in a calculator that could affect financial decisions, we prioritise those and aim to respond and fix the issue same day.</p>
+
+    <h3 style="margin-top:20px; font-size:1rem; color:#1e293b;">Can you give me legal, financial, or medical advice?</h3>
+    <p>No — and we'd be doing you a disservice if we tried. The tools and guides here give you a solid starting point and help you understand the numbers, but your specific situation needs a qualified professional: a solicitor, financial adviser, accountant, or doctor. If you're not sure who to contact, the Citizens Advice Bureau (UK) or your state bar's referral service (US) can point you in the right direction.</p>
+
+    <h3 style="margin-top:20px; font-size:1rem; color:#1e293b;">I found a calculation that looks wrong — what should I do?</h3>
+    <p>Please report it using the form above, selecting "Error or wrong figure in a calculator." Include the tool name, the inputs you used, the result you got, and what you think the correct figure should be (with a source if you have one). We verify every report and fix genuine errors as quickly as possible.</p>
+
+    <h3 style="margin-top:20px; font-size:1rem; color:#1e293b;">Can I suggest a new calculator or guide?</h3>
+    <p>Yes — tool suggestions are always welcome. The most useful submissions explain what the tool should calculate, what inputs it would need, and who would use it. If it's something that serves a real practical need and we can build it accurately, it goes on the list.</p>
+
+    <h3 style="margin-top:20px; font-size:1rem; color:#1e293b;">Are the tools free to embed or share?</h3>
+    <p>Each tool lives on its own subdomain (for example, qr.fluxmediasystems.com or stamp-duty-calculator.fluxmediasystems.com) and can be linked to directly. They're free to share. For embedding in a third-party site or commercial use, please get in touch first.</p>
+
+    <div style="margin-top:40px;">
+        <a href="https://fluxmediasystems.com" style="display:inline-block; background:#f1f5f9; color:#1e293b; padding:12px 28px; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.95rem;">← Back to tools</a>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-logo">⚡ Flux Media Systems</div>
+        <div class="footer-links">
+            <a href="https://fluxmediasystems.com/guides/">Guides</a>
+            <a href="https://fluxmediasystems.com/about.html">About</a>
+            <a href="https://fluxmediasystems.com/contact.html">Contact</a>
+            <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a>
+            <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a>
+        </div>
+        <div class="footer-copy">&copy; 2026 Flux Media Systems. All tools are free to use. Results are estimates — always verify important decisions with a qualified professional.</div>
+    </div>
+</footer>
+
+<script>
+// ⚠️  SETUP REQUIRED: Replace YOUR_FORM_ID below with your Formspree form ID.
+// 1. Go to https://formspree.io and sign up (free)
+// 2. Create a new form — enter admin@fluxmediasystems.com as the email
+// 3. Copy the form ID (looks like: xyzabcde) from the endpoint URL
+// 4. Replace YOUR_FORM_ID below with that ID
+const FORMSPREE_ID = 'xrewkbbr';
+
+async function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('contact-form');
+    const btn = form.querySelector('.form-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+        const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+            form.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+        } else {
+            const data = await res.json();
+            const msg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.';
+            btn.textContent = 'Send message';
+            btn.disabled = false;
+            alert(msg);
+        }
+    } catch (err) {
+        btn.textContent = 'Send message';
+        btn.disabled = false;
+        alert('Could not send message. Please check your connection and try again.');
+    }
+}
+</script>
+
+</body>
+</html>

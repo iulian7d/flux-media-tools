@@ -1,117 +1,317 @@
-# Flux Media Systems — Free Web Tools
-> A collection of free, single-purpose calculators and tools for health, finance, and everyday tasks.
-> All tools run entirely in the browser. No login required. No data stored on servers.
-
-## Site
-https://fluxmediasystems.com
-
-## Tools
-
-### Finance Tools
-
-**Mortgage Calculator**
-URL: https://mortgage.fluxmediasystems.com
-Description: Calculate mortgage affordability based on income and debts, or compute monthly payments and amortization for any loan amount. Uses the 28%/36% DTI rule. Includes extra payment savings.
-Keywords: mortgage calculator, mortgage affordability, monthly payment, amortization table, home loan
-
-**Salary & Take-Home Pay Calculator**
-URL: https://salary.fluxmediasystems.com
-Description: Calculate net take-home pay from gross salary. Covers 2025 federal income tax brackets for all filing statuses, all 50 US state taxes, Social Security, Medicare, and 401k deductions.
-Keywords: salary calculator, take home pay, net pay calculator, paycheck calculator, income tax calculator
-
-**Investment Growth Calculator**
-URL: https://invest.fluxmediasystems.com
-Description: Project investment portfolio growth with compound interest. Supports initial investment, monthly contributions, adjustable compounding frequency, and inflation-adjusted returns. Includes a line chart.
-Keywords: investment calculator, compound interest calculator, investment growth, portfolio calculator, compound interest
-
-**Loan Calculator**
-URL: https://loan.fluxmediasystems.com
-Description: Calculate monthly loan payments, total interest paid, and full amortization schedule for any loan. Shows savings from making extra payments. Includes a stacked bar chart.
-Keywords: loan calculator, loan payment calculator, amortization calculator, personal loan calculator, auto loan calculator
-
-**Freelancer Rate Calculator**
-URL: https://rate.fluxmediasystems.com
-Description: Calculate the minimum hourly rate a freelancer needs to charge to hit their income goal. Accounts for desired income, self-employment tax, unpaid vacation weeks, non-billable hours, and business expenses.
-Keywords: freelancer rate calculator, hourly rate calculator, freelance pricing, consultant rate, self-employed income
-
-**Retirement Savings Calculator**
-URL: https://retire.fluxmediasystems.com
-Description: Project retirement savings growth and determine if you'll have enough to retire. Uses the 4% safe withdrawal rule. Factors in Social Security income, inflation, and current portfolio value.
-Keywords: retirement calculator, retirement savings calculator, 401k calculator, retirement planning, how much to retire
-
-### Health & Medical Tools
-
-**Pregnancy Due Date Calculator**
-URL: https://pregnancy.fluxmediasystems.com
-Description: Calculate pregnancy due date from last menstrual period (LMP), conception date, IVF transfer date, or ultrasound. Shows weeks pregnant, trimester, days remaining, baby size by week, and key milestones.
-Keywords: pregnancy calculator, due date calculator, pregnancy due date, how many weeks pregnant, baby size calculator
-
-**Ovulation & Fertile Window Calculator**
-URL: https://ovulation.fluxmediasystems.com
-Description: Calculate ovulation day, fertile window, and next period based on cycle length and luteal phase. Includes a 3-month color-coded calendar showing period, fertile, ovulation, and PMS days.
-Keywords: ovulation calculator, fertile window calculator, ovulation tracker, when am I fertile, conception calculator
-
-**Blood Pressure Tracker**
-URL: https://bp.fluxmediasystems.com
-Description: Log and track blood pressure readings over time. Classifies readings using AHA guidelines (Normal, Elevated, Stage 1, Stage 2, Crisis). Saves history locally and displays a trend chart.
-Keywords: blood pressure tracker, blood pressure log, blood pressure chart, hypertension tracker, systolic diastolic
-
-**Type 2 Diabetes Risk Calculator**
-URL: https://diabetes.fluxmediasystems.com
-Description: Assess Type 2 diabetes risk using ADA guidelines. Scores age, BMI, waist circumference, physical activity, family history, diet, blood pressure, and gestational diabetes history. Provides a personalized action plan.
-Keywords: diabetes risk calculator, type 2 diabetes risk, am I diabetic, prediabetes calculator, diabetes risk assessment
-
-**Sleep Calculator**
-URL: https://sleep.fluxmediasystems.com
-Description: Find the best times to go to sleep or wake up based on 90-minute sleep cycles. Includes a sleep debt calculator showing weekly sleep deficit by age group.
-Keywords: sleep calculator, what time should I sleep, best time to wake up, sleep cycle calculator, sleep debt
-
-**Body Fat Percentage Calculator**
-URL: https://bodyfat.fluxmediasystems.com
-Description: Calculate body fat percentage using the US Navy formula (waist, neck, hips measurements) or the BMI-based Deurenberg formula. Shows fat mass, lean mass, fitness category, and ideal range.
-Keywords: body fat calculator, body fat percentage, navy body fat calculator, how to calculate body fat, body composition
-
-**Health Insurance Cost Estimator**
-URL: https://insurance.fluxmediasystems.com
-Description: Estimate monthly health insurance premiums and ACA subsidy eligibility. Based on 2025 marketplace averages. Inputs: income, household size, age, state cost tier, plan type (Bronze/Silver/Gold/Platinum).
-Keywords: health insurance calculator, ACA subsidy calculator, Obamacare calculator, health insurance cost estimator, marketplace insurance
-
-**Drug Interaction Checker**
-URL: https://interactions.fluxmediasystems.com
-Description: Check for interactions between 2 or more medications or supplements using the OpenFDA drug label database. Displays interaction descriptions and severity (major, moderate, minor).
-Keywords: drug interaction checker, medication interaction, drug interactions, supplement interactions, medicine interaction
-
-### General Tools
-
-**Age Calculator**
-URL: https://age.fluxmediasystems.com
-Description: Calculate exact age in years, months, and days from a birthdate. Also shows days until next birthday and age on any target date.
-Keywords: age calculator, how old am I, birthday calculator, age in days, exact age calculator
-
-**Calorie Calculator**
-URL: https://calorie.fluxmediasystems.com
-Description: Calculate daily calorie needs based on age, sex, height, weight, and activity level. Uses the Mifflin-St Jeor equation. Shows TDEE and calorie targets for weight loss, maintenance, and gain.
-Keywords: calorie calculator, TDEE calculator, daily calorie needs, how many calories should I eat, weight loss calories
-
-**QR Code Generator**
-URL: https://qr.fluxmediasystems.com
-Description: Generate QR codes instantly for any URL, text, or content. Download as PNG. No login required. Runs entirely in the browser.
-Keywords: QR code generator, free QR code, create QR code, QR code maker, URL to QR code
-
-**Password Generator**
-URL: https://password.fluxmediasystems.com
-Description: Generate strong, random passwords with custom length and character sets (uppercase, lowercase, numbers, symbols). Shows password strength meter.
-Keywords: password generator, strong password generator, random password, secure password, password maker
-
-**Discount & Sale Price Calculator**
-URL: https://discount.fluxmediasystems.com
-Description: Calculate sale price after a percentage discount, or work backwards to find what discount percentage was applied. Also calculates tax on final price.
-Keywords: discount calculator, sale price calculator, percentage off calculator, percent discount, how much is X% off
+# Flux Media Systems — Free Web Calculators & Tools
+> A collection of 50 free, single-purpose calculators covering finance, health, property, legal, and pet care.
+> All tools run in the browser. No login required. No data stored on servers. UK and US coverage throughout.
 
 ## Publisher
 Flux Media Systems
 https://fluxmediasystems.com
-contact: via website
+Contact: https://fluxmediasystems.com/contact.html
+
+## Site Pages
+- Homepage: https://fluxmediasystems.com
+- About: https://fluxmediasystems.com/about.html
+- Contact: https://fluxmediasystems.com/contact.html
+- Privacy Policy: https://fluxmediasystems.com/privacy-policy.html
+- Terms of Use: https://fluxmediasystems.com/terms-of-use.html
+- Guides Index: https://fluxmediasystems.com/guides/
+
+## Guides
+
+**Stamp Duty Guide**
+URL: https://fluxmediasystems.com/guides/stamp-duty-guide.html
+Description: Complete guide to UK Stamp Duty Land Tax (SDLT) in 2026. Covers rates for standard purchases, first-time buyers, second homes, and non-UK residents. Includes worked examples.
+
+**Mortgage Guide**
+URL: https://fluxmediasystems.com/guides/mortgage-guide.html
+Description: How UK mortgages work — repayment vs interest-only, fixed vs variable rates, LTV impact on rates, the application process, and how overpayments save interest.
+
+**Rent vs Buy Guide**
+URL: https://fluxmediasystems.com/guides/rent-vs-buy-guide.html
+Description: Detailed comparison of renting vs buying a home in the UK — total costs, opportunity cost of the deposit, house price growth assumptions, and break-even timeline.
+
+**Redundancy Guide**
+URL: https://fluxmediasystems.com/guides/redundancy-guide.html
+Description: UK redundancy rights guide covering statutory redundancy pay, notice periods, garden leave, PILON, the redundancy selection process, and what to do if redundancy is unfair.
+
+**Pet Medication Guide**
+URL: https://fluxmediasystems.com/guides/pet-medication-guide.html
+Description: Guide to common dog and cat medications — dosage principles, giving tablets and liquids, storage, and when to contact a vet. References Plumb's Veterinary Drug Handbook.
+
+**Compound Interest Guide**
+URL: https://fluxmediasystems.com/guides/compound-interest-guide.html
+Description: How compound interest works, the Rule of 72, how compounding frequency affects returns, and how to use compound interest to grow savings over time.
+
+---
+
+## Finance & Property Tools
+
+**Mortgage Calculator**
+URL: https://mortgage.fluxmediasystems.com
+Description: Calculate mortgage monthly payments, total interest, and amortization schedule. Estimates affordability based on income using 28%/36% DTI rule. Covers UK and US. Includes extra payment savings.
+Keywords: mortgage calculator, monthly mortgage payment, mortgage affordability, home loan calculator, amortization
+
+**Mortgage Overpayment Calculator**
+URL: https://mortgage-overpayment-calculator.fluxmediasystems.com
+Description: Calculate exactly how much interest you save and how many years you cut off your mortgage by making monthly overpayments or lump sum overpayments.
+Keywords: mortgage overpayment calculator, overpay mortgage, save interest on mortgage, pay off mortgage early
+
+**Stamp Duty Calculator**
+URL: https://stamp-duty-calculator.fluxmediasystems.com
+Description: Calculate UK Stamp Duty Land Tax (SDLT) for standard purchases, first-time buyers (nil-rate up to £500k), and second homes (3% surcharge). Uses 2025/26 rates.
+Keywords: stamp duty calculator, SDLT calculator, first time buyer stamp duty, stamp duty 2026
+
+**LTV Calculator**
+URL: https://ltv-calculator.fluxmediasystems.com
+Description: Calculate Loan-to-Value ratio for UK mortgage purchases or remortgages. Shows which LTV band applies and typical rate implication of each band (60% to 95%).
+Keywords: LTV calculator, loan to value, mortgage LTV, remortgage LTV, deposit percentage
+
+**Home Affordability Calculator**
+URL: https://home-affordability-calculator.fluxmediasystems.com
+Description: Calculate how much house you can afford in the UK based on gross income, deposit size, existing debts, and current mortgage rates. Uses 4.5x income multiplier.
+Keywords: home affordability calculator, how much house can I afford, mortgage affordability UK
+
+**Home Equity Calculator**
+URL: https://home-equity-calculator.fluxmediasystems.com
+Description: Calculate how much equity you have in your home and how much you could borrow through a remortgage or equity release.
+Keywords: home equity calculator, how much equity do I have, equity release calculator, remortgage equity
+
+**Rent vs Buy Calculator**
+URL: https://rent-vs-buy-calculator.fluxmediasystems.com
+Description: Compare the true long-term cost of renting vs buying in the UK. Factors in house price growth, deposit opportunity cost, rent increases, maintenance, and transaction costs. Shows break-even year.
+Keywords: rent vs buy calculator, is it cheaper to rent or buy, rent or buy UK
+
+**Rental Yield Calculator**
+URL: https://rental-yield-calculator.fluxmediasystems.com
+Description: Calculate gross and net rental yield on a buy-to-let property. Net yield accounts for mortgage interest, letting agent fees, maintenance, insurance, and void periods.
+Keywords: rental yield calculator, gross rental yield, net rental yield, buy to let yield
+
+**Property Tax Calculator**
+URL: https://property-tax-calculator.fluxmediasystems.com
+Description: Estimate UK council tax by band and local authority, or US property tax by state. Covers all UK council tax bands A–H and average effective rates for all US states.
+Keywords: property tax calculator, council tax calculator, UK council tax bands, US property tax by state
+
+**Renovation Cost Calculator**
+URL: https://renovation-cost-calculator.fluxmediasystems.com
+Description: Estimate UK home renovation costs for kitchens, bathrooms, loft conversions, single/double extensions, and full house refurbishments. Adjusts for size and quality level.
+Keywords: renovation cost calculator, kitchen renovation cost UK, loft conversion cost, extension cost UK
+
+**Moving House Cost Calculator**
+URL: https://moving-cost-calculator.fluxmediasystems.com
+Description: Estimate total UK moving house costs including removal company, solicitor conveyancing fees, survey costs, estate agent fees, and mortgage arrangement fees.
+Keywords: moving house cost calculator, removal cost, conveyancing fees, cost of moving home UK
+
+**Loan Calculator**
+URL: https://loan.fluxmediasystems.com
+Description: Calculate monthly loan repayments, total interest paid, and full amortization schedule for any loan. Shows savings from extra payments. Includes repayment chart.
+Keywords: loan calculator, loan payment calculator, personal loan calculator, monthly payment calculator
+
+**Investment Calculator**
+URL: https://invest.fluxmediasystems.com
+Description: Project investment portfolio growth with compound interest. Supports initial investment, monthly contributions, adjustable compounding frequency, and inflation-adjusted real returns.
+Keywords: investment calculator, compound interest calculator, investment growth, portfolio calculator
+
+**Retirement Calculator**
+URL: https://retire.fluxmediasystems.com
+Description: Project retirement savings and determine if you can retire by a target date. Uses 4% safe withdrawal rule. Includes Social Security or UK State Pension income.
+Keywords: retirement calculator, retirement savings calculator, when can I retire, pension calculator UK
+
+**Freelancer Rate Calculator**
+URL: https://rate.fluxmediasystems.com
+Description: Calculate the minimum hourly or day rate a freelancer needs to charge to hit a desired net income. Accounts for self-employment tax, unpaid leave, non-billable hours, and expenses.
+Keywords: freelancer rate calculator, hourly rate calculator, freelance pricing, day rate calculator
+
+**Salary Calculator**
+URL: https://salary.fluxmediasystems.com
+Description: Calculate net take-home pay from gross salary. Covers all 50 US states (state income tax, FICA) and UK (Income Tax, National Insurance, student loan repayment).
+Keywords: salary calculator, take home pay calculator, net pay calculator, paycheck calculator, income tax UK
+
+**Health Insurance Cost Estimator**
+URL: https://insurance.fluxmediasystems.com
+Description: Estimate US health insurance monthly premiums and ACA subsidy eligibility based on income, household size, age, state, and plan tier (Bronze/Silver/Gold/Platinum).
+Keywords: health insurance calculator, ACA subsidy calculator, Obamacare premium calculator, marketplace insurance
+
+---
+
+## Legal Tools
+
+**Redundancy Pay Calculator**
+URL: https://redundancy-pay-calculator.fluxmediasystems.com
+Description: Calculate UK statutory redundancy pay based on age, years of service, and weekly pay. Uses 2025/26 weekly pay cap (£719). Shows age-banded multiplier breakdown and total entitlement.
+Keywords: redundancy pay calculator, statutory redundancy pay, redundancy calculator UK 2026
+
+**Notice Period Calculator**
+URL: https://notice-period-calculator.fluxmediasystems.com
+Description: Find UK statutory minimum notice period by years of service and calculate pay in lieu of notice (PILON). Covers employer and employee obligations under the Employment Rights Act 1996.
+Keywords: notice period calculator, PILON calculator, pay in lieu of notice, statutory notice period UK
+
+**Employment Tribunal Calculator**
+URL: https://employment-tribunal-calculator.fluxmediasystems.com
+Description: Estimate basic award and compensatory award for UK unfair dismissal tribunal claims. Uses 2025/26 weekly pay cap (£719) and maximum compensatory award (£115,115).
+Keywords: employment tribunal calculator, unfair dismissal compensation, basic award calculator UK
+
+**Alimony Calculator**
+URL: https://alimony-calculator.fluxmediasystems.com
+Description: Estimate spousal maintenance (UK) or alimony (US) based on marriage length, income difference, and jurisdiction. For guidance only — outcomes vary widely by court.
+Keywords: alimony calculator, spousal maintenance calculator, spousal support estimator, divorce maintenance UK
+
+**Divorce Asset Calculator**
+URL: https://divorce-asset-calculator.fluxmediasystems.com
+Description: Model how property, savings, pensions, and debts might be divided in a UK or US divorce financial settlement based on equitable distribution principles.
+Keywords: divorce asset calculator, financial settlement calculator, divorce property split, matrimonial assets
+
+**Child Support Calculator**
+URL: https://child-support-calculator.fluxmediasystems.com
+Description: Estimate UK child maintenance using the Child Maintenance Service (CMS) formula based on gross weekly income and number of children. Also covers US state income shares model.
+Keywords: child support calculator, child maintenance calculator, CMS calculator UK, child maintenance 2026
+
+**Small Claims Court Calculator**
+URL: https://small-claims-calculator.fluxmediasystems.com
+Description: Check if a claim qualifies for small claims, calculate court fees, and see claim limits for England & Wales, Scotland, Northern Ireland, and all 50 US states.
+Keywords: small claims calculator, small claims court fees, small claims limit UK, small claims court US
+
+**Statute of Limitations Calculator**
+URL: https://statute-of-limitations.fluxmediasystems.com
+Description: Check if a legal claim is still within time. Covers personal injury, breach of contract, debt, and property for all US states and UK (Limitation Act 1980).
+Keywords: statute of limitations calculator, limitation period UK, is my claim in time, legal time limit
+
+**Inheritance Tax Calculator**
+URL: https://inheritance-tax-calculator.fluxmediasystems.com
+Description: Estimate UK Inheritance Tax using the 2025/26 nil-rate band (£325,000), residence nil-rate band (£175,000), and rules for married couples, charitable gifts, and taper relief.
+Keywords: inheritance tax calculator, IHT calculator, estate tax UK, nil rate band 2026
+
+**Late Payment Interest Calculator**
+URL: https://late-payment-interest.fluxmediasystems.com
+Description: Calculate statutory late payment interest on overdue B2B invoices under the Late Payment of Commercial Debts Act 1998. Rate is 8% plus Bank of England base rate. Includes debt recovery costs.
+Keywords: late payment interest calculator, statutory interest invoices, late payment act, overdue invoice interest UK
+
+---
+
+## Health Tools
+
+**Pregnancy Due Date Calculator**
+URL: https://pregnancy.fluxmediasystems.com
+Description: Calculate due date from LMP, conception date, IVF transfer date, or ultrasound. Shows weeks pregnant, trimester, days remaining, baby size by week, and key milestones.
+Keywords: pregnancy calculator, due date calculator, how many weeks pregnant, pregnancy due date
+
+**Ovulation & Fertile Window Calculator**
+URL: https://ovulation.fluxmediasystems.com
+Description: Calculate ovulation day, fertile window, and next period from cycle length and luteal phase. Includes 3-month colour-coded calendar showing period, fertile, ovulation, and PMS days.
+Keywords: ovulation calculator, fertile window calculator, when am I fertile, period tracker, conception calculator
+
+**Blood Pressure Tracker**
+URL: https://bp.fluxmediasystems.com
+Description: Log and track blood pressure readings over time. Classifies readings using AHA 2017 guidelines (Normal / Elevated / Stage 1 / Stage 2 / Hypertensive Crisis). Trend chart included. Saves locally.
+Keywords: blood pressure tracker, blood pressure log, blood pressure chart, hypertension tracker, normal blood pressure
+
+**Type 2 Diabetes Risk Calculator**
+URL: https://diabetes.fluxmediasystems.com
+Description: Assess Type 2 diabetes risk using ADA criteria — age, BMI, waist, activity, family history, diet, blood pressure, gestational history. Provides risk rating and personalised action plan.
+Keywords: diabetes risk calculator, type 2 diabetes risk, am I at risk of diabetes, prediabetes test
+
+**Sleep Calculator**
+URL: https://sleep.fluxmediasystems.com
+Description: Find optimal sleep and wake times based on 90-minute sleep cycles to avoid waking mid-cycle. Includes sleep debt calculator showing cumulative weekly deficit by age group.
+Keywords: sleep calculator, best time to wake up, sleep cycle calculator, sleep debt calculator
+
+**Body Fat Percentage Calculator**
+URL: https://bodyfat.fluxmediasystems.com
+Description: Calculate body fat using the US Navy formula (waist/neck/hips) or BMI-based Deurenberg formula. Shows fat mass, lean mass, fitness category, and healthy range by sex.
+Keywords: body fat calculator, body fat percentage, navy body fat formula, body composition calculator
+
+**Calorie Calculator**
+URL: https://calorie.fluxmediasystems.com
+Description: Calculate daily calorie needs using the Mifflin-St Jeor equation. Outputs BMR, TDEE, and calorie targets for weight loss (−500 kcal), maintenance, and muscle gain (+500 kcal). Includes macro split.
+Keywords: calorie calculator, TDEE calculator, daily calorie needs, how many calories to lose weight, BMR calculator
+
+**Drug Interaction Checker**
+URL: https://interactions.fluxmediasystems.com
+Description: Check interactions between medications or supplements using the OpenFDA drug label database. Displays interaction descriptions and severity (major / moderate / minor).
+Keywords: drug interaction checker, medication interaction checker, supplement interactions, medicine checker
+
+**Age Calculator**
+URL: https://age.fluxmediasystems.com
+Description: Calculate exact age in years, months, weeks, and days from a birthdate. Shows days until next birthday and age on any target date.
+Keywords: age calculator, how old am I, exact age calculator, birthday calculator, age in days
+
+---
+
+## Pet Tools
+
+**Dog Age Calculator**
+URL: https://dog-age-calculator.fluxmediasystems.com
+Description: Convert dog years to human years using the DNA methylation-based formula (UC San Diego, 2019), not the old multiply-by-7 rule. Works for all breed sizes.
+Keywords: dog age calculator, dog years to human years, how old is my dog in human years
+
+**Cat Age Calculator**
+URL: https://cat-age-calculator.fluxmediasystems.com
+Description: Convert cat years to human years using AAHA/AAFP feline life-stage guidelines. Covers kitten, junior, adult, mature, senior, and geriatric life stages.
+Keywords: cat age calculator, cat years to human years, how old is my cat in human years
+
+**Dog Calorie Calculator**
+URL: https://dog-calorie-calculator.fluxmediasystems.com
+Description: Calculate a dog's daily calorie needs using the RER formula endorsed by veterinary nutritionists. Adjusts for neuter status, life stage, activity level, and weight status.
+Keywords: dog calorie calculator, how many calories does my dog need, RER dog, dog daily calories
+
+**Cat Calorie Calculator**
+URL: https://cat-calorie-calculator.fluxmediasystems.com
+Description: Calculate a cat's daily calorie needs based on weight, neuter status, age, and activity using NRC-recommended RER formulas. Helps prevent feline obesity and malnutrition.
+Keywords: cat calorie calculator, how many calories does my cat need, feline calorie calculator
+
+**Dog Food Calculator**
+URL: https://dog-food-calculator.fluxmediasystems.com
+Description: Calculate how much food to feed a dog per day based on weight, age, activity level, and food type (dry kibble, wet, raw, or mixed). Converts calories to grams or cups.
+Keywords: dog food calculator, how much to feed my dog, dog feeding guide, dog food portion
+
+**Dog Water Calculator**
+URL: https://dog-water-calculator.fluxmediasystems.com
+Description: Calculate how much water a dog should drink daily based on weight, activity level, and diet type. Includes signs of dehydration and overhydration, and when to see a vet.
+Keywords: dog water intake calculator, how much water should my dog drink, dog hydration
+
+**Dog Weight Calculator**
+URL: https://dog-weight-calculator.fluxmediasystems.com
+Description: Check if a dog is at a healthy weight using Body Condition Score (BCS) guidelines from veterinary nutritionists. Shows ideal weight range and status (underweight/healthy/overweight).
+Keywords: dog ideal weight calculator, is my dog overweight, dog healthy weight, body condition score
+
+**Dog Pregnancy Calculator**
+URL: https://dog-pregnancy-calculator.fluxmediasystems.com
+Description: Calculate a dog's due date and week-by-week pregnancy milestones from mating or conception date. Covers the 63-day gestation with signs of labour and whelping checklist.
+Keywords: dog pregnancy calculator, dog due date calculator, whelping date, canine gestation period
+
+**Puppy Growth Calculator**
+URL: https://puppy-growth-calculator.fluxmediasystems.com
+Description: Predict a puppy's adult weight from current age and weight using breed-size-specific growth curves (toy/small/medium/large/giant). Shows percentage of adult size reached and fully-grown date.
+Keywords: puppy growth calculator, how big will my puppy get, puppy adult weight, puppy weight chart
+
+**Pet Medication Dosage Calculator**
+URL: https://pet-medication-calculator.fluxmediasystems.com
+Description: Find correct dose ranges for common dog and cat medications by body weight. Covers NSAIDs, antibiotics, antiparasitics, steroids, and more. Referenced to Plumb's Veterinary Drug Handbook.
+Keywords: pet medication dosage calculator, dog medication dose, cat medication dose, vet drug dose by weight
+
+**Pet Insurance Cost Estimator**
+URL: https://pet-insurance-calculator.fluxmediasystems.com
+Description: Estimate monthly pet insurance premiums for dogs and cats based on breed, age, location, and coverage type (accident-only / accident & illness / comprehensive).
+Keywords: pet insurance calculator, how much does pet insurance cost, dog insurance, cat insurance
+
+---
+
+## General Tools
+
+**QR Code Generator**
+URL: https://qr.fluxmediasystems.com
+Description: Generate QR codes instantly for any URL, text, phone number, or email. Download as PNG. Runs entirely in the browser — no data transmitted to servers.
+Keywords: QR code generator, free QR code maker, URL to QR code, create QR code
+
+**Password Generator**
+URL: https://password.fluxmediasystems.com
+Description: Generate strong random passwords with customisable length and character sets. Displays strength rating. Runs in browser — no passwords transmitted.
+Keywords: password generator, strong password generator, random password, secure password
+
+**Discount Calculator**
+URL: https://discount.fluxmediasystems.com
+Description: Calculate final price after a percentage discount, or find the discount percentage from original and sale prices. Also calculates VAT or sales tax on the discounted price.
+Keywords: discount calculator, sale price calculator, percentage off calculator, how much is X% off
+
+---
 
 ## License
-All tools are free to use. Content may be cited with attribution.
+All tools are free to use. Content may be cited with attribution to Flux Media Systems (https://fluxmediasystems.com).

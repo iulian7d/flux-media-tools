@@ -16,6 +16,7 @@
     <meta property="og:description" content="Free age calculator. Find your exact age in years, months, and days. Calculate days until your next birthday.">
     <meta property="og:url" content="https://age.fluxmediasystems.com">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://fluxmediasystems.com/social-preview.png">
     <meta property="og:site_name" content="Flux Media Systems">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Age Calculator - Calculate Your Exact Age">
@@ -76,6 +77,15 @@
 </script>
 </head>
 <body>
+<nav style="background:#1a3a5c;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;flex-wrap:wrap;gap:8px;">
+  <a href="https://fluxmediasystems.com" style="color:#fff;text-decoration:none;font-weight:700;font-size:0.95rem;">⚡ Flux Media Systems</a>
+  <div style="display:flex;gap:20px;">
+    <a href="https://fluxmediasystems.com" style="color:#93c5fd;text-decoration:none;font-size:0.88rem;">Home</a>
+    <a href="https://fluxmediasystems.com/guides/" style="color:#93c5fd;text-decoration:none;font-size:0.88rem;">Guides</a>
+    <a href="https://fluxmediasystems.com/about.html" style="color:#93c5fd;text-decoration:none;font-size:0.88rem;">About</a>
+    <a href="https://fluxmediasystems.com/contact.html" style="color:#93c5fd;text-decoration:none;font-size:0.88rem;">Contact</a>
+  </div>
+</nav>
     <div class="container">
         <!-- Header -->
         <header class="header">
@@ -208,7 +218,19 @@
 
             <h3>Can I calculate someone else's age?</h3>
             <p>Yes — simply enter their date of birth instead of yours. This is useful for calculating a child's age for school enrollment, working out a relative's age, or checking age eligibility for events or services.</p>
-        </section>
+        
+    <h2>How Age Is Calculated</h2>
+    <p>Calculating an exact age sounds straightforward, but calendar arithmetic is surprisingly complex. A naive approach — subtracting the birth year from the current year — gives you an approximate age, but it ignores whether your birthday has already occurred this calendar year. Our calculator determines the precise number of completed years, then works out the remaining months and days separately.</p>
+    <p>Leap years add another layer of complexity. Because February has 29 days roughly every four years (with exceptions for century years not divisible by 400), the number of days in a year varies. This is why two people born exactly 30 years apart may have lived a different number of total days. Our calculator accounts for every leap year between your birth date and today.</p>
+    <p>The hours and minutes figures are calculated from midnight on your date of birth to the current moment. Because we don't know your exact birth time, these are calculated from 00:00 on your birth date — they give a useful sense of scale rather than a precise personal figure.</p>
+
+    <h2>What the Results Tell You</h2>
+    <p><strong>Years, months, and days</strong> — your most precise age expression. This is useful for legal purposes (age eligibility), medical contexts (paediatric dosing is often age-band specific), and official forms.</p>
+    <p><strong>Total days lived</strong> — a striking way to appreciate the passage of time. Most people in their 30s have lived over 10,000 days; reaching 27,375 days means you've lived exactly 75 years.</p>
+    <p><strong>Days until next birthday</strong> — recalculated each time you load the page, so it's always current. Useful for planning ahead or simply satisfying curiosity.</p>
+    <p><strong>Day of the week born</strong> — calculated using the Zeller–Doomsday algorithm. Statistically, births are slightly less common on weekends (planned inductions and C-sections tend to happen on weekdays), so most people were born Monday–Friday.</p>
+
+</section>
 
         <!-- Ad Space (Bottom) -->
         <div class="ad-space">
@@ -225,8 +247,9 @@
         <strong>&#8505;&#65039; Disclaimer:</strong> This tool is provided for informational and convenience purposes only. Results are estimates. Flux Media Systems is not liable for any decisions made based on this tool's output.
     </div>
 <footer class="footer">
-            <p>&copy; 2026 Flux Media Systems. All rights reserved. | <a href="/">Home</a></p>
-        </footer>
+    <p>🎂 <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved.</p>
+</footer>
     </div>
 
     <script src="script.js"></script>

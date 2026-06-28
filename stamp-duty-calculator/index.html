@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stamp Duty Calculator 2026 - UK SDLT First-Time Buyer & Second Home</title>
+    <title>Stamp Duty Calculator 2026 - SDLT First-Time Buyer</title>
     <meta name="description" content="Free UK stamp duty calculator 2026. Calculate SDLT on property purchases including first-time buyer relief, second home 5% surcharge, Scotland LBTT, and Wales LTT rates.">
     <meta name="keywords" content="stamp duty calculator 2026, SDLT calculator, stamp duty first time buyer, stamp duty second home, stamp duty land tax calculator UK">
     <meta name="google-adsense-account" content="ca-pub-6784909791643403">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6784909791643403"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://stamp-duty-calculator.fluxmediasystems.com">
-    <meta property="og:title" content="Stamp Duty Calculator 2026 - UK SDLT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Stamp Duty Calculator 2026 - SDLT First-Time Buyer">
+    <meta name="twitter:description" content="Free stamp duty calculator. Calculate UK SDLT for standard purchases, first-time buyers, and second homes using 2025/26 rates.">
+    <meta property="og:title" content="Stamp Duty Calculator 2026 - SDLT First-Time Buyer">
     <meta property="og:description" content="Free UK stamp duty calculator. Includes first-time buyer relief, second home surcharge, Scotland and Wales rates.">
     <meta property="og:url" content="https://stamp-duty-calculator.fluxmediasystems.com">
+    <meta property="og:image" content="https://fluxmediasystems.com/social-preview.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -61,6 +65,15 @@
 </script>
 </head>
 <body>
+<nav style="background:#1a3a5c;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;flex-wrap:wrap;gap:8px;">
+  <a href="https://fluxmediasystems.com" style="color:#fff;text-decoration:none;font-weight:700;font-size:0.95rem;">⚡ Flux Media Systems</a>
+  <div style="display:flex;gap:20px;">
+    <a href="https://fluxmediasystems.com" style="color:#93c5fd;text-decoration:none;font-size:0.88rem;">Home</a>
+    <a href="https://fluxmediasystems.com/guides/" style="color:#93c5fd;text-decoration:none;font-size:0.88rem;">Guides</a>
+    <a href="https://fluxmediasystems.com/about.html" style="color:#93c5fd;text-decoration:none;font-size:0.88rem;">About</a>
+    <a href="https://fluxmediasystems.com/contact.html" style="color:#93c5fd;text-decoration:none;font-size:0.88rem;">Contact</a>
+  </div>
+</nav>
 <header class="header">
     <h1>📋 Stamp Duty Calculator 2026</h1>
     <p class="subtitle">UK SDLT — England, Scotland (LBTT) &amp; Wales (LTT)</p>
@@ -220,9 +233,16 @@
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6784909791643403" data-ad-slot="2104982836" data-ad-format="auto" data-full-width-responsive="true"></ins>
     </div>
 </div>
+<div style="max-width:720px;margin:32px auto 24px;padding:20px 24px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;">
+  <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#2563eb;margin:0 0 6px;">📖 Related Guide</p>
+  <h3 style="margin:0 0 8px;font-size:1.1rem;color:#1e293b;">The Complete Guide to Stamp Duty in 2026</h3>
+  <p style="margin:0 0 14px;color:#475569;font-size:0.95rem;">How SDLT actually works, the April 2025 rate changes, first-time buyer relief, Scotland LBTT, Wales LTT, and the most common mistakes buyers make — explained in plain English.</p>
+  <a href="https://fluxmediasystems.com/guides/stamp-duty-guide.html" style="display:inline-block;background:#2563eb;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;">Read the guide →</a>
+</div>
+
 <footer class="footer">
-    <p>🏠 <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
-    <p style="margin-top:8px;">&copy; 2026 Home Calc Tools. All rights reserved. Not financial or legal advice.</p>
+    <p>🏠 <a href="https://fluxmediasystems.com">Flux Media Systems</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/guides/" style="color:inherit;">Guides</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/about.html" style="color:inherit;">About</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/contact.html" style="color:inherit;">Contact</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="https://fluxmediasystems.com/terms-of-use.html">Terms of Use</a></p>
+    <p style="margin-top:8px;">&copy; 2026 Flux Media Systems. All rights reserved. Not financial or legal advice.</p>
 </footer>
 <script>
 function switchTab(t) {
@@ -334,21 +354,10 @@ function calcWales() {
     document.getElementById('wal-total').textContent = fmt(total);
     document.getElementById('wal-effective').textContent = effective + '%';
     document.getElementById('wal-price-show').textContent = fmt(price);
-    document.getElementById('wal-total-cost').textContent = fmt(price + total);
-
-    let html = '<tr><th>Band</th><th>Rate</th><th>Tax</th></tr>';
-    rows.slice(1).forEach(r => { html += `<tr><td>${r.label}</td><td>${r.range}</td><td>${r.amount}</td></tr>`; });
-    html += `<tr class="total"><td colspan="2"><strong>Total LTT</strong></td><td><strong>${fmt(total)}</strong></td></tr>`;
-    document.getElementById('wal-breakdown').innerHTML = html;
-    document.getElementById('wal-results').classList.add('show');
-    document.getElementById('wal-results').scrollIntoView({behavior:'smooth'});
+    document.getElementById('wal-breakdown').innerHTML = `<tr><th>Band</th><th>Rate</th><th>Tax</th></tr>` + rows;
 }
-function resetWal() { document.getElementById('wal-results').classList.remove('show'); }
-</script>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    (adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </body>
 </html>
