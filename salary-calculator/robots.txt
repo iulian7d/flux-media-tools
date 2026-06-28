@@ -29,4 +29,4 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-Sitemap: https://salary.fluxmediasystems.com/sitemap.xml
+Sitemap: https://fluxmediasystems.com/salary-calculator/sitemap.xml
