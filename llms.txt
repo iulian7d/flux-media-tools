@@ -223,11 +223,6 @@ URL: https://fluxmediasystems.com/calorie-calculator/
 Description: Calculate daily calorie needs using the Mifflin-St Jeor equation. Outputs BMR, TDEE, and calorie targets for weight loss (−500 kcal), maintenance, and muscle gain (+500 kcal). Includes macro split.
 Keywords: calorie calculator, TDEE calculator, daily calorie needs, how many calories to lose weight, BMR calculator
 
-**Drug Interaction Checker**
-URL: https://fluxmediasystems.com/drug-interaction-checker/
-Description: Check interactions between medications or supplements using the OpenFDA drug label database. Displays interaction descriptions and severity (major / moderate / minor).
-Keywords: drug interaction checker, medication interaction checker, supplement interactions, medicine checker
-
 **Age Calculator**
 URL: https://fluxmediasystems.com/age-calculator/
 Description: Calculate exact age in years, months, weeks, and days from a birthdate. Shows days until next birthday and age on any target date.
